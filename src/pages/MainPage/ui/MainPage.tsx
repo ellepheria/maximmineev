@@ -1,5 +1,7 @@
 import cls from './MainPage.module.scss';
-import { classNames, Loader, PageLoader } from '../../../shared';
+import {
+    Button, ButtonSize, ButtonTheme, classNames, Loader,
+} from '../../../shared';
 
 interface MainPageProps {
     className?: string;
