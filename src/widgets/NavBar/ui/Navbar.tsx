@@ -2,7 +2,6 @@ import cls from './Navbar.module.scss';
 import { classNames, ThemeSwitcher } from '../../../shared';
 import { AppLink } from '../../../shared/ui/AppLink/AppLink';
 import { RoutePath } from '../../../app/providers/router/routeConfig';
-import { useTheme } from '../../../app/providers/ThemeProvider';
 
 interface NavBarProps {
     className?: string;
