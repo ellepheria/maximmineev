@@ -1,10 +1,17 @@
 import React from 'react';
-import '../App.css';
 import { MainPage } from '../pages/MainPage';
+import { useTheme } from './providers/ThemeProvider';
+import { classNames } from '../shared';
 
 function App() {
+    const { theme, toggleTheme } = useTheme();
+
+    const onToggle = () => {
+        toggleTheme();
+    };
+
     return (
-        <div className="App">
+        <div className={classNames('app', {}, [theme])}>
             <MainPage />
         </div>
     );
