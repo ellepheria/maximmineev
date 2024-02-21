@@ -1,0 +1,24 @@
+.Navbar {
+    width: 100%;
+    height: var(--navbar-height);
+    background: var(--bg-color);
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    justify-content: center;
+    font: var(--font-l);
+}
+
+.links {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: auto;
+}
+
+.themeSwitcher {
+    fill: var(--primary-color);
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+}

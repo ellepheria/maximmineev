@@ -1,0 +1,17 @@
+.AppLink {
+    padding: 0.3em 0.6em;
+    text-decoration: none;
+    border-radius: 5px;
+
+    &:hover {
+        background: var(--hover-color);
+    }
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.secondary {
+    color: var(--secondary-color);
+}

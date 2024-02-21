@@ -1,8 +1,8 @@
 import React from 'react';
-import { MainPage } from '../pages/MainPage';
 import { useTheme } from './providers/ThemeProvider';
 import { classNames } from '../shared';
 import { AppRouter } from './providers/router';
+import { Navbar } from '../widgets/NavBar';
 
 function App() {
     const { theme, toggleTheme } = useTheme();
@@ -13,7 +13,10 @@ function App() {
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <AppRouter />
+            <Navbar />
+            <div>
+                <AppRouter />
+            </div>
         </div>
     );
 }
