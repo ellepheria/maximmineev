@@ -1,15 +1,12 @@
-import React from 'react';
-import { useTheme } from './providers/ThemeProvider';
-import { classNames } from '../shared';
-import { AppRouter } from './providers/router';
+import {
+    classNames,
+} from '../shared';
 import { Navbar } from '../widgets/NavBar';
+import { useTheme } from './providers/ThemeProvider';
+import { AppRouter } from './providers/router';
 
 function App() {
-    const { theme, toggleTheme } = useTheme();
-
-    const onToggle = () => {
-        toggleTheme();
-    };
+    const { theme } = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
