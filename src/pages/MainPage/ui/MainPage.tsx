@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import {
     classNames, Loader,
 } from '../../../shared';
@@ -19,4 +20,4 @@ const MainPage = (props: MainPageProps) => {
     );
 };
 
-export default MainPage;
+export default memo(MainPage);

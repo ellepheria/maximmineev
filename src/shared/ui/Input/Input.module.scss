@@ -1,3 +1,23 @@
+.inputWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.placeholder {
+	margin-bottom: 5px;
+	color: var(--secondary-color);
+	opacity: 0.7;
+}
+
 .Input {
-	
+	outline: none;
+	border: 1px var(--hover-color) solid;
+	padding: 10px;
+	border-radius: 8px;
+	width: 100%;
+	transition: var(--theme-transition);
+
+	&:focus {
+		outline: none;
+	}
 }

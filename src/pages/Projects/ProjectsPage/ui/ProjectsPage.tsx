@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import cls from './ProjectsPage.module.scss';
 import { classNames } from '../../../../shared';
 
@@ -11,4 +12,4 @@ const ProjectsPage = ({ className }: ProjectsPageProps) => (
     </div>
 );
 
-export default ProjectsPage;
+export default memo(ProjectsPage);

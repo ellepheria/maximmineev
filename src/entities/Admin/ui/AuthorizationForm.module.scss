@@ -1,0 +1,21 @@
+.formWrapper {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	padding: 100px;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	font: var(--font-l);
+	margin-bottom: 30px;
+}
+
+.form {
+	width: 50%;
+}
+
+.input {
+	margin: 30px;
+}
