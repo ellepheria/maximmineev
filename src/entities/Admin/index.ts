@@ -1,1 +1,1 @@
-export { AdminAuthorizationPage } from './ui/AdminAuthorizationPage';
+export { AuthorizationForm } from './ui/AuthorizationForm';

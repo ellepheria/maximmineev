@@ -39,7 +39,7 @@
     ]
   },
   "devDependencies": {
-    "json-server": "^1.0.0-alpha.23",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -49,7 +49,8 @@
     "@types/react-dom": "^18.2.19",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "typescript": "^4.9.5",
-    "sass": "^1.71.0"
+    "json-server": "^1.0.0-alpha.23",
+    "sass": "^1.71.0",
+    "typescript": "^4.9.5"
   }
 }

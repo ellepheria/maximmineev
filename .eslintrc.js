@@ -51,5 +51,6 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'linebreak-style': 'off',
+        'no-tabs': 'off',
     },
 };
