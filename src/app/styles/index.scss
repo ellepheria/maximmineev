@@ -13,13 +13,14 @@
     background: var(--bg-color);
     min-height: 100vh;
     transition: var(--theme-transition);
-}
-
-.content-page {
     display: flex;
+    flex-direction: column;
 }
 
-.page-wrapper {
+.content_page {
+    display: flex;
     flex-grow: 1;
     padding: 20px;
+    width: 100%;
+    justify-content: center;
 }
