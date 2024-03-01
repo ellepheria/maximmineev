@@ -1,10 +1,12 @@
-import { memo, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import {
+    memo, useCallback,
+    useState,
+} from 'react';
+import { useDispatch } from 'react-redux';
 import { Button, classNames } from '../../../shared';
+import { postAuthData } from '../../../shared/lib/api/postAuthData';
 import Input from '../../../shared/ui/Input/Input';
 import cls from './AuthorizationForm.module.scss';
-import { getAdminAuthData } from '../model/selectors/getAuthData/getAdminAuthData';
-import { adminActions } from '../model/slice/adminSlice';
 
 interface AuthorizationFormProps {
 	className?: string;
@@ -15,8 +17,20 @@ export const AuthorizationForm = memo((props: AuthorizationFormProps) => {
         className,
     } = props;
 
-    const [login, setLogin] = useState<string>('');
+    const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+
+    const dispatch = useDispatch();
+
+    const onAuth = useCallback(async () => {
+        await postAuthData({
+            authData: {
+                username,
+                password,
+            },
+            dispatch,
+        });
+    }, [dispatch, username, password]);
 
     return (
         <div className={classNames(cls.formWrapper, {}, [className])}>
@@ -27,8 +41,8 @@ export const AuthorizationForm = memo((props: AuthorizationFormProps) => {
                 <Input
                     placeholder="Логин"
                     autofocus
-                    value={login}
-                    onChange={setLogin}
+                    value={username}
+                    onChange={setUsername}
                     className={cls.input}
                 />
                 <Input
@@ -38,7 +52,10 @@ export const AuthorizationForm = memo((props: AuthorizationFormProps) => {
                     onChange={setPassword}
                     className={cls.input}
                 />
-                <Button>
+                <Button
+                    className={cls.loginBtn}
+                    onClick={onAuth}
+                >
                     Войти
                 </Button>
             </div>
