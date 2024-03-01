@@ -15,6 +15,7 @@ const MainPage = (props: MainPageProps) => {
 
     return (
         <div className={classNames(cls.MainPage, {}, [className || ''])}>
+            Главная
             <Loader />
         </div>
     );

@@ -1,7 +1,10 @@
-import { memo, useState } from 'react';
-import { classNames } from '../../../shared';
+import { memo, useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Button, classNames } from '../../../shared';
 import Input from '../../../shared/ui/Input/Input';
 import cls from './AuthorizationForm.module.scss';
+import { getAdminAuthData } from '../model/selectors/getAuthData/getAdminAuthData';
+import { adminActions } from '../model/slice/adminSlice';
 
 interface AuthorizationFormProps {
 	className?: string;
@@ -35,6 +38,9 @@ export const AuthorizationForm = memo((props: AuthorizationFormProps) => {
                     onChange={setPassword}
                     className={cls.input}
                 />
+                <Button>
+                    Войти
+                </Button>
             </div>
         </div>
     );

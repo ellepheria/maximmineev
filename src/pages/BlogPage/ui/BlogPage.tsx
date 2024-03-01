@@ -8,7 +8,7 @@ interface BlogPageProps {
 
 const BlogPage = ({ className }: BlogPageProps) => (
     <div className={classNames(cls.BlogPage, {}, [className])}>
-        Blog Page
+        Блог
     </div>
 );
 

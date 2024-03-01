@@ -8,7 +8,7 @@ interface ProjectsPageProps {
 
 const ProjectsPage = ({ className }: ProjectsPageProps) => (
     <div className={classNames(cls.ProjectsPage, {}, [className])}>
-        Projects Page
+        Проекты
     </div>
 );
 
