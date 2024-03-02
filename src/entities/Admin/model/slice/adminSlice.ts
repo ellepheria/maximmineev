@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { ADMIN_LOCALSTORAGE_KEY } from '../../../../shared/const/localstorage';
 import { Admin, AdminSchema } from '../types/admin';
-import { ADMIN_LOCALSTORAGE_KEY, LOCAL_STORAGE_THEME_KEY } from '../../../../shared/const/localstorage';
 
 const initialState: AdminSchema = {};
 
