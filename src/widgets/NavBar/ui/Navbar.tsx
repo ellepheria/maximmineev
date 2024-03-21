@@ -1,13 +1,12 @@
+import { RoutePath } from 'app/providers/router/routeConfig';
+import { getAdminAuthData } from 'entities/Admin';
+import { adminActions } from 'entities/Admin/model/slice/adminSlice';
 import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from '../../../app/providers/router/routeConfig';
-import { getAdminAuthData } from '../../../entities/Admin/model/selectors/getAuthData/getAdminAuthData';
-import { adminActions } from '../../../entities/Admin/model/slice/adminSlice';
-import {
-    Button,
-    ThemeSwitcher,
-    classNames,
-} from '../../../shared';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
+import { ThemeSwitcher } from 'widgets/ThemeSwitcher/ThemeSwitcher';
+
 import { AppLink } from '../../../shared/ui/AppLink/AppLink';
 import cls from './Navbar.module.scss';
 

@@ -3,7 +3,8 @@ import {
     useState,
 } from 'react';
 import { useDispatch } from 'react-redux';
-import { Button, classNames } from '../../../shared';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
 import { postAuthData } from '../../../shared/lib/api/postAuthData';
 import Input from '../../../shared/ui/Input/Input';
 import cls from './AuthorizationForm.module.scss';

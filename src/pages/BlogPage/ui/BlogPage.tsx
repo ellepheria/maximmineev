@@ -1,6 +1,6 @@
 import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './BlogPage.module.scss';
-import { classNames } from '../../../shared';
 
 interface BlogPageProps {
     className?: string;

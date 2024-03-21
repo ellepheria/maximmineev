@@ -1,8 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import {
-    classNames,
-} from '../shared';
+
+import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from '../widgets/NavBar';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';

@@ -1,6 +1,6 @@
 import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './ProjectsPage.module.scss';
-import { classNames } from '../../../../shared';
 
 interface ProjectsPageProps {
     className?: string;
