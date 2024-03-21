@@ -1,5 +1,5 @@
+import { AuthorizationForm } from 'entities/Admin';
 import { memo } from 'react';
-import { AuthorizationForm } from '../../../entities/Admin';
 import cls from './Authorizationpage.module.scss';
 
 const AuthorizationPage = memo(() => (
