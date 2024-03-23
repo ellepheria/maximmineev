@@ -11,12 +11,24 @@ export enum Technologies {
     JAVASCRIPT = 'javascript',
 }
 
+export enum ProjectType {
+    EDUCATION = 'education',
+    COMMERCIAL = 'commercial',
+}
+
 export interface Project {
     id: string;
     title: string;
     description: string;
     images?: Image[];
     createdAt: string;
-    technologies?: Technologies[]
-    links?: string[]
+    technologies?: Technologies[];
+    types: ProjectType[];
+    links?: string[];
+}
+
+export interface ProjectSchema {
+    project?: Project;
+    error?: string;
+    isLoading?: boolean;
 }

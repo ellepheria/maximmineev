@@ -52,5 +52,6 @@ module.exports = {
         'no-param-reassign': 'off',
         'linebreak-style': 'off',
         'no-tabs': 'off',
+        'no-undef': 'off',
     },
 };
