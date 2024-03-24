@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     HTMLProps, memo, ReactNode, useCallback,
 } from 'react';
@@ -11,11 +11,14 @@ export enum CardTheme {
     OUTLINED = 'outlined',
 }
 
-interface CardProps extends HTMLProps<HTMLDivElement>{
+type DivProps = Omit<HTMLProps<HTMLDivElement>, 'max'>
+
+interface CardProps extends DivProps {
     className?: string;
     theme?: CardTheme;
     onClick?: () => void;
     children?: ReactNode;
+    max?: boolean;
 }
 
 export const Card = memo((props: CardProps) => {
@@ -24,7 +27,7 @@ export const Card = memo((props: CardProps) => {
         theme = CardTheme.FILLED,
         onClick,
         children,
-        max,
+        max = false,
         ...otherProps
     } = props;
 
@@ -32,6 +35,10 @@ export const Card = memo((props: CardProps) => {
         className,
         cls[theme],
     ];
+
+    const mods: Mods = {
+        [cls.max]: max,
+    };
 
     const onClickHandler = useCallback(() => {
         if (onClick) {
@@ -41,7 +48,7 @@ export const Card = memo((props: CardProps) => {
 
     return (
         <VStack
-            className={classNames(cls.Card, {}, additional)}
+            className={classNames(cls.Card, mods, additional)}
             onClick={onClickHandler}
             {...otherProps}
         >
