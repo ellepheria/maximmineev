@@ -1,15 +1,16 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './BlogPage.module.scss';
+import { Page } from '../../../widgets/Page/Page';
 
 interface BlogPageProps {
     className?: string;
 }
 
 const BlogPage = ({ className }: BlogPageProps) => (
-    <div className={classNames(cls.BlogPage, {}, [className])}>
+    <Page className={classNames(cls.BlogPage, {}, [className])}>
         Блог
-    </div>
+    </Page>
 );
 
 export default memo(BlogPage);

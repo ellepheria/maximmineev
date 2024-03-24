@@ -2,8 +2,9 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Page } from 'widgets/Page/Page';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import cls from './ProjectsPage.module.scss';
-import { DynamicModuleLoader, ReducersList } from '../../../../shared/lib/components/DynamicModuleLoader';
 import { projectsPageReducer } from '../model/slice/projectsPage';
 import { fetchProjects } from '../model/services/fetchProjects/fetchProjects';
 
@@ -27,9 +28,9 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ProjectsPage, {}, [className])}>
+            <Page className={classNames(cls.ProjectsPage, {}, [className])}>
                 Проекты
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

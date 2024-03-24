@@ -1,6 +1,7 @@
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 
-export const getProjectData = (state: StateSchema) => state.projectDetails?.project;
+export const getProjectDetailsData = (state: StateSchema) => state.projectDetails?.project || { id: '-1' };
+export const getProjectDetailsCover = (state: StateSchema) => state.projectDetails?.project?.cover;
 export const getProjectDetailsId = (state: StateSchema) => state.projectDetails?.project?.id;
 export const getProjectDetailsCreatedAt = (state: StateSchema) => state.projectDetails?.project?.createdAt;
 export const getProjectDetailsImages = (state: StateSchema) => state.projectDetails?.project?.images;

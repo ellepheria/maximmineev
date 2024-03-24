@@ -1,7 +1,3 @@
-export interface Image {
-    src: string;
-}
-
 export enum Technologies {
     HTML = 'html',
     CSS = 'css',
@@ -18,12 +14,13 @@ export enum ProjectType {
 
 export interface Project {
     id: string;
-    title: string;
-    description: string;
-    images?: Image[];
-    createdAt: string;
+    cover?: string;
+    title?: string;
+    description?: string;
+    images?: string[];
+    createdAt?: string;
     technologies?: Technologies[];
-    types: ProjectType[];
+    types?: ProjectType[];
     links?: string[];
 }
 
