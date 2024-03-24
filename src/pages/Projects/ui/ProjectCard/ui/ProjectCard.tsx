@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Project } from 'entities/Project';
+import { Card } from 'shared/ui/Card/Card';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'app/providers/router/routeConfig';
 import cls from './ProjectCard.module.scss';
-import { Card } from '../../../../../shared/ui/Card/Card';
-import { HStack, VStack } from '../../../../../shared/ui/Stack';
-import { AppLink } from '../../../../../shared/ui/AppLink/AppLink';
-import { RoutePath } from '../../../../../app/providers/router/routeConfig';
 
 interface ProjectCardProps {
     className?: string;

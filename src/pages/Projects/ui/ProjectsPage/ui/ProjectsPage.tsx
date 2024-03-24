@@ -5,12 +5,12 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from 'widgets/Page/Page';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
+import { VStack } from 'shared/ui/Stack';
 import cls from './ProjectsPage.module.scss';
 import { projectsPageReducer } from '../model/slice/projectsPage';
 import { fetchProjects } from '../model/services/fetchProjects/fetchProjects';
 import { getProjectsList } from '../model/selectors/projectsPageSelectors';
 import { ProjectCard } from '../../ProjectCard';
-import { VStack } from '../../../../../shared/ui/Stack';
 
 interface ProjectsPageProps {
     className?: string;
