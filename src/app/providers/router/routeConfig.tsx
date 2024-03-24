@@ -3,12 +3,14 @@ import { MainPage } from '../../../pages/MainPage';
 import { ProjectsPage } from '../../../pages/Projects';
 import { BlogPage } from '../../../pages/BlogPage';
 import { AdminAuthorizationPage } from '../../../pages/Admin';
+import { ProjectDetailsPage } from '../../../pages/ProjectDetailsPage/ui/ProjectDetailsPage';
 
 export enum AppRoutes {
     MAIN = 'main',
     PROJECTS = 'projects',
     BLOG = 'blog',
     ADMIN = 'admin',
+    PROJECT_DETAILS = 'project_details',
     // NOT_FOUND = 'not_found',
 }
 
@@ -17,6 +19,7 @@ export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.PROJECTS]: '/projects',
     [AppRoutes.BLOG]: '/blog',
     [AppRoutes.ADMIN]: '/admin',
+    [AppRoutes.PROJECT_DETAILS]: '/projects/:id',
     // [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -36,5 +39,9 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     [AppRoutes.ADMIN]: {
         path: RoutePath.admin,
         element: <AdminAuthorizationPage />,
+    },
+    [AppRoutes.PROJECT_DETAILS]: {
+        path: RoutePath.project_details,
+        element: <ProjectDetailsPage />,
     },
 };

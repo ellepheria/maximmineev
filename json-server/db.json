@@ -11,6 +11,35 @@
       "userId": "2"
     }
   ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "Мой первый проект",
+      "description": "Описание моего первго проекта",
+      "createdAt": "2021",
+      "types": [
+        "EDUCATION"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Мой второй проект",
+      "description": "Описание моего второго проекта",
+      "createdAt": "2022",
+      "types": [
+        "EDUCATION"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Мой третий проект",
+      "description": "Описание моего третьего проекта",
+      "createdAt": "2023",
+      "types": [
+        "COMMERCIAL"
+      ]
+    }
+  ],
   "comments": [
     {
       "id": "1",

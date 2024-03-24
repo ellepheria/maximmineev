@@ -2,12 +2,14 @@ import { AdminSchema } from 'entities/Admin';
 import { ProjectSchema } from 'entities/Project/model/types/project';
 import { EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { ProjectDetailsSchema } from '../../../../pages/ProjectDetailsPage';
 
 export interface StateSchema {
 	admin: AdminSchema;
 
 	// async reducers
 	project?: ProjectSchema;
+	projectDetails?: ProjectDetailsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
