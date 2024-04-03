@@ -5,6 +5,8 @@
     overflow-y: auto;
     flex-shrink: 100;
     display: flex;
+    max-width: 1000px;
+    min-width: 600px;
 }
 
 .center {

@@ -19,16 +19,18 @@
       "createdAt": "2021",
       "types": [
         "EDUCATION"
-      ]
+      ],
+      "cover": "https://rozetked.me/images/uploads/ykEf34VL5W0k.jpg"
     },
     {
       "id": "2",
       "title": "Мой второй проект",
-      "description": "Описание моего второго проекта",
+      "description": "Описание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проекта",
       "createdAt": "2022",
       "types": [
         "EDUCATION"
-      ]
+      ],
+      "cover": "https://rozetked.me/images/uploads/mUIkM061Ljzp.jpg"
     },
     {
       "id": "3",
@@ -37,7 +39,8 @@
       "createdAt": "2023",
       "types": [
         "COMMERCIAL"
-      ]
+      ],
+      "cover": "https://rozetked.me/images/uploads/BS8WyHP6SZND.jpg"
     }
   ],
   "comments": [

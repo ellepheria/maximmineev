@@ -1,3 +1,21 @@
 .ProjectCard {
-
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 16px;
 }
+
+.cover {
+    object-fit: cover;
+    width: 400px;
+    max-height: 250px;
+    border-radius: 8px;
+}
+
+.content {
+    height: 100%;
+}
+
+.description {
+    align-self: flex-end;
+}
+

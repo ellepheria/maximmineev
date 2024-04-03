@@ -34,7 +34,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
 
     const projectList = useMemo(() => (
         projects.map((project) => (
-            <ProjectCard project={project} />
+            <ProjectCard project={project} key={project.id} />
         ))
     ), [projects]);
 

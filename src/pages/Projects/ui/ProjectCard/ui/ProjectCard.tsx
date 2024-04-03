@@ -1,11 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Project } from 'entities/Project';
-import { Card } from 'shared/ui/Card/Card';
+import { Card, CardTheme } from 'shared/ui/Card/Card';
 import { HStack, VStack } from 'shared/ui/Stack';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'app/providers/router/routeConfig';
 import cls from './ProjectCard.module.scss';
+import { classNames } from '../../../../../shared/lib/classNames/classNames';
 
 interface ProjectCardProps {
     className?: string;
@@ -29,25 +27,33 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
     } = project;
 
     return (
-        <AppLink to={`${RoutePath.projects}/${id}`}>
-            <Card max className={classNames(cls.ProjectCard, {}, [className])}>
-                <VStack max>
-                    <HStack max>
-                        {cover}
-                        <VStack>
+        <Card
+            max
+            theme={CardTheme.CLEAR}
+            className={classNames(cls.ProjectCard, {}, [className])}
+        >
+            <VStack max className={cls.container}>
+                <HStack max gap="32" align="start">
+                    <img
+                        src={cover}
+                        alt={`project ${id} cover`}
+                        className={cls.cover}
+                    />
+                    <VStack max justify="between" align="center" className={cls.content}>
+                        <VStack max gap="16" align="center">
                             <h1>{title}</h1>
-                            <p>{description}</p>
+                            <p className={cls.description}>{description}</p>
                         </VStack>
-                    </HStack>
-                    <HStack max>
-                        <HStack>
-                            <p>{types.join(', ')}</p>
-                            <p>{technologies.join(', ')}</p>
+                        <HStack max justify="end" gap="16" align="end">
+                            <HStack>
+                                <p>{types.join(', ')}</p>
+                                <p>{technologies.join(', ')}</p>
+                            </HStack>
+                            <p>{createdAt}</p>
                         </HStack>
-                        <p>{createdAt}</p>
-                    </HStack>
-                </VStack>
-            </Card>
-        </AppLink>
+                    </VStack>
+                </HStack>
+            </VStack>
+        </Card>
     );
 });
