@@ -17,30 +17,53 @@
       "title": "Мой первый проект",
       "description": "Описание моего первго проекта",
       "createdAt": "2021",
-      "types": [
-        "EDUCATION"
+      "types": "Учебный",
+      "cover": "https://rozetked.me/images/uploads/ykEf34VL5W0k.jpg",
+      "roles": ["Frontend", "TeamLead"],
+      "technologies": ["html", "scss", "typescript"],
+      "duties": [
+        "Разработка клиентской части приложения",
+        "Разработка",
+        "клиентской",
+        "части"
       ],
-      "cover": "https://rozetked.me/images/uploads/ykEf34VL5W0k.jpg"
+      "githubLink": "https://github.com/mineevmaxim/production-project",
+      "websiteLink": "https://ya.ru",
+      "isTeamProject": false,
+      "links": [
+        "https://github.com/mineevmaxim/production-project",
+        "https://ya.ru"
+      ]
     },
     {
       "id": "2",
       "title": "Мой второй проект",
       "description": "Описание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проектаОписание моего второго проекта",
       "createdAt": "2022",
-      "types": [
-        "EDUCATION"
+      "types": "Учебный",
+      "cover": "https://rozetked.me/images/uploads/mUIkM061Ljzp.jpg",
+      "roles": ["Frontend", "TeamLead"],
+      "technologies": [
+        "html", "scss", "typescript"
       ],
-      "cover": "https://rozetked.me/images/uploads/mUIkM061Ljzp.jpg"
+      "duties": ["Разработка клиентской части приложения"],
+      "githubLink": "https://github.com/mineevmaxim/production-project",
+      "websiteLink": "https://ya.ru",
+      "isTeamProject": true
     },
     {
       "id": "3",
       "title": "Мой третий проект",
       "description": "Описание моего третьего проекта",
       "createdAt": "2023",
-      "types": [
-        "COMMERCIAL"
-      ],
-      "cover": "https://rozetked.me/images/uploads/BS8WyHP6SZND.jpg"
+      "types": "Коммерческий",
+      "cover": "https://rozetked.me/images/uploads/BS8WyHP6SZND.jpg",
+      "roles": ["Frontend", "TeamLead"],
+      "technologies": ["html", "scss", "typescript"],
+      "duties": ["Разработка клиентской части приложения"],
+      "githubLink": "https://github.com/mineevmaxim/production-project",
+      "websiteLink": "https://ya.ru",
+      "isTeamProject": false
     }
   ],
   "comments": [

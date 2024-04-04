@@ -8,8 +8,15 @@ export enum Technologies {
 }
 
 export enum ProjectType {
-    EDUCATION = 'education',
-    COMMERCIAL = 'commercial',
+    EDUCATION = 'Учебный',
+    COMMERCIAL = 'Коммерческий',
+}
+
+export enum ProjectRole {
+    FRONTEND = 'Frontend',
+    BACKEND = 'Backend',
+    TEAMLEAD = 'TeamLead',
+    ANALYST = 'Analyst',
 }
 
 export interface Project {
@@ -20,8 +27,13 @@ export interface Project {
     images?: string[];
     createdAt?: string;
     technologies?: Technologies[];
-    types?: ProjectType[];
+    type: ProjectType;
     links?: string[];
+    roles?: ProjectRole[];
+    duties?: string[];
+    githubLink?: string;
+    websiteLink?: string;
+    isTeamProject?: boolean;
 }
 
 export interface ProjectSchema {

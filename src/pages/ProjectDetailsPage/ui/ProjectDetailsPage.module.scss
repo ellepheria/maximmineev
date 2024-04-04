@@ -1,3 +1,54 @@
 .ProjectDetailsPage {
 
 }
+
+.cover {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.title {
+    width: 100%;
+    padding: 16px 24px;
+}
+
+.card {
+    align-self: flex-end;
+    justify-self: flex-end;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.content {
+    padding: 16px 24px;
+}
+
+.duties {
+    list-style-position: outside;
+}
+
+.dutyItem {
+    margin-left: 40px;
+}
+
+.duty {
+    margin-left: 12px;
+}
+
+.links {
+    list-style-position: outside;
+}
+
+.linkItem {
+    margin-left: 40px;
+    margin-bottom: 12px;
+}
+
+.link {
+    margin-left: 8px;
+}
+
+.linkText {
+    display: inline-flex;
+}

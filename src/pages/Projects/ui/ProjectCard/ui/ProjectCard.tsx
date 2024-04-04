@@ -4,6 +4,7 @@ import { Card, CardTheme } from 'shared/ui/Card/Card';
 import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './ProjectCard.module.scss';
 import { classNames } from '../../../../../shared/lib/classNames/classNames';
+import { ProjectType } from '../../../../../entities/Project/model/types/project';
 
 interface ProjectCardProps {
     className?: string;
@@ -19,7 +20,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
     const {
         id,
         createdAt,
-        types = [],
+        type = ProjectType.EDUCATION,
         technologies = [],
         cover,
         title,
@@ -46,7 +47,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
                         </VStack>
                         <HStack max justify="end" gap="16" align="end">
                             <HStack>
-                                <p>{types.join(', ')}</p>
+                                <p>{type}</p>
                                 <p>{technologies.join(', ')}</p>
                             </HStack>
                             <p>{createdAt}</p>
