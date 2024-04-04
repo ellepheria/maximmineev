@@ -109,7 +109,7 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
                             </>
                         )}
 
-                        <Text title="Ссылки" size={TextSize.S} />
+                        <Text title="Ссылки:" size={TextSize.S} />
                         <ul className={cls.links}>
                             {links && links.map((link) => (
                                 <li
