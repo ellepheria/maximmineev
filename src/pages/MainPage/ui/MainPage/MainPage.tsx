@@ -3,6 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Page } from 'widgets/Page/Page';
 import { MainPageHeader } from 'features/MainPageHeader';
 import cls from './MainPage.module.scss';
+import { MainPageStack } from '../../../../features/MainPageStack';
+import { VStack } from '../../../../shared/ui/Stack';
 
 interface MainPageProps {
     className?: string;
@@ -15,7 +17,10 @@ const MainPage = (props: MainPageProps) => {
 
     return (
         <Page className={classNames(cls.MainPage, {}, [className || ''])}>
-            <MainPageHeader />
+            <VStack max gap="32">
+                <MainPageHeader />
+                <MainPageStack />
+            </VStack>
         </Page>
     );
 };
