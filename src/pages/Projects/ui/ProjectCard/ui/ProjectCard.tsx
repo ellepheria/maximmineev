@@ -5,6 +5,7 @@ import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './ProjectCard.module.scss';
 import { classNames } from '../../../../../shared/lib/classNames/classNames';
 import { ProjectType } from '../../../../../entities/Project/model/types/project';
+import { Text, TextSize } from '../../../../../shared/ui/Text/Text';
 
 interface ProjectCardProps {
     className?: string;
@@ -41,16 +42,16 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
                         className={cls.cover}
                     />
                     <VStack max justify="between" align="center" className={cls.content}>
-                        <VStack max gap="16" align="center">
-                            <h1>{title}</h1>
-                            <p className={cls.description}>{description}</p>
+                        <VStack max gap="16" align="end">
+                            <Text title={title} size={TextSize.L} />
+                            <Text text={description} className={cls.description} size={TextSize.M} />
                         </VStack>
                         <HStack max justify="end" gap="16" align="end">
                             <HStack gap="16">
-                                <p>{type}</p>
-                                <p>{technologies.join(', ')}</p>
+                                <Text text={type} size={TextSize.S} />
+                                <Text text={technologies.join(', ')} size={TextSize.S} />
                             </HStack>
-                            <p>{createdAt}</p>
+                            <Text text={createdAt} size={TextSize.S} />
                         </HStack>
                     </VStack>
                 </HStack>
