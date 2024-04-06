@@ -14,6 +14,14 @@ export enum TextAlign {
     CENTER = 'center',
 }
 
+export enum TextGap {
+    GAP4 = 'gap4',
+    GAP8 = 'gap8',
+    GAP16 = 'gap16',
+    GAP24 = 'gap24',
+    GAP32 = 'gap32',
+}
+
 export enum TextSize {
     S = 'size_s',
     M = 'size_m',
@@ -27,6 +35,7 @@ interface TextProps {
     theme?: TextTheme;
     align?: TextAlign;
     size?: TextSize;
+    gap?: TextGap;
 }
 
 type HeaderTagType = 'h1' | 'h2' | 'h3';
@@ -45,6 +54,7 @@ export const Text = memo((props: TextProps) => {
         theme = TextTheme.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
+        gap = TextGap.GAP4,
     } = props;
 
     const HeaderTag = mapSizeToHeaderTag[size];
@@ -53,6 +63,7 @@ export const Text = memo((props: TextProps) => {
         [cls[theme]]: true,
         [cls[align]]: true,
         [cls[size]]: true,
+        [cls[gap]]: true,
     };
 
     return (

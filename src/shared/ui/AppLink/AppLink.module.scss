@@ -20,6 +20,10 @@
 .clear {
     padding: 0;
     border: 0;
-    background: none;
+    background: inherit;
     outline: none;
+
+    &:hover {
+        background: inherit;
+    }
 }

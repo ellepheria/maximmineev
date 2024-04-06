@@ -46,7 +46,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
                             <p className={cls.description}>{description}</p>
                         </VStack>
                         <HStack max justify="end" gap="16" align="end">
-                            <HStack>
+                            <HStack gap="16">
                                 <p>{type}</p>
                                 <p>{technologies.join(', ')}</p>
                             </HStack>
