@@ -19,3 +19,6 @@ export const getProjectDetailsGithubLink = (state: StateSchema) => state.project
 
 export const getProjectDetailsWebsiteLink = (state: StateSchema) => state.projectDetails?.project?.websiteLink;
 export const getProjectDetailsIsTeamProject = (state: StateSchema) => state.projectDetails?.project?.isTeamProject;
+
+export const getProjectDetailsIsLoading = (state: StateSchema) => state.projectDetails?.isLoading || false;
+export const getProjectDetailsError = (state: StateSchema) => state.projectDetails?.error || '';

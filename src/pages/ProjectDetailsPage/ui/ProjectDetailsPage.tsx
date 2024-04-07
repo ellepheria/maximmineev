@@ -14,7 +14,7 @@ import {
     getProjectDetailsDescription,
     getProjectDetailsDuties,
     getProjectDetailsGithubLink,
-    getProjectDetailsImages,
+    getProjectDetailsImages, getProjectDetailsIsLoading,
     getProjectDetailsIsTeamProject,
     getProjectDetailsLinks,
     getProjectDetailsRoles,
@@ -30,6 +30,7 @@ import {
 } from '../../../shared/ui/Text/Text';
 import { Card } from '../../../shared/ui/Card/Card';
 import { AppLink } from '../../../shared/ui/AppLink/AppLink';
+import { PageLoader } from '../../../widgets/PageLoader/PageLoader';
 
 interface ProjectDetailsPageProps {
     className?: string;
@@ -63,9 +64,14 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
     const githubLink = useSelector(getProjectDetailsGithubLink);
     const websiteLink = useSelector(getProjectDetailsWebsiteLink);
     const isTeamProject = useSelector(getProjectDetailsIsTeamProject);
+    const isLoading = useSelector(getProjectDetailsIsLoading);
+
+    if (isLoading) {
+        return <PageLoader />;
+    }
 
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ProjectDetailsPage, {}, [className])}>
                 <VStack max>
                     <img src={cover} alt="cover" className={cls.cover} />
