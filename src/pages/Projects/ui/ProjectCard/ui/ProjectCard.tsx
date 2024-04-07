@@ -2,15 +2,15 @@ import { memo, useMemo } from 'react';
 import { Project } from 'entities/Project';
 import { Card, CardTheme } from 'shared/ui/Card/Card';
 import { HStack, VStack } from 'shared/ui/Stack';
-import cls from './ProjectCard.module.scss';
-import { classNames } from '../../../../../shared/lib/classNames/classNames';
-import { ProjectType } from '../../../../../entities/Project/model/types/project';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { ProjectType } from 'entities/Project/model/types/project';
 import {
     Text, TextAlign, TextSize, TextTheme,
-} from '../../../../../shared/ui/Text/Text';
-import { Tab } from '../../../../../shared/ui/Tab/Tab';
-import { AppLink, AppLinkTheme } from '../../../../../shared/ui/AppLink/AppLink';
-import { RoutePath } from '../../../../../app/providers/router/routeConfig';
+} from 'shared/ui/Text/Text';
+import { Tab } from 'shared/ui/Tab/Tab';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'app/providers/router/routeConfig';
+import cls from './ProjectCard.module.scss';
 
 interface ProjectCardProps {
     className?: string;
@@ -68,8 +68,19 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
                             <Text title={title} size={TextSize.M} />
                             <Text text={description} className={cls.description} size={TextSize.M} align={TextAlign.RIGHT} />
                         </VStack>
-                        <HStack max justify="end" gap="16" align="center">
-                            {technologiesList}
+                        <HStack max justify="between" gap="8" align="center">
+                            <HStack gap="8">
+                                {technologiesList}
+                            </HStack>
+                            <AppLink
+                                to={`${RoutePath.projects}/${project.id}`}
+                                theme={AppLinkTheme.CLEAR}
+                                className={cls.tabLink}
+                            >
+                                <Tab className={cls.tab}>
+                                    <Text text="Перейти к проекту" size={TextSize.M} />
+                                </Tab>
+                            </AppLink>
                         </HStack>
                     </VStack>
                 </HStack>
