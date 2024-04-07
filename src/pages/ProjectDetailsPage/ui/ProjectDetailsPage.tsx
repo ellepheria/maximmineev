@@ -119,7 +119,7 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
                     <VStack max className={cls.content} gap="16">
                         <Text text={description} theme={TextTheme.PRIMARY} />
                         {duties && (
-                            <>
+                            <VStack max gap="8">
                                 <Text title="Обязанности на проекте:" size={TextSize.S} />
                                 <ul className={cls.duties}>
                                     {duties.map((duty) => (
@@ -131,11 +131,11 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
                                         </li>
                                     ))}
                                 </ul>
-                            </>
+                            </VStack>
                         )}
 
                         {roles && (
-                            <>
+                            <VStack gap="8" max>
                                 <Text title="Роли в проекте:" size={TextSize.S} />
                                 <ul className={cls.duties}>
                                     {roles.map((role) => (
@@ -147,40 +147,41 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
                                         </li>
                                     ))}
                                 </ul>
-                            </>
+                            </VStack>
                         )}
 
-                        <Text title="Ссылки:" size={TextSize.S} />
-                        <ul className={cls.links}>
-                            {links && links.map((link) => (
-                                <li
-                                    key={link}
-                                    className={cls.linkItem}
-                                >
-                                    <AppLink to={link} className={cls.link}>
-                                        <Text text="link" className={cls.linkText} />
-                                    </AppLink>
-                                </li>
-                            ))}
-                            {githubLink && (
-                                <li className={cls.linkItem}>
-                                    <AppLink to={githubLink} className={cls.link}>
-                                        <Text text="GitHub" className={cls.linkText} />
-                                    </AppLink>
-                                </li>
-                            )}
-                            {websiteLink && (
-                                <li className={cls.linkItem}>
-                                    <AppLink to={websiteLink} className={cls.link}>
-                                        <Text text="Website" className={cls.linkText} />
-                                    </AppLink>
-                                </li>
-                            )}
-                        </ul>
+                        <VStack max gap="8">
+                            <Text title="Ссылки:" size={TextSize.S} />
+                            <ul className={cls.links}>
+                                {links && links.map((link) => (
+                                    <li
+                                        key={link}
+                                        className={cls.linkItem}
+                                    >
+                                        <AppLink to={link} className={cls.link}>
+                                            <Text text="link" className={cls.linkText} />
+                                        </AppLink>
+                                    </li>
+                                ))}
+                                {githubLink && (
+                                    <li className={cls.linkItem}>
+                                        <AppLink to={githubLink} className={cls.link}>
+                                            <Text text="GitHub" className={cls.linkText} />
+                                        </AppLink>
+                                    </li>
+                                )}
+                                {websiteLink && (
+                                    <li className={cls.linkItem}>
+                                        <AppLink to={websiteLink} className={cls.link}>
+                                            <Text text="Website" className={cls.linkText} />
+                                        </AppLink>
+                                    </li>
+                                )}
+                            </ul>
+                        </VStack>
                     </VStack>
                     {images}
                     {technologies}
-                    {roles}
                 </VStack>
             </Page>
         </DynamicModuleLoader>
