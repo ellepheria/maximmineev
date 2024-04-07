@@ -12,6 +12,7 @@ import { fetchProjects } from '../model/services/fetchProjects/fetchProjects';
 import { getProjectsIsLoading, getProjectsList } from '../model/selectors/projectsPageSelectors';
 import { ProjectCard } from '../../ProjectCard';
 import { PageLoader } from '../../../../../widgets/PageLoader/PageLoader';
+import { Skeleton } from '../../../../../shared/ui/Skeleton/Skeleton';
 
 interface ProjectsPageProps {
     className?: string;
@@ -41,7 +42,15 @@ const ProjectsPage = (props: ProjectsPageProps) => {
     ), [projects]);
 
     if (isLoading) {
-        return <PageLoader />;
+        return (
+            <Page className={classNames(cls.ProjectsPage, {}, [className])}>
+                <VStack max gap="32" align="center">
+                    <Skeleton width="100%" height={263} border="16px" />
+                    <Skeleton width="100%" height={263} border="16px" />
+                    <Skeleton width="100%" height={263} border="16px" />
+                </VStack>
+            </Page>
+        );
     }
 
     return (
