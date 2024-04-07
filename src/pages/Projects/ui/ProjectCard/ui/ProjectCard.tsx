@@ -1,11 +1,16 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { Project } from 'entities/Project';
 import { Card, CardTheme } from 'shared/ui/Card/Card';
 import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './ProjectCard.module.scss';
 import { classNames } from '../../../../../shared/lib/classNames/classNames';
 import { ProjectType } from '../../../../../entities/Project/model/types/project';
-import { Text, TextSize } from '../../../../../shared/ui/Text/Text';
+import {
+    Text, TextAlign, TextSize, TextTheme,
+} from '../../../../../shared/ui/Text/Text';
+import { Tab } from '../../../../../shared/ui/Tab/Tab';
+import { AppLink, AppLinkTheme } from '../../../../../shared/ui/AppLink/AppLink';
+import { RoutePath } from '../../../../../app/providers/router/routeConfig';
 
 interface ProjectCardProps {
     className?: string;
@@ -28,6 +33,12 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
         description,
     } = project;
 
+    const technologiesList = useMemo(() => technologies.map((item) => (
+        <Tab className={cls.tab}>
+            <Text text={item} size={TextSize.M} theme={TextTheme.INVERTED} key={item} />
+        </Tab>
+    )), [technologies]);
+
     return (
         <Card
             max
@@ -36,22 +47,29 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
         >
             <VStack max className={cls.container}>
                 <HStack max gap="32" align="start">
-                    <img
-                        src={cover}
-                        alt={`project ${id} cover`}
-                        className={cls.cover}
-                    />
+                    <AppLink to={`${RoutePath.projects}/${project.id}`} theme={AppLinkTheme.CLEAR}>
+                        <div className={cls.imageWrapper}>
+                            <Tab className={cls.createdAt}>
+                                <Text text={createdAt} />
+                            </Tab>
+                            <Tab className={cls.type}>
+                                <Text text={type} />
+                            </Tab>
+                            <img
+                                src={cover}
+                                alt={`project ${id} cover`}
+                                className={cls.cover}
+                            />
+                        </div>
+                    </AppLink>
+
                     <VStack max justify="between" align="center" className={cls.content}>
-                        <VStack max gap="16" align="end">
-                            <Text title={title} size={TextSize.L} />
-                            <Text text={description} className={cls.description} size={TextSize.M} />
+                        <VStack max gap="16" align="end" justify="start">
+                            <Text title={title} size={TextSize.M} />
+                            <Text text={description} className={cls.description} size={TextSize.M} align={TextAlign.RIGHT} />
                         </VStack>
-                        <HStack max justify="end" gap="16" align="end">
-                            <HStack gap="16">
-                                <Text text={type} size={TextSize.S} />
-                                <Text text={technologies.join(', ')} size={TextSize.S} />
-                            </HStack>
-                            <Text text={createdAt} size={TextSize.S} />
+                        <HStack max justify="end" gap="16" align="center">
+                            {technologiesList}
                         </HStack>
                     </VStack>
                 </HStack>
