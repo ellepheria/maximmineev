@@ -9,8 +9,9 @@ import { VStack } from 'shared/ui/Stack';
 import cls from './ProjectsPage.module.scss';
 import { projectsPageReducer } from '../model/slice/projectsPage';
 import { fetchProjects } from '../model/services/fetchProjects/fetchProjects';
-import { getProjectsList } from '../model/selectors/projectsPageSelectors';
+import { getProjectsIsLoading, getProjectsList } from '../model/selectors/projectsPageSelectors';
 import { ProjectCard } from '../../ProjectCard';
+import { PageLoader } from '../../../../../widgets/PageLoader/PageLoader';
 
 interface ProjectsPageProps {
     className?: string;
@@ -30,6 +31,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
         dispatch(fetchProjects());
     });
 
+    const isLoading = useSelector(getProjectsIsLoading);
     const projects = useSelector(getProjectsList);
 
     const projectList = useMemo(() => (
@@ -38,8 +40,12 @@ const ProjectsPage = (props: ProjectsPageProps) => {
         ))
     ), [projects]);
 
+    if (isLoading) {
+        return <PageLoader />;
+    }
+
     return (
-        <DynamicModuleLoader reducers={reducers}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page className={classNames(cls.ProjectsPage, {}, [className])}>
                 <VStack max gap="32" align="center">
                     {projectList}
