@@ -14,7 +14,7 @@ export const Skeleton = memo((props: SkeletonProps) => {
         className,
         height,
         width,
-        border,
+        border = '16px',
     } = props;
 
     const styles: CSSProperties = {

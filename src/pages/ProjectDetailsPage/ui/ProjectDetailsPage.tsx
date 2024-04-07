@@ -2,19 +2,25 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import cls from './ProjectDetailsPage.module.scss';
-import { useInitialEffect } from '../../../shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from '../../../shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchProjectById } from '../model/services/fetchProjectById/fetchProjectByid';
-import { DynamicModuleLoader, ReducersList } from '../../../shared/lib/components/DynamicModuleLoader';
-import { projectDetailsReducer } from '../model/slice/projectDetailsSlice';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { Page } from 'widgets/Page/Page';
+import {
+    Text, TextAlign, TextSize, TextTheme,
+} from 'shared/ui/Text/Text';
+import { Card } from 'shared/ui/Card/Card';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import {
     getProjectDetailsCover,
     getProjectDetailsCreatedAt,
     getProjectDetailsDescription,
     getProjectDetailsDuties,
     getProjectDetailsGithubLink,
-    getProjectDetailsImages, getProjectDetailsIsLoading,
+    getProjectDetailsImages,
+    getProjectDetailsIsLoading,
     getProjectDetailsIsTeamProject,
     getProjectDetailsLinks,
     getProjectDetailsRoles,
@@ -23,14 +29,9 @@ import {
     getProjectDetailsType,
     getProjectDetailsWebsiteLink,
 } from '../model/selectors/projectDetails';
-import { HStack, VStack } from '../../../shared/ui/Stack';
-import { Page } from '../../../widgets/Page/Page';
-import {
-    Text, TextAlign, TextSize, TextTheme,
-} from '../../../shared/ui/Text/Text';
-import { Card } from '../../../shared/ui/Card/Card';
-import { AppLink } from '../../../shared/ui/AppLink/AppLink';
-import { PageLoader } from '../../../widgets/PageLoader/PageLoader';
+import { projectDetailsReducer } from '../model/slice/projectDetailsSlice';
+import { fetchProjectById } from '../model/services/fetchProjectById/fetchProjectByid';
+import cls from './ProjectDetailsPage.module.scss';
 
 interface ProjectDetailsPageProps {
     className?: string;
@@ -67,7 +68,41 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
     const isLoading = useSelector(getProjectDetailsIsLoading);
 
     if (isLoading) {
-        return <PageLoader />;
+        return (
+            <Page className={classNames(cls.ProjectDetailsPage, {}, [className])}>
+                <VStack max>
+                    <Skeleton className={cls.cover} height={526} width="100%" />
+                    <HStack justify="between" className={cls.title}>
+                        <Skeleton height={50} width={300} border="8px" />
+                        <Skeleton height={40} width={260} border="8px" />
+                    </HStack>
+                    <VStack max className={cls.content} gap="16">
+                        <Skeleton height={150} width="80%" border="12px" />
+
+                        <Text title="Обязанности на проекте:" size={TextSize.S} />
+                        <VStack gap="8">
+                            <Skeleton height={30} width={300} border="8px" className={cls.dutyItem} />
+                            <Skeleton height={30} width={300} border="8px" className={cls.dutyItem} />
+                            <Skeleton height={30} width={300} border="8px" className={cls.dutyItem} />
+                        </VStack>
+
+                        <Text title="Роли в проекте:" size={TextSize.S} />
+                        <VStack gap="8">
+                            <Skeleton height={30} width={300} border="8px" className={cls.dutyItem} />
+                            <Skeleton height={30} width={300} border="8px" className={cls.dutyItem} />
+                            <Skeleton height={30} width={300} border="8px" className={cls.dutyItem} />
+                        </VStack>
+
+                        <Text title="Ссылки:" size={TextSize.S} />
+                        <VStack gap="8">
+                            <Skeleton height={30} width={300} border="8px" className={cls.linkItem} />
+                            <Skeleton height={30} width={300} border="8px" className={cls.linkItem} />
+                            <Skeleton height={30} width={300} border="8px" className={cls.linkItem} />
+                        </VStack>
+                    </VStack>
+                </VStack>
+            </Page>
+        );
     }
 
     return (
