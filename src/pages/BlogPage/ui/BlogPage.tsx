@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Page } from 'widgets/Page/Page';
 import cls from './BlogPage.module.scss';
-import { Page } from '../../../widgets/Page/Page';
 
 interface BlogPageProps {
     className?: string;

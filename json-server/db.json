@@ -20,7 +20,7 @@
       "types": "Учебный",
       "cover": "https://rozetked.me/images/uploads/ykEf34VL5W0k.jpg",
       "roles": ["Frontend", "TeamLead"],
-      "technologies": ["html", "scss", "typescript"],
+      "technologies": ["html", "sass", "typescript"],
       "duties": [
         "Разработка клиентской части приложения",
         "Разработка",
@@ -44,7 +44,7 @@
       "cover": "https://rozetked.me/images/uploads/mUIkM061Ljzp.jpg",
       "roles": ["Frontend", "TeamLead"],
       "technologies": [
-        "html", "scss", "typescript"
+        "python", "csharp", "typescript"
       ],
       "duties": ["Разработка клиентской части приложения"],
       "githubLink": "https://github.com/mineevmaxim/production-project",
@@ -59,7 +59,7 @@
       "types": "Коммерческий",
       "cover": "https://rozetked.me/images/uploads/BS8WyHP6SZND.jpg",
       "roles": ["Frontend", "TeamLead"],
-      "technologies": ["html", "scss", "typescript"],
+      "technologies": ["vue", "html", "python"],
       "duties": ["Разработка клиентской части приложения"],
       "githubLink": "https://github.com/mineevmaxim/production-project",
       "websiteLink": "https://ya.ru",

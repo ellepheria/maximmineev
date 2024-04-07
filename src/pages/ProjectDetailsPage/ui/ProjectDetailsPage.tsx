@@ -13,6 +13,7 @@ import {
 import { Card } from 'shared/ui/Card/Card';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { TechnologiesStack } from 'features/TechnologiesStack';
 import {
     getProjectDetailsCover,
     getProjectDetailsCreatedAt,
@@ -179,6 +180,11 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
                                 )}
                             </ul>
                         </VStack>
+                        {technologies && (
+                            <HStack justify="start" max>
+                                <TechnologiesStack technologies={technologies} title="Технологии:" size={TextSize.S} />
+                            </HStack>
+                        )}
                     </VStack>
                     {images}
                     {technologies}

@@ -1,10 +1,12 @@
 export enum Technologies {
     HTML = 'html',
     CSS = 'css',
-    SCSS = 'scss',
+    SASS = 'sass',
     PYTHON = 'python',
     TYPESCRIPT = 'typescript',
-    JAVASCRIPT = 'javascript',
+    REACT = 'react',
+    VUE = 'vue',
+    CSHARP = 'csharp',
 }
 
 export enum ProjectType {

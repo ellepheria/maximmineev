@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Project } from 'entities/Project';
 import { ProjectDetailsSchema } from '../types/projectDetails';
 import { fetchProjectById } from '../services/fetchProjectById/fetchProjectByid';
-import { Project } from '../../../../entities/Project';
 
 const initialState: ProjectDetailsSchema = {
     project: undefined,

@@ -6,13 +6,12 @@ import { Page } from 'widgets/Page/Page';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
 import { VStack } from 'shared/ui/Stack';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import cls from './ProjectsPage.module.scss';
 import { projectsPageReducer } from '../model/slice/projectsPage';
 import { fetchProjects } from '../model/services/fetchProjects/fetchProjects';
 import { getProjectsIsLoading, getProjectsList } from '../model/selectors/projectsPageSelectors';
 import { ProjectCard } from '../../ProjectCard';
-import { PageLoader } from '../../../../../widgets/PageLoader/PageLoader';
-import { Skeleton } from '../../../../../shared/ui/Skeleton/Skeleton';
 
 interface ProjectsPageProps {
     className?: string;
