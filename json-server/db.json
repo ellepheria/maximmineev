@@ -14,26 +14,22 @@
   "projects": [
     {
       "id": "1",
-      "title": "Мой первый проект",
-      "description": "Описание моего первго проекта",
-      "createdAt": "2021",
+      "title": "Телеграм бот \"Расписание СУНЦ УрФУ\"",
+      "description": "Телеграм бот для удобной работы с расписанием в СУНЦ УрФУ, более 150 активныз пользователей. На настоящий момент сервис недоступен",
+      "createdAt": "2020",
       "types": "Учебный",
-      "cover": "https://rozetked.me/images/uploads/ykEf34VL5W0k.jpg",
-      "roles": ["Frontend", "TeamLead"],
-      "technologies": ["html", "sass", "typescript"],
+      "cover": "https://i.ibb.co/nCNYySN/tg-image-3454523229.jpg",
+      "roles": ["Backend"],
+      "technologies": ["html", "php", "mysql"],
       "duties": [
-        "Разработка клиентской части приложения",
-        "Разработка",
-        "клиентской",
-        "части"
+        "Ведение собственного pet-проекта",
+        "Работа с api УрФУ",
+        "Работа с Webhooks",
+        "Организация базы данных",
+        "Оформление расписания в красивом, понятном и удобном виде"
       ],
-      "githubLink": "https://github.com/mineevmaxim/production-project",
-      "websiteLink": "https://ya.ru",
-      "isTeamProject": false,
-      "links": [
-        "https://github.com/mineevmaxim/production-project",
-        "https://ya.ru"
-      ]
+      "githubLink": "https://github.com/mineevmaxim/sescTimetableBot",
+      "isTeamProject": false
     },
     {
       "id": "2",
