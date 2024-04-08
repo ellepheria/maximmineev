@@ -186,8 +186,6 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
                             </HStack>
                         )}
                     </VStack>
-                    {images}
-                    {technologies}
                 </VStack>
             </Page>
         </DynamicModuleLoader>
