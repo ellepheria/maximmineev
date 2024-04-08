@@ -68,18 +68,20 @@
     },
     {
       "id": "4",
-      "title": "Мобильное приложения для курьеров пиццерии",
-      "description": "Мобильное приложения для курьеров пиццерии в ООО НПЦ РИЦ. Мобильное приложение - один из пяти проектов сложной инфраструктуры пиццерии",
-      "createdAt": "2023",
+      "title": "Веб-портфолио",
+      "description": "Веб-сервис для организации, хранения, публикации проектов конкретного человека. Сервис ориентирован на программистов и дизайнеров",
+      "createdAt": "2022",
       "types": "Учебный",
-      "cover": "https://i.ibb.co/RCj9FSt/tg-image-2476931167.jpg",
-      "roles": ["Frontend"],
-      "technologies": ["react native", "javascript"],
+      "cover": "https://i.ibb.co/bzkc4PV/image.jpg",
+      "roles": ["Frontend", "TeamLead"],
+      "technologies": ["vue", "javascript"],
       "duties": [
         "Разработка клиентской части приложения",
-        "Верстка скринов"
+        "Работа с api",
+        "Полностью самостоятельная разработка клиентской части приложения",
+        "Обязанности тимлида, ведение проекта"
       ],
-      "githubLink": "https://github.com/akakayka/Mobile-app",
+      "githubLink": "https://github.com/mineevmaxim/digital-portfolio-fj",
       "isTeamProject": true
     }
   ],
