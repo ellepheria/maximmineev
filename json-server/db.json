@@ -20,7 +20,7 @@
       "types": "Учебный",
       "cover": "https://i.ibb.co/nCNYySN/tg-image-3454523229.jpg",
       "roles": ["Backend"],
-      "technologies": ["html", "php", "mysql"],
+      "technologies": ["php", "mysql"],
       "duties": [
         "Ведение собственного pet-проекта",
         "Работа с api УрФУ",
@@ -33,33 +33,54 @@
     },
     {
       "id": "2",
-      "title": "Мой второй проект",
-      "description": "Описание моего второго проекта",
-      "createdAt": "2022",
+      "title": "Сервис для проведения собеседований",
+      "description": "Внутрення платформа для проведения собедеований для компании 66Бит",
+      "createdAt": "2024",
       "types": "Учебный",
-      "cover": "https://rozetked.me/images/uploads/mUIkM061Ljzp.jpg",
-      "roles": ["Frontend", "TeamLead"],
+      "cover": "https://i.ibb.co/tD62xcc/tg-image-1135060500.jpg",
+      "roles": ["Frontend"],
       "technologies": [
-        "python", "csharp", "typescript"
+        "react", "typescript", "sass", "eslint", "redux toolkit", "websockets", "vite"
       ],
-      "duties": ["Разработка клиентской части приложения"],
-      "githubLink": "https://github.com/mineevmaxim/production-project",
-      "websiteLink": "https://ya.ru",
+      "duties": [
+        "Доработка существующего проекта",
+        "Полный редизайн системы",
+        "Переписывание с Angular на React",
+        "Разработка клиентской части приложения с нуля"
+      ],
       "isTeamProject": true
     },
     {
       "id": "3",
-      "title": "Мой третий проект",
-      "description": "Описание моего третьего проекта",
+      "title": "Мобильное приложения для курьеров пиццерии",
+      "description": "Мобильное приложения для курьеров пиццерии в ООО НПЦ РИЦ. Мобильное приложение - один из пяти проектов сложной инфраструктуры пиццерии",
       "createdAt": "2023",
-      "types": "Коммерческий",
-      "cover": "https://rozetked.me/images/uploads/BS8WyHP6SZND.jpg",
-      "roles": ["Frontend", "TeamLead"],
-      "technologies": ["vue", "html", "python"],
-      "duties": ["Разработка клиентской части приложения"],
-      "githubLink": "https://github.com/mineevmaxim/production-project",
-      "websiteLink": "https://ya.ru",
-      "isTeamProject": false
+      "types": "Учебный",
+      "cover": "https://i.ibb.co/RCj9FSt/tg-image-2476931167.jpg",
+      "roles": ["Frontend"],
+      "technologies": ["react native", "javascript"],
+      "duties": [
+        "Разработка клиентской части приложения",
+        "Верстка скринов"
+      ],
+      "githubLink": "https://github.com/akakayka/Mobile-app",
+      "isTeamProject": true
+    },
+    {
+      "id": "4",
+      "title": "Мобильное приложения для курьеров пиццерии",
+      "description": "Мобильное приложения для курьеров пиццерии в ООО НПЦ РИЦ. Мобильное приложение - один из пяти проектов сложной инфраструктуры пиццерии",
+      "createdAt": "2023",
+      "types": "Учебный",
+      "cover": "https://i.ibb.co/RCj9FSt/tg-image-2476931167.jpg",
+      "roles": ["Frontend"],
+      "technologies": ["react native", "javascript"],
+      "duties": [
+        "Разработка клиентской части приложения",
+        "Верстка скринов"
+      ],
+      "githubLink": "https://github.com/akakayka/Mobile-app",
+      "isTeamProject": true
     }
   ],
   "comments": [

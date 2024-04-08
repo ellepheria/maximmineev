@@ -65,7 +65,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
 
                     <VStack max justify="between" align="center" className={cls.content}>
                         <VStack max gap="16" align="end" justify="start">
-                            <Text title={title} size={TextSize.M} />
+                            <Text title={title} size={TextSize.M} align={TextAlign.RIGHT} />
                             <Text text={description} className={cls.description} size={TextSize.M} align={TextAlign.RIGHT} />
                         </VStack>
                         <HStack max justify="between" gap="8" align="center">
