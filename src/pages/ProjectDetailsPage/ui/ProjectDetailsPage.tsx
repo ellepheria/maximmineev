@@ -159,21 +159,21 @@ const ProjectDetailsPage = memo((props: ProjectDetailsPageProps) => {
                                         key={link}
                                         className={cls.linkItem}
                                     >
-                                        <AppLink to={link} className={cls.link}>
+                                        <AppLink to={link} className={cls.link} target="_blank">
                                             <Text text="link" className={cls.linkText} />
                                         </AppLink>
                                     </li>
                                 ))}
                                 {githubLink && (
                                     <li className={cls.linkItem}>
-                                        <AppLink to={githubLink} className={cls.link}>
+                                        <AppLink to={githubLink} className={cls.link} target="_blank">
                                             <Text text="GitHub" className={cls.linkText} />
                                         </AppLink>
                                     </li>
                                 )}
                                 {websiteLink && (
                                     <li className={cls.linkItem}>
-                                        <AppLink to={websiteLink} className={cls.link}>
+                                        <AppLink to={websiteLink} className={cls.link} target="_blank">
                                             <Text text="Website" className={cls.linkText} />
                                         </AppLink>
                                     </li>

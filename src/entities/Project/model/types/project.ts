@@ -7,6 +7,15 @@ export enum Technologies {
     REACT = 'react',
     VUE = 'vue',
     CSHARP = 'csharp',
+    PHP = 'php',
+    REACT_NATIVE = 'react native',
+    MYSQL = 'mysql',
+    JAVASCRIPT = 'javascript',
+    VITE = 'vite',
+    ESLINT = 'eslint',
+    WEBSOCKETS = 'websockets',
+    REDUX = 'redux',
+    REDUX_TOOLKIT = 'redux toolkit',
 }
 
 export enum ProjectType {
