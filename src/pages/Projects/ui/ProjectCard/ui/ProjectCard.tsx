@@ -33,7 +33,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
         description,
     } = project;
 
-    const technologiesList = useMemo(() => technologies.map((item) => (
+    const technologiesList = useMemo(() => technologies.slice(0, 2).map((item) => (
         <Tab className={cls.tab}>
             <Text text={item} size={TextSize.M} theme={TextTheme.INVERTED} key={item} />
         </Tab>
@@ -69,7 +69,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
                             <Text text={description} className={cls.description} size={TextSize.M} align={TextAlign.RIGHT} />
                         </VStack>
                         <HStack max justify="between" gap="8" align="center">
-                            <HStack gap="8">
+                            <HStack gap="8" className={cls.technologies}>
                                 {technologiesList}
                             </HStack>
                             <AppLink
