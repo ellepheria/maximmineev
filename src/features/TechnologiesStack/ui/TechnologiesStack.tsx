@@ -5,7 +5,6 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Technologies } from 'entities/Project/model/types/project';
 import { mapTechIcon } from 'shared/const/mapTechIcon';
 import cls from './TechnologiesStack.module.scss';
-import { Tooltip } from '../../../shared/ui/Tooltip/Tooltip';
 
 interface TechnologiesStackProps {
     className?: string;

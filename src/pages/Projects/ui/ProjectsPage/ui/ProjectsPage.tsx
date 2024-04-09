@@ -47,6 +47,8 @@ const ProjectsPage = (props: ProjectsPageProps) => {
                     <Skeleton width="100%" height={263} border="16px" />
                     <Skeleton width="100%" height={263} border="16px" />
                     <Skeleton width="100%" height={263} border="16px" />
+                    <Skeleton width="100%" height={263} border="16px" />
+                    <Skeleton width="100%" height={263} border="16px" />
                 </VStack>
             </Page>
         );
