@@ -130,28 +130,22 @@
     },
     {
       "id": "6",
-      "title": "Телеграм бот для расписания в УГМУ",
-      "description": "Телеграм бот, предназначенный для удобного и понятного получения расписания Уральского Государственного Медицинского Университета",
+      "title": "Мой личный сайт-визитка",
+      "description": "Сайт, на котором вы сейчас находитесь",
       "createdAt": "2024",
       "types": "Учебный",
-      "cover": "https://i.ibb.co/wN2XBfR/tg-image-3044113496.jpg",
-      "roles": ["Backend", "Frontend"],
-      "technologies": ["python", "postgres"],
+      "cover": "https://i.ibb.co/48zjj3z/tg-image-431331292.jpg",
+      "roles": ["Frontend", "Backend"],
+      "technologies": ["react", "typescript", "sass"],
       "duties": [
-        "Разработка телеграм-бота",
-        "Работа с api",
-        "Парсинг данных",
-        "Красивое отображение данных"
+        "Разработка клиентской части приложения",
+        "Разработка серверной части приложения",
       ],
-      "isTeamProject": true,
+      "isTeamProject": false,
       "links": [
         {
-          "title": "Telegram",
-          "href": "https://t.me/UsmaTimetableBot"
-        },
-        {
           "title": "GitHub",
-          "href": "https://github.com/mineevmaxim/UsmaTimetableBot"
+          "href": "https://github.com/mineevmaxim/maximmineev"
         }
       ]
     }
