@@ -18,6 +18,7 @@ export enum Technologies {
     WEBSOCKETS = 'websockets',
     REDUX = 'redux',
     REDUX_TOOLKIT = 'redux toolkit',
+    POSTGRES = 'postgres',
 }
 
 export enum ProjectType {

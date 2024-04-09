@@ -5,6 +5,7 @@ import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Technologies } from 'entities/Project/model/types/project';
 import { mapTechIcon } from 'shared/const/mapTechIcon';
 import cls from './TechnologiesStack.module.scss';
+import { Tooltip } from '../../../shared/ui/Tooltip/Tooltip';
 
 interface TechnologiesStackProps {
     className?: string;
@@ -22,7 +23,9 @@ export const TechnologiesStack = memo((props: TechnologiesStackProps) => {
     } = props;
 
     const icons = useMemo(() => technologies.map((item) => (
-        <img src={mapTechIcon[item]} alt={item} className={cls.icon} key={item} />
+        <div data-hint={item} className={cls.container}>
+            <img src={mapTechIcon[item]} alt={item} className={cls.icon} data-hint={item} />
+        </div>
     )), [technologies]);
 
     return (

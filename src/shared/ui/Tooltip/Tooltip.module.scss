@@ -1,0 +1,22 @@
+.Tooltip {
+    position: relative;
+    display: flex;
+}
+
+.tooltip {
+    position: absolute;
+    justify-self: center;
+    top: calc(100% + 8px);
+    padding: 4px 8px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 8px;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in;
+
+    &.show {
+        opacity: 1;
+    }
+}
+

@@ -13,6 +13,7 @@ import ViteIcon from 'shared/assets/icons/vite.svg';
 import ReduxIcon from 'shared/assets/icons/redux.svg';
 import EslintIcon from 'shared/assets/icons/eslint.svg';
 import WebsocketsIcon from 'shared/assets/icons/websocket.png';
+import PostgresIcon from 'shared/assets/icons/postgresql.svg';
 import ReactNativeIcon from 'shared/assets/icons/react-native.png';
 import { Technologies } from 'entities/Project/model/types/project';
 
@@ -34,4 +35,5 @@ export const mapTechIcon: Record<Technologies, string> = {
     [Technologies.REDUX]: ReduxIcon,
     [Technologies.REDUX_TOOLKIT]: ReduxIcon,
     [Technologies.WEBSOCKETS]: WebsocketsIcon,
+    [Technologies.POSTGRES]: PostgresIcon,
 };
