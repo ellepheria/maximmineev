@@ -15,9 +15,6 @@ export const getProjectDetailsRoles = (state: StateSchema) => state.projectDetai
 
 export const getProjectDetailsDuties = (state: StateSchema) => state.projectDetails?.project?.duties;
 
-export const getProjectDetailsGithubLink = (state: StateSchema) => state.projectDetails?.project?.githubLink;
-
-export const getProjectDetailsWebsiteLink = (state: StateSchema) => state.projectDetails?.project?.websiteLink;
 export const getProjectDetailsIsTeamProject = (state: StateSchema) => state.projectDetails?.project?.isTeamProject;
 
 export const getProjectDetailsIsLoading = (state: StateSchema) => state.projectDetails?.isLoading || false;

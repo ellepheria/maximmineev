@@ -4,14 +4,10 @@ import cls from './MainPageLinks.module.scss';
 import { AppLink } from '../../../shared/ui/AppLink/AppLink';
 import { Text } from '../../../shared/ui/Text/Text';
 import { VStack } from '../../../shared/ui/Stack';
+import { Link } from '../../../shared/types/Link';
 
 interface MainPageLinksProps {
     className?: string;
-}
-
-interface Link {
-    href: string;
-    title: string;
 }
 
 const links: Link[] = [
@@ -29,7 +25,7 @@ export const MainPageLinks = memo((props: MainPageLinksProps) => {
 
     const linksList = links.map((link) => (
         <li className={cls.listItem} key={link.href}>
-            <AppLink to={link.href}>
+            <AppLink to={link.href} target="_blank">
                 <Text text={link.title} className={cls.listItemText} />
             </AppLink>
         </li>

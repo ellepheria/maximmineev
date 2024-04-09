@@ -1,3 +1,5 @@
+import { Link } from 'shared/types/Link';
+
 export enum Technologies {
     HTML = 'html',
     CSS = 'css',
@@ -39,11 +41,9 @@ export interface Project {
     createdAt?: string;
     technologies?: Technologies[];
     type: ProjectType;
-    links?: string[];
+    links?: Link[];
     roles?: ProjectRole[];
     duties?: string[];
-    githubLink?: string;
-    websiteLink?: string;
     isTeamProject?: boolean;
 }
 

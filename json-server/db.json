@@ -2,13 +2,11 @@
   "posts": [
     {
       "id": "1",
-      "title": "json-server",
-      "userId": "1"
+      "title": "json-server"
     },
     {
       "id": "2",
-      "title": "json-server",
-      "userId": "2"
+      "title": "json-server"
     }
   ],
   "projects": [
@@ -28,8 +26,17 @@
         "Организация базы данных",
         "Оформление расписания в красивом, понятном и удобном виде"
       ],
-      "githubLink": "https://github.com/mineevmaxim/sescTimetableBot",
-      "isTeamProject": false
+      "isTeamProject": false,
+      "links": [
+        {
+          "title": "Telegram",
+          "href": "https://t.me/sesc_timetable_bot"
+        },
+        {
+          "title": "GitHub",
+          "href": "https://github.com/mineevmaxim/sescTimetableBot"
+        }
+      ]
     },
     {
       "id": "2",
@@ -63,8 +70,13 @@
         "Разработка клиентской части приложения",
         "Верстка скринов"
       ],
-      "githubLink": "https://github.com/akakayka/Mobile-app",
-      "isTeamProject": true
+      "isTeamProject": true,
+      "links": [
+        {
+          "title": "GitHub",
+          "href": "https://github.com/akakayka/Mobile-app"
+        }
+      ]
     },
     {
       "id": "4",
@@ -81,8 +93,67 @@
         "Полностью самостоятельная разработка клиентской части приложения",
         "Обязанности тимлида, ведение проекта"
       ],
-      "githubLink": "https://github.com/mineevmaxim/digital-portfolio-fj",
-      "isTeamProject": true
+      "isTeamProject": true,
+      "links": [
+        {
+          "title": "GitHub",
+          "href": "https://github.com/mineevmaxim/digital-portfolio-fj"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Телеграм бот для расписания в УГМУ",
+      "description": "Телеграм бот, предназначенный для удобного и понятного получения расписания Уральского Государственного Медицинского Университета",
+      "createdAt": "2024",
+      "types": "Учебный",
+      "cover": "https://i.ibb.co/wN2XBfR/tg-image-3044113496.jpg",
+      "roles": ["Backend", "Frontend"],
+      "technologies": ["python", "postgres"],
+      "duties": [
+        "Разработка телеграм-бота",
+        "Работа с api",
+        "Парсинг данных",
+        "Красивое отображение данных"
+      ],
+      "isTeamProject": false,
+      "links": [
+        {
+          "title": "Telegram",
+          "href": "https://t.me/UsmaTimetableBot"
+        },
+        {
+          "title": "GitHub",
+          "href": "https://github.com/mineevmaxim/UsmaTimetableBot"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Телеграм бот для расписания в УГМУ",
+      "description": "Телеграм бот, предназначенный для удобного и понятного получения расписания Уральского Государственного Медицинского Университета",
+      "createdAt": "2024",
+      "types": "Учебный",
+      "cover": "https://i.ibb.co/wN2XBfR/tg-image-3044113496.jpg",
+      "roles": ["Backend", "Frontend"],
+      "technologies": ["python", "postgres"],
+      "duties": [
+        "Разработка телеграм-бота",
+        "Работа с api",
+        "Парсинг данных",
+        "Красивое отображение данных"
+      ],
+      "isTeamProject": true,
+      "links": [
+        {
+          "title": "Telegram",
+          "href": "https://t.me/UsmaTimetableBot"
+        },
+        {
+          "title": "GitHub",
+          "href": "https://github.com/mineevmaxim/UsmaTimetableBot"
+        }
+      ]
     }
   ],
   "comments": [
