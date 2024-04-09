@@ -34,7 +34,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
     } = project;
 
     const technologiesList = useMemo(() => technologies.slice(0, 2).map((item) => (
-        <Tab className={cls.tab}>
+        <Tab className={cls.tab} key={item}>
             <Text text={item} size={TextSize.M} theme={TextTheme.INVERTED} key={item} />
         </Tab>
     )), [technologies]);

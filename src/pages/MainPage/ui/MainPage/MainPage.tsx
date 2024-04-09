@@ -5,6 +5,7 @@ import { MainPageHeader } from 'features/MainPageHeader';
 import { MainPageStack } from 'widgets/MainPageStack';
 import { VStack } from 'shared/ui/Stack';
 import cls from './MainPage.module.scss';
+import { MainPageLinks } from '../../../../features/MainPageLinks';
 
 interface MainPageProps {
     className?: string;
@@ -19,6 +20,7 @@ const MainPage = (props: MainPageProps) => {
         <Page className={classNames(cls.MainPage, {}, [className || ''])}>
             <VStack max gap="32">
                 <MainPageHeader />
+                <MainPageLinks />
                 <MainPageStack />
             </VStack>
         </Page>
