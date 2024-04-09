@@ -23,7 +23,7 @@ export const TechnologiesStack = memo((props: TechnologiesStackProps) => {
     } = props;
 
     const icons = useMemo(() => technologies.map((item) => (
-        <div data-hint={item} className={cls.container}>
+        <div data-hint={item} className={cls.container} key={item}>
             <img src={mapTechIcon[item]} alt={item} className={cls.icon} data-hint={item} />
         </div>
     )), [technologies]);
