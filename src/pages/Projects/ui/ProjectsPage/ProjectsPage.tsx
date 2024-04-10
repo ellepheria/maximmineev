@@ -20,7 +20,7 @@ const ProjectsPage = (props: ProjectsPageProps) => {
     } = props;
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames(cls.ProjectsPage, {}, [className])}>
                 <ProjectsList />
             </Page>

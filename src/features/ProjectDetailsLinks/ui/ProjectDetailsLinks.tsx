@@ -8,7 +8,7 @@ import cls from './ProjectDetailsLinks.module.scss';
 
 interface ProjectDetailsLinksProps {
     className?: string;
-    links: Link[];
+    links?: Link[];
 }
 
 export const ProjectDetailsLinks = memo((props: ProjectDetailsLinksProps) => {
@@ -16,6 +16,10 @@ export const ProjectDetailsLinks = memo((props: ProjectDetailsLinksProps) => {
         className,
         links,
     } = props;
+
+    if (!links) {
+        return null;
+    }
 
     return (
         <VStack max gap="8" className={classNames(cls.ProjectDetailsLinks, {}, [className])}>

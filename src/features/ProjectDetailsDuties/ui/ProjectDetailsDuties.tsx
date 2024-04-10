@@ -1,12 +1,12 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import cls from './ProjectDetailsDuties.module.scss';
-import { Text, TextSize } from '../../../shared/ui/Text/Text';
-import { VStack } from '../../../shared/ui/Stack';
 
 interface ProjectDetailsDutiesProps {
     className?: string;
-    duties: string[];
+    duties?: string[];
 }
 
 export const ProjectDetailsDuties = memo((props: ProjectDetailsDutiesProps) => {
@@ -14,6 +14,10 @@ export const ProjectDetailsDuties = memo((props: ProjectDetailsDutiesProps) => {
         className,
         duties,
     } = props;
+
+    if (!duties) {
+        return null;
+    }
 
     return (
         <VStack max gap="8" className={classNames(cls.ProjectDetailsDuties, {}, [className])}>

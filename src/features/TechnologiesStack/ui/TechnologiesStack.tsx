@@ -9,7 +9,7 @@ import cls from './TechnologiesStack.module.scss';
 interface TechnologiesStackProps {
     className?: string;
     title?: string;
-    technologies: Technologies[];
+    technologies?: Technologies[];
     size?: TextSize;
 }
 
@@ -21,11 +21,15 @@ export const TechnologiesStack = memo((props: TechnologiesStackProps) => {
         size = TextSize.M,
     } = props;
 
-    const icons = useMemo(() => technologies.map((item) => (
+    const icons = useMemo(() => technologies?.map((item) => (
         <div data-hint={item} className={cls.container} key={item}>
             <img src={mapTechIcon[item]} alt={item} className={cls.icon} data-hint={item} />
         </div>
     )), [technologies]);
+
+    if (!technologies) {
+        return null;
+    }
 
     return (
         <HStack

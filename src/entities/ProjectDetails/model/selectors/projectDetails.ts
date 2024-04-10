@@ -1,5 +1,5 @@
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
-import { ProjectType } from '../../../../entities/Project/model/types/project';
+import { ProjectType } from '../../../Project/model/types/project';
 
 export const getProjectDetailsData = (state: StateSchema) => state.projectDetails?.project || { id: '-1' };
 export const getProjectDetailsCover = (state: StateSchema) => state.projectDetails?.project?.cover;

@@ -1,0 +1,22 @@
+.cover {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    aspect-ratio: 16 / 9;
+}
+
+.title {
+    width: 100%;
+    padding: 16px 24px;
+}
+
+.card {
+    align-self: flex-end;
+    justify-self: flex-end;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.content {
+    padding: 16px 24px;
+}
