@@ -4,4 +4,5 @@ export interface ProjectsPageSchema {
     projects?: Project[];
     isLoading?: boolean;
     error?: string;
+    _inited: boolean;
 }

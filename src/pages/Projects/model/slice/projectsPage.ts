@@ -7,6 +7,7 @@ const initialState: ProjectsPageSchema = {
     isLoading: false,
     error: undefined,
     projects: [],
+    _inited: false,
 };
 
 export const projectsPageSlice = createSlice({
@@ -25,6 +26,7 @@ export const projectsPageSlice = createSlice({
             ) => {
                 state.isLoading = false;
                 state.projects = action.payload;
+                state._inited = true;
             })
             .addCase(fetchProjects.rejected, (
                 state,

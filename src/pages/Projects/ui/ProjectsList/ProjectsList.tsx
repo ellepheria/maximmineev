@@ -6,7 +6,7 @@ import { VStack } from '../../../../shared/ui/Stack';
 import { useAppDispatch } from '../../../../shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '../../../../shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchProjects } from '../../model/services/fetchProjects/fetchProjects';
-import { getProjectsIsLoading, getProjectsList } from '../../model/selectors/projectsPageSelectors';
+import { getProjectsInited, getProjectsIsLoading, getProjectsList } from '../../model/selectors/projectsPageSelectors';
 import { ProjectCard } from '../ProjectCard';
 import { ProjectPageSkeletons } from '../ProjectPageSkeletons/ProjectPageSkeletons';
 import { DynamicModuleLoader, ReducersList } from '../../../../shared/lib/components/DynamicModuleLoader';
@@ -27,9 +27,12 @@ export const ProjectsList = memo((props: ProjectsListProps) => {
 
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getProjectsIsLoading);
+    const inited = useSelector(getProjectsInited);
 
     useInitialEffect(() => {
-        dispatch(fetchProjects());
+        if (!inited) {
+            dispatch(fetchProjects());
+        }
     });
 
     const projects = useSelector(getProjectsList);
@@ -41,7 +44,7 @@ export const ProjectsList = memo((props: ProjectsListProps) => {
     ), [projects]);
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             {isLoading ? (
                 <ProjectPageSkeletons />
             )
