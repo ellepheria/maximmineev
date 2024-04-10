@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
 import { HStack, VStack } from 'shared/ui/Stack';
 import {
@@ -39,7 +39,7 @@ const reducers: ReducersList = {
     projectDetails: projectDetailsReducer,
 };
 
-export const ProjectDetails = memo((props: ProjectDetailsProps) => {
+export const ProjectDetails = (props: ProjectDetailsProps) => {
     const {
         className,
         id,
@@ -65,34 +65,36 @@ export const ProjectDetails = memo((props: ProjectDetailsProps) => {
     const duties = useSelector(getProjectDetailsDuties);
     const isTeamProject = useSelector(getProjectDetailsIsTeamProject);
 
-    if (!id) {
-        return null;
-    }
-
-    if (isLoading) {
-        return <ProjectDetailsSkeletons />;
-    }
+    const projectType = useMemo(
+        () => `${type} - ${isTeamProject ? 'Командный' : 'Одиночный'} - ${createdAt}`,
+        [createdAt, type, isTeamProject],
+    );
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <VStack max>
-                <img src={cover} alt="cover" className={cls.cover} />
-                <HStack justify="between" className={cls.title}>
-                    <Text align={TextAlign.LEFT} title={title} size={TextSize.L} />
-                    <Card className={cls.card}>
-                        <Text text={`${type} - ${isTeamProject ? 'Командный' : 'Одиночный'} - ${createdAt}`} />
-                    </Card>
-                </HStack>
-                <VStack max className={cls.content} gap="16">
-                    <Text text={description} theme={TextTheme.PRIMARY} />
-                    <ProjectDetailsDuties duties={duties} />
-                    <ProjectDetailsRoles roles={roles} />
-                    <ProjectDetailsLinks links={links} />
-                    <HStack justify="start" max>
-                        <TechnologiesStack technologies={technologies} title="Технологии:" size={TextSize.S} />
-                    </HStack>
-                </VStack>
-            </VStack>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            {isLoading ? (
+                <ProjectDetailsSkeletons />
+            )
+                : (
+                    <VStack max>
+                        <img src={cover} alt="cover" className={cls.cover} />
+                        <HStack justify="between" className={cls.title}>
+                            <Text align={TextAlign.LEFT} title={title} size={TextSize.L} />
+                            <Card className={cls.card}>
+                                <Text text={projectType} />
+                            </Card>
+                        </HStack>
+                        <VStack max className={cls.content} gap="16">
+                            <Text text={description} theme={TextTheme.PRIMARY} />
+                            <ProjectDetailsDuties duties={duties} />
+                            <ProjectDetailsRoles roles={roles} />
+                            <ProjectDetailsLinks links={links} />
+                            <HStack justify="start" max>
+                                <TechnologiesStack technologies={technologies} title="Технологии:" size={TextSize.S} />
+                            </HStack>
+                        </VStack>
+                    </VStack>
+                )}
         </DynamicModuleLoader>
     );
-});
+};

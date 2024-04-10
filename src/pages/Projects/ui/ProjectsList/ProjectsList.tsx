@@ -9,10 +9,16 @@ import { fetchProjects } from '../../model/services/fetchProjects/fetchProjects'
 import { getProjectsIsLoading, getProjectsList } from '../../model/selectors/projectsPageSelectors';
 import { ProjectCard } from '../ProjectCard';
 import { ProjectPageSkeletons } from '../ProjectPageSkeletons/ProjectPageSkeletons';
+import { DynamicModuleLoader, ReducersList } from '../../../../shared/lib/components/DynamicModuleLoader';
+import { projectsPageReducer } from '../../model/slice/projectsPage';
 
 interface ProjectsListProps {
     className?: string;
 }
+
+const reducers: ReducersList = {
+    projectsPage: projectsPageReducer,
+};
 
 export const ProjectsList = memo((props: ProjectsListProps) => {
     const {
@@ -20,12 +26,12 @@ export const ProjectsList = memo((props: ProjectsListProps) => {
     } = props;
 
     const dispatch = useAppDispatch();
+    const isLoading = useSelector(getProjectsIsLoading);
 
     useInitialEffect(() => {
         dispatch(fetchProjects());
     });
 
-    const isLoading = useSelector(getProjectsIsLoading);
     const projects = useSelector(getProjectsList);
 
     const projectList = useMemo(() => (
@@ -34,15 +40,16 @@ export const ProjectsList = memo((props: ProjectsListProps) => {
         ))
     ), [projects]);
 
-    if (isLoading) {
-        return (
-            <ProjectPageSkeletons />
-        );
-    }
-
     return (
-        <VStack max gap="32" align="center">
-            {projectList}
-        </VStack>
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            {isLoading ? (
+                <ProjectPageSkeletons />
+            )
+                : (
+                    <VStack max gap="32" align="center">
+                        {projectList}
+                    </VStack>
+                )}
+        </DynamicModuleLoader>
     );
 });
