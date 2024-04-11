@@ -3,6 +3,7 @@ import { memo, useCallback } from 'react';
 import CopyIcon from 'shared/assets/icons/copy.svg';
 import { Button, ButtonTheme } from '../Button/Button';
 import cls from './Code.module.scss';
+import { Text } from '../Text/Text';
 
 interface CodeProps {
     className?: string;
@@ -30,7 +31,7 @@ export const Code = memo((props: CodeProps) => {
                 />
             </Button>
             <code>
-                {text}
+                <Text text={text} />
             </code>
         </pre>
     );
