@@ -5,6 +5,7 @@ import { AxiosInstance } from 'axios';
 import { ProjectDetailsSchema } from '../../../../pages/ProjectDetailsPage';
 import { ProjectsPageSchema } from '../../../../pages/Projects/model/types/projects';
 import { PostDetailsSchema } from '../../../../entities/Post/model/types/post';
+import { PostsPageSchema } from '../../../../pages/PostsPage/model/types/posts';
 
 export interface StateSchema {
 	admin: AdminSchema;
@@ -13,6 +14,7 @@ export interface StateSchema {
 	project?: ProjectSchema;
 	projectDetails?: ProjectDetailsSchema;
 	projectsPage?: ProjectsPageSchema;
+	postsPage?: PostsPageSchema;
 	postDetails?: PostDetailsSchema;
 }
 
