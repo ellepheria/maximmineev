@@ -23,7 +23,7 @@ export const PostTextBlock = memo((props: PostTextBlockProps) => {
             )}
             <VStack max gap="8">
                 {block.paragraphs.map((paragraph) => (
-                    <Text text={paragraph} className={cls.paragraph} />
+                    <Text text={paragraph} className={cls.paragraph} key={paragraph} />
                 ))}
             </VStack>
         </VStack>

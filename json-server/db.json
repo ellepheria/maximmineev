@@ -11,20 +11,42 @@
           "id": "1",
           "type": "text",
           "paragraphs": [
-            "First paragraph. The history about my life",
-            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting.",
-            "Second paragraph. My life is very interesting."
+            "First paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my life",
+            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting."
           ]
         },
         {
           "id": "2",
+          "type": "image",
+          "src": "https://rozetked.me/images/uploads/webp/X4P96LXsgfeo.webp",
+          "alt": "first image",
+          "title": "Первое изображение"
+        },
+        {
+          "id": "3",
+          "type": "text",
+          "paragraphs": [
+            "First paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my life",
+            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "image",
+          "src": "https://rozetked.me/images/uploads/webp/CUsSmhmp2rnz.webp",
+          "alt": "image title",
+          "title": "Второе изображение"
+        },
+        {
+          "id": "5",
+          "type": "text",
+          "paragraphs": [
+            "First paragraph. The history about my life.First paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my life",
+            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting."
+          ]
+        },
+        {
+          "id": "6",
           "type": "code",
           "code": "console.log('Hello, World!');"
         }
