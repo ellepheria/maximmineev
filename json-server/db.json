@@ -39,6 +39,20 @@
         },
         {
           "id": "5",
+          "type": "list",
+          "title": "Дни недели",
+          "items": [
+            "Понедельник",
+            "Вторник",
+            "Среда",
+            "Четверг",
+            "Пятница",
+            "Суббота",
+            "Воскресенье"
+          ]
+        },
+        {
+          "id": "6",
           "type": "text",
           "paragraphs": [
             "First paragraph. The history about my life.First paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my life",
@@ -46,7 +60,7 @@
           ]
         },
         {
-          "id": "6",
+          "id": "7",
           "type": "code",
           "code": "console.log('Hello, World!');"
         }

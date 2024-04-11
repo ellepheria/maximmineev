@@ -2,6 +2,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import cls from './PostListBlock.module.scss';
 import { PostListBlockType } from '../../model/types/post';
+import { VStack } from '../../../../shared/ui/Stack';
+import { Text, TextSize } from '../../../../shared/ui/Text/Text';
 
 interface PostListBlockProps {
     className?: string;
@@ -15,8 +17,23 @@ export const PostListBlock = memo((props: PostListBlockProps) => {
     } = props;
 
     return (
-        <div className={classNames(cls.PostListBlock, {}, [className])}>
-            {`${block}`}
-        </div>
+        <VStack
+            className={classNames(cls.PostListBlock, {}, [className])}
+            gap="16"
+        >
+            {block.title && (
+                <Text title={block.title} size={TextSize.S} />
+            )}
+            <ul className={cls.list}>
+                {block.items.map((item) => (
+                    <li
+                        key={item}
+                        className={cls.item}
+                    >
+                        <Text text={item} className={cls.text} />
+                    </li>
+                ))}
+            </ul>
+        </VStack>
     );
 });
