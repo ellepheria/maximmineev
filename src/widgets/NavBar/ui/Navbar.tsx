@@ -41,7 +41,7 @@ export const Navbar = memo(({ className }: NavBarProps) => {
                     Проекты
                 </AppLink>
                 <AppLink
-                    to={RoutePath.blog}
+                    to={RoutePath.posts}
                     className={cls.link}
                 >
                     Блог

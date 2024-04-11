@@ -1,25 +1,28 @@
 import { RouteProps } from 'react-router-dom';
 import { MainPage } from 'pages/MainPage';
 import { ProjectsPage } from 'pages/Projects';
-import { BlogPage } from 'pages/BlogPage';
 import { AdminAuthorizationPage } from 'pages/Admin';
 import { ProjectDetailsPage } from 'pages/ProjectDetailsPage';
+import { PostsPage } from 'pages/PostsPage';
+import { PostDetailsPage } from 'pages/PostDetailsPage';
 
 export enum AppRoutes {
     MAIN = 'main',
     PROJECTS = 'projects',
-    BLOG = 'blog',
     ADMIN = 'admin',
     PROJECT_DETAILS = 'project_details',
+    POSTS = 'posts',
+    POST_DETAILS = 'post_details',
     // NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: '/',
     [AppRoutes.PROJECTS]: '/projects',
-    [AppRoutes.BLOG]: '/blog',
     [AppRoutes.ADMIN]: '/admin',
     [AppRoutes.PROJECT_DETAILS]: '/projects/:id',
+    [AppRoutes.POSTS]: '/posts',
+    [AppRoutes.POST_DETAILS]: '/posts/:id',
     // [AppRoutes.NOT_FOUND]: '*',
 };
 
@@ -32,9 +35,13 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
         path: RoutePath.projects,
         element: <ProjectsPage />,
     },
-    [AppRoutes.BLOG]: {
-        path: RoutePath.blog,
-        element: <BlogPage />,
+    [AppRoutes.POSTS]: {
+        path: RoutePath.posts,
+        element: <PostsPage />,
+    },
+    [AppRoutes.POST_DETAILS]: {
+        path: RoutePath.post_details,
+        element: <PostDetailsPage />,
     },
     [AppRoutes.ADMIN]: {
         path: RoutePath.admin,
