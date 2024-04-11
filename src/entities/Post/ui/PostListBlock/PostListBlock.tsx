@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { VStack } from 'shared/ui/Stack';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import cls from './PostListBlock.module.scss';
 import { PostListBlockType } from '../../model/types/post';
-import { VStack } from '../../../../shared/ui/Stack';
-import { Text, TextSize } from '../../../../shared/ui/Text/Text';
 
 interface PostListBlockProps {
     className?: string;

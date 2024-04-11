@@ -37,6 +37,7 @@ export interface PostListBlockType extends PostBlockBase {
 
 export interface PostLinkBlockType extends PostBlockBase {
     type: PostBlockType.LINK;
+    text: string;
     link: string;
 }
 export type PostBlock = PostCodeBlockType | PostListBlockType | PostTextBlockType | PostLinkBlockType | PostImageBlockType;

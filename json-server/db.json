@@ -53,6 +53,12 @@
         },
         {
           "id": "6",
+          "type": "link",
+          "link": "https://vk.com/vakhrushkaa",
+          "text": "Самая красивая девушка в мире"
+        },
+        {
+          "id": "7",
           "type": "text",
           "paragraphs": [
             "First paragraph. The history about my life.First paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my lifeFirst paragraph. The history about my life",
@@ -60,7 +66,7 @@
           ]
         },
         {
-          "id": "7",
+          "id": "8",
           "type": "code",
           "code": "console.log('Hello, World!');"
         }
