@@ -2,13 +2,29 @@
   "posts": [
     {
       "id": "1",
-      "title": "my first post",
-      "subtitle": "first post",
+      "title": "Мой первый пост",
+      "subtitle": "Интересный короткий текст для тестов",
       "cover": "https://i.ibb.co/tD62xcc/tg-image-1135060500.jpg",
       "createdAt": "11.04.2024",
       "blocks": [
         {
           "id": "1",
+          "type": "text",
+          "paragraphs": [
+            "First paragraph. The history about my life",
+            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting. Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting.",
+            "Second paragraph. My life is very interesting."
+          ]
+        },
+        {
+          "id": "2",
           "type": "code",
           "code": "console.log('Hello, World!');"
         }
