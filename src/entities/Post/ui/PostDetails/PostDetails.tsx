@@ -13,11 +13,11 @@ import { PostLinkBlock } from 'entities/Post/ui/PostLinkBlock/PostLinkBlock';
 import { PostListBlock } from 'entities/Post/ui/PostListBlock/PostListBlock';
 import { PostTextBlock } from 'entities/Post/ui/PostTextBlock/PostTextBlock';
 import { PostImageBlock } from 'entities/Post/ui/PostImageBlock/PostImageBlock';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { HStack, VStack } from 'shared/ui/Stack';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Card } from 'shared/ui/Card/Card';
 import cls from './PostDetails.module.scss';
+import { PostDetailsSkeletons } from '../PostDetailsSkeletons/PostDetailsSkeletons';
 
 interface PostDetailsPageProps {
     className?: string;
@@ -97,13 +97,7 @@ export const PostDetails = (props: PostDetailsPageProps) => {
 
     if (isLoading) {
         content = (
-            <>
-                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
-                <Skeleton className={cls.title} width={300} height={32} />
-                <Skeleton className={cls.skeleton} width={600} height={24} />
-                <Skeleton className={cls.skeleton} width="100%" height={200} />
-                <Skeleton className={cls.skeleton} width="100%" height={200} />
-            </>
+            <PostDetailsSkeletons />
         );
     } else {
         content = (
