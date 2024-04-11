@@ -8,8 +8,8 @@ import { VStack } from 'shared/ui/Stack';
 import { postsPageReducer } from '../../model/slice/postsPageSlice';
 import { getPostsPageInited, getPostsPageIsLoading, getPostsPagePosts } from '../../model/selectors/posts';
 import { fetchPosts } from '../../model/services/fetchPosts/fetchPosts';
-import { ProjectPageSkeletons } from '../../../Projects/ui/ProjectPageSkeletons/ProjectPageSkeletons';
 import { PostCard } from '../PostCard/PostCard';
+import { PostsPageSkeletons } from '../PostsPageSkeletons/PostsPageSkeletons';
 
 const reducers: ReducersList = {
     postsPage: postsPageReducer,
@@ -35,7 +35,7 @@ const PostsPage = memo(() => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             {isLoading ? (
-                <ProjectPageSkeletons />
+                <PostsPageSkeletons />
             )
                 : (
                     <Page>
