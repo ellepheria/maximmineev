@@ -11,35 +11,35 @@ export interface PostBlockBase {
     type: PostBlockType;
 }
 
-export interface PostCodeBlock extends PostBlockBase {
+export interface PostCodeBlockType extends PostBlockBase {
     type: PostBlockType.CODE;
     code: string;
 }
 
-export interface PostImageBlock extends PostBlockBase {
+export interface PostImageBlockType extends PostBlockBase {
     type: PostBlockType.IMAGE;
     src: string;
     alt: string;
     title: string;
 }
 
-export interface PostTextBlock extends PostBlockBase {
+export interface PostTextBlockType extends PostBlockBase {
     type: PostBlockType.TEXT;
     paragraphs: string[];
     title?: string;
 }
 
-export interface PostListBlock extends PostBlockBase {
+export interface PostListBlockType extends PostBlockBase {
     type: PostBlockType.LIST;
     items: string[];
     title?: string;
 }
 
-export interface PostLinkBlock extends PostBlockBase {
+export interface PostLinkBlockType extends PostBlockBase {
     type: PostBlockType.LINK;
     link: string;
 }
-export type PostBlock = PostCodeBlock | PostListBlock | PostTextBlock | PostLinkBlock | PostImageBlock;
+export type PostBlock = PostCodeBlockType | PostListBlockType | PostTextBlockType | PostLinkBlockType | PostImageBlockType;
 
 export interface Post {
     id: string;
