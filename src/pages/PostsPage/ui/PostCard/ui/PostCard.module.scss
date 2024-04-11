@@ -1,0 +1,70 @@
+.PostCard {
+    border-radius: 16px;
+    padding: 16px;
+    width: 100%;
+}
+
+.container {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in;
+
+    &:hover {
+        transform: scale(1.03);
+
+        .createdAt {
+            opacity: 1;
+        }
+
+        .title {
+            transform: scale(1.01);
+        }
+
+        .description {
+            transform: scale(1.01);
+        }
+    }
+}
+
+.cover {
+    border-radius: 12px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.tab {
+    background: var(--bg-color);
+}
+
+.createdAt {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 8px;
+    margin-right: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 16px;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+    padding: 8px 24px;
+}
+
+.description {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    z-index: 1000;
+    padding: 8px 14px;
+    transition: transform 0.3s ease;
+    max-width: 70%;
+    text-wrap: wrap;
+}

@@ -48,6 +48,7 @@ export interface Post {
     subtitle?: string;
     cover?: string;
     createdAt: string;
+    description?: string;
     blocks: PostBlock[];
 }
 
