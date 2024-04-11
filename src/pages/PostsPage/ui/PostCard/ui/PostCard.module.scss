@@ -1,7 +1,7 @@
 .PostCard {
     border-radius: 16px;
-    padding: 16px;
     width: 100%;
+    padding: 16px 24px;
 }
 
 .container {
@@ -14,14 +14,6 @@
 
         .createdAt {
             opacity: 1;
-        }
-
-        .title {
-            transform: scale(1.01);
-        }
-
-        .description {
-            transform: scale(1.01);
         }
     }
 }
@@ -46,25 +38,18 @@
     transition: opacity 0.3s ease;
 }
 
-.title {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    margin-right: 16px;
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    padding: 8px 24px;
+.subtitle {
+    max-height: 50px;
+    text-indent: 35px;
+}
+
+.subtitle p {
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .description {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin-right: 16px;
-    margin-bottom: 16px;
-    z-index: 1000;
-    padding: 8px 14px;
-    transition: transform 0.3s ease;
-    max-width: 70%;
-    text-wrap: wrap;
+    max-height: 150px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
 }
