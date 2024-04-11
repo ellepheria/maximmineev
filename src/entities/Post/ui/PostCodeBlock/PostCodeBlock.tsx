@@ -1,5 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { Code } from 'shared/ui/Code/Code';
 import cls from './PostCodeBlock.module.scss';
 import { PostCodeBlockType } from '../../model/types/post';
 
@@ -16,7 +17,7 @@ export const PostCodeBlock = memo((props: PostCodeBlockProps) => {
 
     return (
         <div className={classNames(cls.PostCodeBlock, {}, [className])}>
-            {`${block}`}
+            <Code text={block.code} />
         </div>
     );
 });

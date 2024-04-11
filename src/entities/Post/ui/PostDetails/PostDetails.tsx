@@ -17,6 +17,8 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { HStack, VStack } from 'shared/ui/Stack';
 import { TextSize, Text } from 'shared/ui/Text/Text';
 import cls from './PostDetails.module.scss';
+import { Tab } from '../../../../shared/ui/Tab/Tab';
+import { Card } from '../../../../shared/ui/Card/Card';
 
 interface PostDetailsPageProps {
     className?: string;
@@ -114,7 +116,7 @@ export const PostDetails = (props: PostDetailsPageProps) => {
                         className={cls.cover}
                     />
                 </HStack>
-                <VStack gap="4" max>
+                <HStack gap="16" justify="between" max>
                     <Text
                         className={cls.title}
                         title={post?.title}
@@ -122,10 +124,11 @@ export const PostDetails = (props: PostDetailsPageProps) => {
                         size={TextSize.L}
                     />
                     <HStack gap="8" className={cls.articleInfo}>
-                        {/* <Icon className={cls.icon} Svg={CalendarIcon} /> */}
-                        <Text text={post?.createdAt} />
+                        <Card className={cls.card}>
+                            <Text text={post?.createdAt} />
+                        </Card>
                     </HStack>
-                </VStack>
+                </HStack>
                 {post?.blocks.map(renderBlock)}
             </>
         );
