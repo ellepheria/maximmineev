@@ -18,7 +18,7 @@ export const PostListBlock = memo((props: PostListBlockProps) => {
 
     return (
         <VStack
-            className={classNames(cls.PostListBlock, {}, [className])}
+            className={classNames('', {}, [className])}
             gap="16"
         >
             {block.title && (

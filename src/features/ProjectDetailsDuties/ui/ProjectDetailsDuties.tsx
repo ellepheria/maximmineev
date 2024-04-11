@@ -20,7 +20,7 @@ export const ProjectDetailsDuties = memo((props: ProjectDetailsDutiesProps) => {
     }
 
     return (
-        <VStack max gap="8" className={classNames(cls.ProjectDetailsDuties, {}, [className])}>
+        <VStack max gap="8" className={classNames('', {}, [className])}>
             <Text title="Обязанности на проекте:" size={TextSize.S} />
             <ul className={cls.duties}>
                 {duties.map((duty) => (

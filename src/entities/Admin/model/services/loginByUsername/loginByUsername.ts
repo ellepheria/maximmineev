@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
+import { ADMIN_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { adminActions } from '../../slice/adminSlice';
-import { ADMIN_LOCALSTORAGE_KEY } from '../../../../../shared/const/localstorage';
 import { Admin } from '../../types/admin';
 
 interface LoginByUsernameProps {

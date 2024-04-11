@@ -18,7 +18,7 @@ export const PostImageBlock = memo((props: PostImageBlockProps) => {
 
     return (
         <VStack
-            className={classNames(cls.PostImageBlock, {}, [className])}
+            className={classNames('', {}, [className])}
             justify="center"
             align="center"
             gap="8"

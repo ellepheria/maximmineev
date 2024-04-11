@@ -39,7 +39,7 @@ const reducers: ReducersList = {
     projectDetails: projectDetailsReducer,
 };
 
-export const ProjectDetails = (props: ProjectDetailsProps) => {
+export const ProjectDetails = memo((props: ProjectDetailsProps) => {
     const {
         className,
         id,
@@ -97,4 +97,4 @@ export const ProjectDetails = (props: ProjectDetailsProps) => {
                 )}
         </DynamicModuleLoader>
     );
-};
+});

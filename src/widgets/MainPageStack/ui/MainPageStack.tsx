@@ -3,7 +3,6 @@ import { memo } from 'react';
 import { HStack } from 'shared/ui/Stack';
 import { Technologies } from 'entities/Project/model/types/project';
 import { TechnologiesStack } from 'features/TechnologiesStack';
-import cls from './MainPageStack.module.scss';
 
 interface MainPageStackProps {
     className?: string;
@@ -27,7 +26,7 @@ export const MainPageStack = memo((props: MainPageStackProps) => {
 
     return (
         <HStack
-            className={classNames(cls.MainPageStack, {}, [className])}
+            className={classNames('', {}, [className])}
             align="center"
             justify="center"
             max

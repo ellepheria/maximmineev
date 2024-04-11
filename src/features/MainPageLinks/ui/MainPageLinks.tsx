@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { Text } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
+import { Link } from 'shared/types/Link';
 import cls from './MainPageLinks.module.scss';
-import { AppLink } from '../../../shared/ui/AppLink/AppLink';
-import { Text } from '../../../shared/ui/Text/Text';
-import { VStack } from '../../../shared/ui/Stack';
-import { Link } from '../../../shared/types/Link';
 
 interface MainPageLinksProps {
     className?: string;
@@ -32,7 +32,7 @@ export const MainPageLinks = memo((props: MainPageLinksProps) => {
     ));
 
     return (
-        <VStack max gap="16" className={classNames(cls.MainPageLinks, {}, [className])}>
+        <VStack max gap="16" className={classNames('', {}, [className])}>
             <Text title="Ссылки:" />
             <ul>
                 {linksList}

@@ -22,7 +22,7 @@ export const ProjectDetailsLinks = memo((props: ProjectDetailsLinksProps) => {
     }
 
     return (
-        <VStack max gap="8" className={classNames(cls.ProjectDetailsLinks, {}, [className])}>
+        <VStack max gap="8" className={classNames('', {}, [className])}>
             <Text title="Ссылки:" size={TextSize.S} />
             <ul className={cls.links}>
                 {links.map((link) => (

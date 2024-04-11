@@ -9,8 +9,8 @@ import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'app/providers/router/routeConfig';
 import { PostBlockType, PostTextBlockType } from 'entities/Post/model/types/post';
 import { PostTextBlock } from 'entities/Post/ui/PostTextBlock/PostTextBlock';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './PostCard.module.scss';
-import { Button, ButtonTheme } from '../../../../../shared/ui/Button/Button';
 
 interface PostCardProps {
     className?: string;

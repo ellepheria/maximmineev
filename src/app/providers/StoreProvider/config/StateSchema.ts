@@ -2,10 +2,10 @@ import { AdminSchema } from 'entities/Admin';
 import { ProjectSchema } from 'entities/Project/model/types/project';
 import { EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ProjectDetailsSchema } from '../../../../pages/ProjectDetailsPage';
-import { ProjectsPageSchema } from '../../../../pages/Projects/model/types/projects';
-import { PostDetailsSchema } from '../../../../entities/Post/model/types/post';
-import { PostsPageSchema } from '../../../../pages/PostsPage/model/types/posts';
+import { ProjectDetailsSchema } from 'entities/ProjectDetails/model/types/projectDetails';
+import { ProjectsPageSchema } from 'pages/Projects';
+import { PostsPageSchema } from 'pages/PostsPage/model/types/posts';
+import { PostDetailsSchema } from 'entities/Post';
 
 export interface StateSchema {
 	admin: AdminSchema;

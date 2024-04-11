@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import cls from './PostLinkBlock.module.scss';
+import { HStack } from 'shared/ui/Stack';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { Text } from 'shared/ui/Text/Text';
 import { PostLinkBlockType } from '../../model/types/post';
-import { HStack } from '../../../../shared/ui/Stack';
-import { AppLink } from '../../../../shared/ui/AppLink/AppLink';
-import { Text } from '../../../../shared/ui/Text/Text';
+import cls from './PostLinkBlock.module.scss';
 
 interface PostLinkBlockProps {
     className?: string;

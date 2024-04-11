@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { VStack } from 'shared/ui/Stack';
+import { Text } from 'shared/ui/Text/Text';
 import cls from './PostTextBlock.module.scss';
 import { PostTextBlockType } from '../../model/types/post';
-import { VStack } from '../../../../shared/ui/Stack';
-import { Text } from '../../../../shared/ui/Text/Text';
 
 interface PostTextBlockProps {
     className?: string;
@@ -17,7 +17,7 @@ export const PostTextBlock = memo((props: PostTextBlockProps) => {
     } = props;
 
     return (
-        <VStack max gap="16" className={classNames(cls.PostTextBlock, {}, [className])}>
+        <VStack max gap="16" className={classNames('', {}, [className])}>
             {block.title && (
                 <Text title={block.title} />
             )}

@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { VStack } from 'shared/ui/Stack';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Page } from 'widgets/Page/Page';
 import cls from './ProjectPageSkeletons.module.scss';
-import { VStack } from '../../../../shared/ui/Stack';
-import { Skeleton } from '../../../../shared/ui/Skeleton/Skeleton';
-import { Page } from '../../../../widgets/Page/Page';
 
 interface ProjectPageSkeletonsProps {
     className?: string;

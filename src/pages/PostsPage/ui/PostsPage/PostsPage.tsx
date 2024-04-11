@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useMemo } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { Page } from 'widgets/Page/Page';
@@ -6,25 +5,17 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from 'shared/ui/Stack';
-import cls from './PostsPage.module.scss';
 import { postsPageReducer } from '../../model/slice/postsPageSlice';
 import { getPostsPageInited, getPostsPageIsLoading, getPostsPagePosts } from '../../model/selectors/posts';
 import { fetchPosts } from '../../model/services/fetchPosts/fetchPosts';
 import { ProjectPageSkeletons } from '../../../Projects/ui/ProjectPageSkeletons/ProjectPageSkeletons';
-import { PostCard } from '../PostCard/ui/PostCard';
-
-interface PostsPageProps {
-    className?: string;
-}
+import { PostCard } from '../PostCard/PostCard';
 
 const reducers: ReducersList = {
     postsPage: postsPageReducer,
 };
 
-const PostsPage = memo((props: PostsPageProps) => {
-    const {
-        className,
-    } = props;
+const PostsPage = memo(() => {
     const isLoading = useSelector(getPostsPageIsLoading);
     const inited = useSelector(getPostsPageInited);
     const dispatch = useAppDispatch();
@@ -47,7 +38,7 @@ const PostsPage = memo((props: PostsPageProps) => {
                 <ProjectPageSkeletons />
             )
                 : (
-                    <Page className={classNames(cls.PostsPage, {}, [className])}>
+                    <Page>
                         <VStack max gap="32">
                             {postsList}
                         </VStack>

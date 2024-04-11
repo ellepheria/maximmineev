@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Page } from 'widgets/Page/Page';
 import cls from './ProjectDetailsSkeletons.module.scss';
-import { HStack, VStack } from '../../shared/ui/Stack';
-import { Skeleton } from '../../shared/ui/Skeleton/Skeleton';
-import { Text, TextSize } from '../../shared/ui/Text/Text';
-import { Page } from '../../widgets/Page/Page';
 
 interface ProjectDetailsSkeletonsProps {
     className?: string;

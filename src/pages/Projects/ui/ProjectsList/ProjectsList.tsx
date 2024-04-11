@@ -1,30 +1,24 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import cls from './ProjectsList.module.scss';
-import { VStack } from '../../../../shared/ui/Stack';
-import { useAppDispatch } from '../../../../shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from '../../../../shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { VStack } from 'shared/ui/Stack';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { fetchProjects } from '../../model/services/fetchProjects/fetchProjects';
-import { getProjectsInited, getProjectsIsLoading, getProjectsList } from '../../model/selectors/projectsPageSelectors';
-import { ProjectCard } from '../ProjectCard';
+import {
+    getProjectsInited,
+    getProjectsIsLoading,
+    getProjectsList,
+} from '../../model/selectors/projectsPageSelectors';
 import { ProjectPageSkeletons } from '../ProjectPageSkeletons/ProjectPageSkeletons';
-import { DynamicModuleLoader, ReducersList } from '../../../../shared/lib/components/DynamicModuleLoader';
 import { projectsPageReducer } from '../../model/slice/projectsPage';
-
-interface ProjectsListProps {
-    className?: string;
-}
+import { ProjectCard } from '../ProjectCard/ProjectCard';
 
 const reducers: ReducersList = {
     projectsPage: projectsPageReducer,
 };
 
-export const ProjectsList = memo((props: ProjectsListProps) => {
-    const {
-        className,
-    } = props;
-
+export const ProjectsList = memo(() => {
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getProjectsIsLoading);
     const inited = useSelector(getProjectsInited);

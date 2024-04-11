@@ -1,2 +1,2 @@
-export type { ProjectDetailsSchema } from '../../entities/ProjectDetails/model/types/projectDetails';
 export { ProjectDetailsPageAsync as ProjectDetailsPage } from './ui/ProjectDetailsPage/ProjectDetailsPage.async';
+export type { ProjectDetailsPageSchema } from './model/types/projectDetailsPage';

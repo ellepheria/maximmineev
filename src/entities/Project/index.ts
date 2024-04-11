@@ -1,1 +1,7 @@
-export type { Project } from './model/types/project';
+export type {
+    Project,
+    Technologies,
+    ProjectRole,
+    ProjectSchema,
+    ProjectType,
+} from './model/types/project';

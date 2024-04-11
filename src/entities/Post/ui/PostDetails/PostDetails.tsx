@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, ReactNode, useCallback } from 'react';
+import { ReactNode, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
 import { postDetailsReducer } from 'entities/Post/model/slice/postDetailsSlice';
@@ -15,10 +15,9 @@ import { PostTextBlock } from 'entities/Post/ui/PostTextBlock/PostTextBlock';
 import { PostImageBlock } from 'entities/Post/ui/PostImageBlock/PostImageBlock';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { HStack, VStack } from 'shared/ui/Stack';
-import { TextSize, Text } from 'shared/ui/Text/Text';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { Card } from 'shared/ui/Card/Card';
 import cls from './PostDetails.module.scss';
-import { Tab } from '../../../../shared/ui/Tab/Tab';
-import { Card } from '../../../../shared/ui/Card/Card';
 
 interface PostDetailsPageProps {
     className?: string;
@@ -136,7 +135,7 @@ export const PostDetails = (props: PostDetailsPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <VStack gap="16" max className={classNames(cls.PostDetailsPage, {}, [className])}>
+            <VStack gap="16" max className={classNames('', {}, [className])}>
                 {content}
             </VStack>
         </DynamicModuleLoader>
