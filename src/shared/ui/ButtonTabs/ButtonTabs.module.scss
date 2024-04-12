@@ -1,0 +1,16 @@
+.ButtonTabs {
+    border: 1px var(--secondary-color) solid;
+}
+
+.button {
+    flex: 1 1 auto;
+    background: var(--bg-color-secondary);
+    padding: 8px 24px;
+    border-radius: 0;
+    border: 1px var(--secondary-color) solid;
+    text-transform: uppercase;
+
+    &.active {
+        background: var(--bg-color);
+    }
+}
