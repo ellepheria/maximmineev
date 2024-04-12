@@ -7,7 +7,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchPostById } from 'entities/Post/model/services/fetchPostById/fetchPostById';
 import { getPostDetailsData, getPostDetailsIsLoading } from 'entities/Post/model/selectors/postDetails';
-import { PostBlock, PostBlockType } from 'entities/Post/model/types/post';
+import { Post, PostBlock, PostBlockType } from 'entities/Post/model/types/post';
 import { PostCodeBlock } from 'entities/Post/ui/PostCodeBlock/PostCodeBlock';
 import { PostLinkBlock } from 'entities/Post/ui/PostLinkBlock/PostLinkBlock';
 import { PostListBlock } from 'entities/Post/ui/PostListBlock/PostListBlock';
@@ -22,6 +22,7 @@ import { PostDetailsSkeletons } from '../PostDetailsSkeletons/PostDetailsSkeleto
 interface PostDetailsPageProps {
     className?: string;
     id?: string;
+    initialData?: Post;
 }
 
 const reducers: ReducersList = {
@@ -32,16 +33,23 @@ export const PostDetails = (props: PostDetailsPageProps) => {
     const {
         className,
         id,
+        initialData,
     } = props;
 
     const dispatch = useAppDispatch();
     const isLoading = useSelector(getPostDetailsIsLoading);
 
     useInitialEffect(() => {
-        dispatch(fetchPostById(id));
+        if (!initialData) {
+            dispatch(fetchPostById(id));
+        }
     });
 
-    const post = useSelector(getPostDetailsData);
+    let post = useSelector(getPostDetailsData);
+
+    if (initialData) {
+        post = initialData;
+    }
 
     const renderBlock = useCallback((block: PostBlock) => {
         switch (block.type) {
