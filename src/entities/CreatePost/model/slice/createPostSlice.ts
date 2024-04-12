@@ -20,13 +20,21 @@ export const createPostSlice = createSlice({
             };
         },
         addBlock: (state, action: PayloadAction<PostBlock>) => {
-            state.data?.blocks?.push(action.payload);
+            if (state.data) {
+                if (state.data.blocks) {
+                    state.data.blocks.push(action.payload);
+                } else {
+                    state.data.blocks = [action.payload];
+                }
+            } else {
+                state.data = {
+                    blocks: [action.payload],
+                };
+            }
         },
         deleteBlock: (state, action: PayloadAction<PostBlock>) => {
-            if (state.data?.blocks) {
-                state.data.blocks = state.data.blocks.filter(
-                    (block) => block.id !== action.payload.id,
-                );
+            if (state.data && state.data.blocks) {
+                state.data.blocks.filter((block) => block.id !== action.payload.id);
             }
         },
         clearPost: (state) => {

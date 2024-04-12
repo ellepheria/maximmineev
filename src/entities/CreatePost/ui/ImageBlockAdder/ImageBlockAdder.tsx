@@ -32,9 +32,9 @@ export const ImageBlockAdder = memo((props: ImageBlockAdderProps) => {
     return (
         <VStack max gap="16" className={classNames(cls.ImageBlockAdder, {}, [className])}>
             <Text text="Введите ссылку на изображение ниже:" />
-            <Input value={image} onChange={setImage} />
-            <Input value={imageTitle} onChange={setImageTitle} />
-            <Input value={imageAlt} onChange={setImageAlt} />
+            <Input value={image} onChange={setImage} placeholder="Ссылка на изображение" />
+            <Input value={imageTitle} onChange={setImageTitle} placeholder="Текст под изображением" />
+            <Input value={imageAlt} onChange={setImageAlt} placeholder="alt" />
             <HStack max justify="end">
                 <Button onClick={addImageBlock}>
                     <Text text="Добавить изображение в статью" />

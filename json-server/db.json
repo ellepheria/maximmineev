@@ -287,6 +287,55 @@
           "code": "console.log('Hello, World!');"
         }
       ]
+    },
+    {
+      "blocks": [
+        {
+          "id": "0",
+          "type": "list",
+          "items": [
+            "фыв",
+            "фв"
+          ],
+          "title": "фыв"
+        },
+        {
+          "id": "1",
+          "type": "image",
+          "title": "Первое изображение",
+          "alt": "изображение",
+          "src": "https://rozetked.me/images/uploads/webp/87QInDyH9cm5.webp"
+        },
+        {
+          "id": "2",
+          "type": "code",
+          "code": "console.log('hello, world');"
+        },
+        {
+          "id": "3",
+          "type": "link",
+          "link": "https://vk.com/vakhrushkaa",
+          "text": "лучшая девушка в мире"
+        },
+        {
+          "id": "4",
+          "type": "list",
+          "items": [
+            "фыв",
+            "фвфывфвф",
+            "вфыфыв",
+            "вфыв",
+            "фывфывф",
+            "фывфывф"
+          ],
+          "title": "фыв"
+        }
+      ],
+      "cover": "https://rozetked.me/images/uploads/webp/87QInDyH9cm5.webp",
+      "createdAt": "12.04.2024",
+      "title": "Заголовок статьи",
+      "subtitle": "Подзаголовок статьи",
+      "id": "Ir3nTFv"
     }
   ],
   "projects": [
