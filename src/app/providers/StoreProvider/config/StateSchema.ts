@@ -6,6 +6,7 @@ import { ProjectDetailsSchema } from 'entities/ProjectDetails/model/types/projec
 import { ProjectsPageSchema } from 'pages/Projects';
 import { PostsPageSchema } from 'pages/PostsPage/model/types/posts';
 import { PostDetailsSchema } from 'entities/Post';
+import { CreatePostSchema } from 'entities/CreatePost/model/types/createPost';
 
 export interface StateSchema {
 	admin: AdminSchema;
@@ -16,6 +17,7 @@ export interface StateSchema {
 	projectsPage?: ProjectsPageSchema;
 	postsPage?: PostsPageSchema;
 	postDetails?: PostDetailsSchema;
+	createPost?: CreatePostSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -46,6 +46,14 @@ export const Navbar = memo(({ className }: NavBarProps) => {
                 >
                     Статьи
                 </AppLink>
+                {authData && (
+                    <AppLink
+                        to={RoutePath.create_post}
+                        className={cls.link}
+                    >
+                        Создать статью
+                    </AppLink>
+                )}
             </div>
             {authData && (
                 <Button
