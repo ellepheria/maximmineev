@@ -3,7 +3,7 @@ import { memo } from 'react';
 import cls from './LinkBlockAdder.module.scss';
 import { Text } from '../../../../shared/ui/Text/Text';
 import Input from '../../../../shared/ui/Input/Input';
-import { VStack } from '../../../../shared/ui/Stack';
+import { HStack, VStack } from '../../../../shared/ui/Stack';
 import { Button } from '../../../../shared/ui/Button/Button';
 
 interface LinkBlockAdderProps {
@@ -30,9 +30,11 @@ export const LinkBlockAdder = memo((props: LinkBlockAdderProps) => {
             <Text text="Введите параметры ссылки ниже:" />
             <Input value={linkTitle} onChange={setLinkTitle} placeholder="Текст ссылки:" />
             <Input value={linkHref} onChange={setLinkHref} placeholder="Адрес ссылки:" />
-            <Button onClick={addLinkBlock}>
-                <Text text="Добавить ссылку в статью" />
-            </Button>
+            <HStack max justify="end">
+                <Button onClick={addLinkBlock}>
+                    <Text text="Добавить ссылку в статью" />
+                </Button>
+            </HStack>
         </VStack>
     );
 });

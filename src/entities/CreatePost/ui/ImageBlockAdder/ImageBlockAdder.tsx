@@ -3,7 +3,7 @@ import { memo } from 'react';
 import cls from './ImageBlockAdder.module.scss';
 import { Text } from '../../../../shared/ui/Text/Text';
 import Input from '../../../../shared/ui/Input/Input';
-import { VStack } from '../../../../shared/ui/Stack';
+import { HStack, VStack } from '../../../../shared/ui/Stack';
 import { Button } from '../../../../shared/ui/Button/Button';
 
 interface ImageBlockAdderProps {
@@ -25,9 +25,11 @@ export const ImageBlockAdder = memo((props: ImageBlockAdderProps) => {
         <VStack max gap="16" className={classNames(cls.ImageBlockAdder, {}, [className])}>
             <Text text="Введите ссылку на изображение ниже:" />
             <Input value={image} onChange={setImage} />
-            <Button onClick={addImageBlock}>
-                <Text text="Добавить изображение в статью" />
-            </Button>
+            <HStack max justify="end">
+                <Button onClick={addImageBlock}>
+                    <Text text="Добавить изображение в статью" />
+                </Button>
+            </HStack>
         </VStack>
     );
 });
