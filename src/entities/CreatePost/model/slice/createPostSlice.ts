@@ -41,10 +41,9 @@ export const createPostSlice = createSlice({
             })
             .addCase(createNewPost.fulfilled, (
                 state,
-                action: PayloadAction<Post>,
             ) => {
                 state.isLoading = false;
-                state.data = action.payload;
+                state.data = undefined;
             })
             .addCase(createNewPost.rejected, (
                 state,

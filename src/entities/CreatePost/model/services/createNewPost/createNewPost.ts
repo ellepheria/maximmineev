@@ -6,7 +6,7 @@ import { getAdminAuthData } from '../../../../Admin';
 import { getCreatePostData } from '../../selectors/createPostSelectors';
 
 export const createNewPost = createAsyncThunk<
-    Post,
+    void,
     void,
     ThunkConfig<string>
 >(
@@ -33,8 +33,7 @@ export const createNewPost = createAsyncThunk<
             }
 
             dispatch(fetchPosts());
-
-            return response.data;
+            return undefined;
         } catch (e) {
             return rejectWithValue('error');
         }

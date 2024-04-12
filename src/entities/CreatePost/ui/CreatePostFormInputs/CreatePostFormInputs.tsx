@@ -31,27 +31,28 @@ export const CreatePostFormInputs = memo(() => {
 
     const createPost = useCallback(() => {
         dispatch(createNewPost());
+        dispatch(createPostActions.clearPost());
     }, [dispatch]);
 
     return (
         <>
             <Input
-                value={post?.title}
+                value={post?.title || ''}
                 onChange={onChangeTitle}
                 placeholder="Заголовок статьи"
             />
             <Input
-                value={post?.subtitle}
+                value={post?.subtitle || ''}
                 onChange={onChangeSubtitle}
                 placeholder="Подзаголовок статьи"
             />
             <Input
-                value={post?.cover}
+                value={post?.cover || ''}
                 onChange={onChangeCover}
                 placeholder="Ссылка на обложку статьи"
             />
             <Input
-                value={post?.createdAt}
+                value={post?.createdAt || ''}
                 onChange={onChangeCreatedAt}
                 placeholder="Дата создания статьи"
             />
