@@ -9,6 +9,11 @@ import cls from './CreatePostFormBlocks.module.scss';
 import { PostBlockType } from '../../../Post/model/types/post';
 import Input from '../../../../shared/ui/Input/Input';
 import { Button } from '../../../../shared/ui/Button/Button';
+import { CodeBlockAdder } from '../CodeBlockAdder/CodeBlockAdder';
+import { ImageBlockAdder } from '../ImageBlockAdder/ImageBlockAdder';
+import { LinkBlockAdder } from '../LinkBlockAdder/LinkBlockAdder';
+import { ListBlockAdder } from '../ListBlockAdder/ListBlockAdder';
+import { TextBlockAdder } from '../TextBlockAdder/TextBlockAdder';
 
 interface CreatePostFormBlocksProps {
     className?: string;
@@ -33,99 +38,64 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
     }, []);
 
     const onChangeListItem = useCallback((value: string, index: number) => {
-        const newItems = listItems;
+        const newItems = [...listItems];
         newItems[index] = value;
         setListItems(newItems);
     }, [listItems]);
 
     const addListItem = useCallback(() => {
-        const newItems = listItems;
-        newItems.push('1');
-        console.log(newItems);
-        setListItems(newItems);
+        setListItems([...listItems, '']);
     }, [listItems]);
 
     const removeLastListItem = useCallback(() => {
         const newItems = listItems;
         newItems.pop();
-        console.log(newItems);
         setListItems(newItems);
     }, [listItems]);
-
-    const listItemInputs = useMemo(() => listItems.map((item, index) => (
-        <Input
-            value={listItems[index]}
-            placeholder={`Элемент ${index}`}
-            onChange={(value: string) => onChangeListItem(value, index)}
-        />
-    )), [listItems, onChangeListItem]);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    const listItemsAdder = (
-        <>
-            <Text text="Введите элементы списка ниже:" />
-            <Input value={listTitle} onChange={setListTitle} placeholder="Заголовок списка:" />
-            {listItemInputs}
-            <HStack max gap="16" justify="end">
-                <Button onClick={addListItem}>
-                    <Text text="Добавить элемент в список" />
-                </Button>
-                <Button onClick={removeLastListItem}>
-                    <Text text="Удалить последний элемент" />
-                </Button>
-                <Button>
-                    <Text text="Добавить список в статью" />
-                </Button>
-            </HStack>
-        </>
-    );
 
     const renderBlockAdder = useMemo(() => {
         switch (blockType) {
         case PostBlockType.CODE:
             return (
-                <>
-                    <Text text="Введите Ваш код ниже:" />
-                    <Input value={code} onChange={setCode} />
-                </>
+                <CodeBlockAdder code={code} setCode={setCode} />
             );
         case PostBlockType.IMAGE:
             return (
-                <>
-                    <Text text="Введите ссылку на изображение ниже:" />
-                    <Input value={image} onChange={setImage} />
-                </>
+                <ImageBlockAdder image={image} setImage={setImage} />
             );
         case PostBlockType.LINK:
             return (
-                <>
-                    <Text text="Введите параметры ссылки ниже:" />
-                    <Input value={linkTitle} onChange={setLinkTitle} placeholder="Текст ссылки:" />
-                    <Input value={linkHref} onChange={setLinkHref} placeholder="Адрес ссылки:" />
-                </>
+                <LinkBlockAdder linkTitle={linkTitle} setLinkTitle={setLinkTitle} linkHref={linkHref} setLinkHref={setLinkHref} />
             );
         case PostBlockType.LIST:
             return (
-                <div>
-                    {listItemsAdder}
-                </div>
+                <ListBlockAdder
+                    removeLastListItem={removeLastListItem}
+                    onChangeListItem={onChangeListItem}
+                    listItems={listItems}
+                    addListItem={addListItem}
+                    listTitle={listTitle}
+                    setListTitle={setListTitle}
+                />
+            );
+        case PostBlockType.TEXT:
+            return (
+                <TextBlockAdder />
             );
         default:
             return null;
         }
-    }, [blockType, code, image, linkHref, linkTitle, listItemsAdder]);
+    }, [addListItem, blockType, code, image, linkHref, linkTitle, listItems, listTitle, onChangeListItem, removeLastListItem]);
 
     return (
         <VStack max gap="16" className={classNames(cls.CreatePostFormBlocks, {}, [className])}>
-            <>
-                <Text title="Добавление блоков" />
-                <ButtonTabs
-                    items={blockTypes}
-                    value={blockType}
-                    onChangeValue={onChangeBlockType}
-                />
-                {renderBlockAdder}
-            </>
+            <Text title="Добавление блоков" />
+            <ButtonTabs
+                items={blockTypes}
+                value={blockType}
+                onChangeValue={onChangeBlockType}
+            />
+            {renderBlockAdder}
         </VStack>
     );
 });
