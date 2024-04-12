@@ -1,30 +1,31 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { fetchPosts } from 'pages/PostsPage/model/services/fetchPosts/fetchPosts';
-import { useSelector } from 'react-redux';
 import { Post } from '../../../../Post';
 import { getAdminAuthData } from '../../../../Admin';
+import { getCreatePostData } from '../../selectors/createPostSelectors';
 
 export const createNewPost = createAsyncThunk<
     Post,
-    Post,
+    void,
     ThunkConfig<string>
 >(
     'createPost/createNewPost',
-    async (post, thunkApi) => {
+    async (_, thunkApi) => {
         const {
-            extra, dispatch, rejectWithValue,
+            extra, dispatch, rejectWithValue, getState,
         } = thunkApi;
 
-        const authData = useSelector(getAdminAuthData);
+        const authData = getAdminAuthData(getState());
+        const post = getCreatePostData(getState());
 
-        if (!authData || !post) {
+        if (!authData) {
             return rejectWithValue('no data');
         }
 
         try {
             const response = await extra.api.post<Post>('/posts', {
-                post,
+                ...post,
             });
 
             if (!response.data) {

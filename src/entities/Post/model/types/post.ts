@@ -43,12 +43,12 @@ export interface PostLinkBlockType extends PostBlockBase {
 export type PostBlock = PostCodeBlockType | PostListBlockType | PostTextBlockType | PostLinkBlockType | PostImageBlockType;
 
 export interface Post {
-    id: string;
-    title: string;
+    id?: string;
+    title?: string;
     subtitle?: string;
     cover?: string;
-    createdAt: string;
-    blocks: PostBlock[];
+    createdAt?: string;
+    blocks?: PostBlock[];
 }
 
 export interface PostDetailsSchema {

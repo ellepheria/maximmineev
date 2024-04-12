@@ -15,12 +15,12 @@ export const createPostSlice = createSlice({
     reducers: {
         updatePost: (state, action: PayloadAction<Post>) => {
             state.data = {
-                ...state,
+                ...state.data,
                 ...action.payload,
             };
         },
         addBlock: (state, action: PayloadAction<PostBlock>) => {
-            state.data?.blocks.push(action.payload);
+            state.data?.blocks?.push(action.payload);
         },
         deleteBlock: (state, action: PayloadAction<PostBlock>) => {
             if (state.data?.blocks) {
@@ -28,6 +28,9 @@ export const createPostSlice = createSlice({
                     (block) => block.id !== action.payload.id,
                 );
             }
+        },
+        clearPost: (state) => {
+            state.data = undefined;
         },
     },
     extraReducers: (builder) => {

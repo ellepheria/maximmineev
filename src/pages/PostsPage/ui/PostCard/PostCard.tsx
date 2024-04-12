@@ -23,7 +23,7 @@ export const PostCard = memo((props: PostCardProps) => {
         post,
     } = props;
 
-    const textBlock = post.blocks.find(
+    const textBlock = post.blocks?.find(
         (block) => block.type === PostBlockType.TEXT,
     ) as PostTextBlockType;
 

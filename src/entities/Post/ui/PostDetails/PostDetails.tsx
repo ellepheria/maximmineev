@@ -122,7 +122,7 @@ export const PostDetails = (props: PostDetailsPageProps) => {
                         </Card>
                     </HStack>
                 </HStack>
-                {post?.blocks.map(renderBlock)}
+                {post?.blocks?.map(renderBlock)}
             </>
         );
     }

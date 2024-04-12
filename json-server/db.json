@@ -291,6 +291,13 @@
           "code": "console.log('Hello, World!');"
         }
       ]
+    },
+    {
+      "cover": "https://rozetked.me/images/uploads/webp/87QInDyH9cm5.webp",
+      "createdAt": "12.04.2024",
+      "title": "title",
+      "subtitle": "subtitle",
+      "id": "Ra1IwRG"
     }
   ],
   "projects": [
@@ -301,8 +308,13 @@
       "createdAt": "2020",
       "types": "Учебный",
       "cover": "https://i.ibb.co/nCNYySN/tg-image-3454523229.jpg",
-      "roles": ["Backend"],
-      "technologies": ["php", "mysql"],
+      "roles": [
+        "Backend"
+      ],
+      "technologies": [
+        "php",
+        "mysql"
+      ],
       "duties": [
         "Ведение собственного pet-проекта",
         "Работа с api УрФУ",
@@ -329,9 +341,17 @@
       "createdAt": "2024",
       "types": "Учебный",
       "cover": "https://i.ibb.co/tD62xcc/tg-image-1135060500.jpg",
-      "roles": ["Frontend"],
+      "roles": [
+        "Frontend"
+      ],
       "technologies": [
-        "react", "typescript", "sass", "eslint", "redux toolkit", "websockets", "vite"
+        "react",
+        "typescript",
+        "sass",
+        "eslint",
+        "redux toolkit",
+        "websockets",
+        "vite"
       ],
       "duties": [
         "Доработка существующего проекта",
@@ -348,8 +368,13 @@
       "createdAt": "2023",
       "types": "Учебный",
       "cover": "https://i.ibb.co/RCj9FSt/tg-image-2476931167.jpg",
-      "roles": ["Frontend"],
-      "technologies": ["react native", "javascript"],
+      "roles": [
+        "Frontend"
+      ],
+      "technologies": [
+        "react native",
+        "javascript"
+      ],
       "duties": [
         "Разработка клиентской части приложения",
         "Верстка скринов"
@@ -369,8 +394,14 @@
       "createdAt": "2022",
       "types": "Учебный",
       "cover": "https://i.ibb.co/bzkc4PV/image.jpg",
-      "roles": ["Frontend", "TeamLead"],
-      "technologies": ["vue", "javascript"],
+      "roles": [
+        "Frontend",
+        "TeamLead"
+      ],
+      "technologies": [
+        "vue",
+        "javascript"
+      ],
       "duties": [
         "Разработка клиентской части приложения",
         "Работа с api",
@@ -392,8 +423,14 @@
       "createdAt": "2024",
       "types": "Учебный",
       "cover": "https://i.ibb.co/wN2XBfR/tg-image-3044113496.jpg",
-      "roles": ["Backend", "Frontend"],
-      "technologies": ["python", "postgres"],
+      "roles": [
+        "Backend",
+        "Frontend"
+      ],
+      "technologies": [
+        "python",
+        "postgres"
+      ],
       "duties": [
         "Разработка телеграм-бота",
         "Работа с api",
@@ -419,8 +456,15 @@
       "createdAt": "2024",
       "types": "Учебный",
       "cover": "https://i.ibb.co/48zjj3z/tg-image-431331292.jpg",
-      "roles": ["Frontend", "Backend"],
-      "technologies": ["react", "typescript", "sass"],
+      "roles": [
+        "Frontend",
+        "Backend"
+      ],
+      "technologies": [
+        "react",
+        "typescript",
+        "sass"
+      ],
       "duties": [
         "Разработка клиентской части приложения",
         "Разработка серверной части приложения"
