@@ -1,10 +1,10 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
+import { Text } from 'shared/ui/Text/Text';
+import Input from 'shared/ui/Input/Input';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { Button } from 'shared/ui/Button/Button';
 import cls from './LinkBlockAdder.module.scss';
-import { Text } from '../../../../shared/ui/Text/Text';
-import Input from '../../../../shared/ui/Input/Input';
-import { HStack, VStack } from '../../../../shared/ui/Stack';
-import { Button } from '../../../../shared/ui/Button/Button';
 
 interface LinkBlockAdderProps {
     className?: string;
