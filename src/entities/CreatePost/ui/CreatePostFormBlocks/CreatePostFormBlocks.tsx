@@ -32,6 +32,7 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
     const [linkHref, setLinkHref] = useState('');
     const [listTitle, setListTitle] = useState('');
     const [listItems, setListItems] = useState<string[]>([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
 
     const onChangeBlockType = useCallback((value: string) => {
         setBlockType(value as PostBlockType);
@@ -48,24 +49,58 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
     }, [listItems]);
 
     const removeLastListItem = useCallback(() => {
-        const newItems = listItems;
+        const newItems = [...listItems];
         newItems.pop();
         setListItems(newItems);
     }, [listItems]);
+
+    const addCodeBlock = useCallback(() => {
+
+    }, []);
+
+    const addLinkBlock = useCallback(() => {
+
+    }, []);
+
+    const addListBlock = useCallback(() => {
+
+    }, []);
+
+    const addImageBlock = useCallback(() => {
+
+    }, []);
+
+    const addTextBlock = useCallback(() => {
+
+    }, []);
 
     const renderBlockAdder = useMemo(() => {
         switch (blockType) {
         case PostBlockType.CODE:
             return (
-                <CodeBlockAdder code={code} setCode={setCode} />
+                <CodeBlockAdder
+                    code={code}
+                    setCode={setCode}
+                    addCodeBlock={addCodeBlock}
+                />
             );
         case PostBlockType.IMAGE:
             return (
-                <ImageBlockAdder image={image} setImage={setImage} />
+                <ImageBlockAdder
+                    image={image}
+                    setImage={setImage}
+                    addImageBlock={addImageBlock}
+                />
             );
         case PostBlockType.LINK:
             return (
-                <LinkBlockAdder linkTitle={linkTitle} setLinkTitle={setLinkTitle} linkHref={linkHref} setLinkHref={setLinkHref} />
+                <LinkBlockAdder
+                    linkTitle={linkTitle}
+                    setLinkTitle={setLinkTitle}
+                    linkHref={linkHref}
+                    setLinkHref={setLinkHref}
+                    addLinkBlock={addLinkBlock}
+                />
             );
         case PostBlockType.LIST:
             return (
@@ -76,6 +111,7 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
                     addListItem={addListItem}
                     listTitle={listTitle}
                     setListTitle={setListTitle}
+                    addListBlock={addListBlock}
                 />
             );
         case PostBlockType.TEXT:
@@ -85,7 +121,22 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
         default:
             return null;
         }
-    }, [addListItem, blockType, code, image, linkHref, linkTitle, listItems, listTitle, onChangeListItem, removeLastListItem]);
+    }, [
+        addCodeBlock,
+        addImageBlock,
+        addLinkBlock,
+        addListBlock,
+        addListItem,
+        blockType,
+        code,
+        image,
+        linkHref,
+        linkTitle,
+        listItems,
+        listTitle,
+        onChangeListItem,
+        removeLastListItem,
+    ]);
 
     return (
         <VStack max gap="16" className={classNames(cls.CreatePostFormBlocks, {}, [className])}>

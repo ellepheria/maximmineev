@@ -16,6 +16,7 @@ interface ListBlockAdderProps {
     setListTitle: (value: string) => void;
     addListItem: () => void;
     removeLastListItem: () => void;
+    addListBlock: () => void;
 }
 
 export const ListBlockAdder = memo((props: ListBlockAdderProps) => {
@@ -27,6 +28,7 @@ export const ListBlockAdder = memo((props: ListBlockAdderProps) => {
         listItems,
         removeLastListItem,
         addListItem,
+        addListBlock,
     } = props;
 
     const listItemInputs = useMemo(() => listItems.map((item, index) => (
@@ -61,7 +63,7 @@ export const ListBlockAdder = memo((props: ListBlockAdderProps) => {
                 <Button onClick={removeLastListItem}>
                     <Text text="Удалить последний элемент" />
                 </Button>
-                <Button>
+                <Button onClick={addListBlock}>
                     <Text text="Добавить список в статью" />
                 </Button>
             </HStack>
