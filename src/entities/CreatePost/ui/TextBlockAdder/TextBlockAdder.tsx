@@ -42,6 +42,12 @@ export const TextBlockAdder = memo((props: TextBlockAdderProps) => {
         setParagraphs(newParagraphs);
     }, [paragraphs, setParagraphs]);
 
+    const onAddBlock = useCallback(() => {
+        addTextBlock();
+        setTitle('');
+        setParagraphs([]);
+    }, [addTextBlock, setParagraphs, setTitle]);
+
     const paragraphsInputs = useMemo(() => paragraphs.map((paragraph, index) => (
         <Input
             placeholder={`Параграф ${index}`}
@@ -63,7 +69,7 @@ export const TextBlockAdder = memo((props: TextBlockAdderProps) => {
                 <Button onClick={removeLastParagraph}>
                     <Text text="Удалить последний параграф" />
                 </Button>
-                <Button onClick={addTextBlock}>
+                <Button onClick={onAddBlock}>
                     <Text text="Добавить текст в статью" />
                 </Button>
             </HStack>

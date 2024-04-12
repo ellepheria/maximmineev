@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import Input from 'shared/ui/Input/Input';
 import { HStack, VStack } from 'shared/ui/Stack';
@@ -25,13 +25,19 @@ export const LinkBlockAdder = memo((props: LinkBlockAdderProps) => {
         addLinkBlock,
     } = props;
 
+    const onAddBlock = useCallback(() => {
+        addLinkBlock();
+        setLinkTitle('');
+        setLinkHref('');
+    }, [addLinkBlock, setLinkHref, setLinkTitle]);
+
     return (
         <VStack max gap="16" className={classNames(cls.LinkBlockAdder, {}, [className])}>
             <Text text="Введите параметры ссылки ниже:" />
             <Input value={linkTitle} onChange={setLinkTitle} placeholder="Текст ссылки:" />
             <Input value={linkHref} onChange={setLinkHref} placeholder="Адрес ссылки:" />
             <HStack max justify="end">
-                <Button onClick={addLinkBlock}>
+                <Button onClick={onAddBlock}>
                     <Text text="Добавить ссылку в статью" />
                 </Button>
             </HStack>

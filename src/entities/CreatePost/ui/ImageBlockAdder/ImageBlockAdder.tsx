@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import Input from 'shared/ui/Input/Input';
 import { HStack, VStack } from 'shared/ui/Stack';
@@ -29,6 +29,13 @@ export const ImageBlockAdder = memo((props: ImageBlockAdderProps) => {
         imageTitle,
     } = props;
 
+    const onAddBlock = useCallback(() => {
+        addImageBlock();
+        setImage('');
+        setImageAlt('');
+        setImageTitle('');
+    }, [addImageBlock, setImage, setImageAlt, setImageTitle]);
+
     return (
         <VStack max gap="16" className={classNames(cls.ImageBlockAdder, {}, [className])}>
             <Text text="Введите ссылку на изображение ниже:" />
@@ -36,7 +43,7 @@ export const ImageBlockAdder = memo((props: ImageBlockAdderProps) => {
             <Input value={imageTitle} onChange={setImageTitle} placeholder="Текст под изображением" />
             <Input value={imageAlt} onChange={setImageAlt} placeholder="alt" />
             <HStack max justify="end">
-                <Button onClick={addImageBlock}>
+                <Button onClick={onAddBlock}>
                     <Text text="Добавить изображение в статью" />
                 </Button>
             </HStack>
