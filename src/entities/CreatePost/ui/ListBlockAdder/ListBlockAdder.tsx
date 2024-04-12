@@ -1,21 +1,19 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useMemo } from 'react';
+import { memo, useCallback, useMemo } from 'react';
+import { Text } from 'shared/ui/Text/Text';
+import Input from 'shared/ui/Input/Input';
+import { HStack, VStack } from 'shared/ui/Stack';
+import { Button } from 'shared/ui/Button/Button';
 import cls from './ListBlockAdder.module.scss';
-import { Text } from '../../../../shared/ui/Text/Text';
-import Input from '../../../../shared/ui/Input/Input';
-import { HStack, VStack } from '../../../../shared/ui/Stack';
-import { Button } from '../../../../shared/ui/Button/Button';
 import { PostListBlock } from '../../../Post/ui/PostListBlock/PostListBlock';
 import { PostBlockType } from '../../../Post/model/types/post';
 
 interface ListBlockAdderProps {
     className?: string;
     listItems: string[];
-    onChangeListItem: (value: string, index: number) => void;
     listTitle: string;
     setListTitle: (value: string) => void;
-    addListItem: () => void;
-    removeLastListItem: () => void;
+    setListItems: (values: string[]) => void;
     addListBlock: () => void;
 }
 
@@ -24,12 +22,26 @@ export const ListBlockAdder = memo((props: ListBlockAdderProps) => {
         className,
         listTitle,
         setListTitle,
-        onChangeListItem,
         listItems,
-        removeLastListItem,
-        addListItem,
         addListBlock,
+        setListItems,
     } = props;
+
+    const onChangeListItem = useCallback((value: string, index: number) => {
+        const newItems = [...listItems];
+        newItems[index] = value;
+        setListItems(newItems);
+    }, [listItems, setListItems]);
+
+    const addListItem = useCallback(() => {
+        setListItems([...listItems, '']);
+    }, [listItems, setListItems]);
+
+    const removeLastListItem = useCallback(() => {
+        const newItems = [...listItems];
+        newItems.pop();
+        setListItems(newItems);
+    }, [listItems, setListItems]);
 
     const listItemInputs = useMemo(() => listItems.map((item, index) => (
         <Input

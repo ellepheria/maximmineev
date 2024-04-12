@@ -36,26 +36,12 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
     const [listTitle, setListTitle] = useState('');
     const [listItems, setListItems] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [title, setTitle] = useState('');
+    const [paragraphs, setParagraphs] = useState<string[]>([]);
 
     const onChangeBlockType = useCallback((value: string) => {
         setBlockType(value as PostBlockType);
     }, []);
-
-    const onChangeListItem = useCallback((value: string, index: number) => {
-        const newItems = [...listItems];
-        newItems[index] = value;
-        setListItems(newItems);
-    }, [listItems]);
-
-    const addListItem = useCallback(() => {
-        setListItems([...listItems, '']);
-    }, [listItems]);
-
-    const removeLastListItem = useCallback(() => {
-        const newItems = [...listItems];
-        newItems.pop();
-        setListItems(newItems);
-    }, [listItems]);
 
     const addCodeBlock = useCallback(() => {
         dispatch(createPostActions.addBlock({
@@ -98,8 +84,14 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
     }, [currentIndex, dispatch, image, imageAlt, imageTitle]);
 
     const addTextBlock = useCallback(() => {
-
-    }, []);
+        dispatch(createPostActions.addBlock({
+            id: currentIndex.toString(),
+            type: PostBlockType.TEXT,
+            title,
+            paragraphs,
+        }));
+        setCurrentIndex((prev) => prev + 1);
+    }, [currentIndex, dispatch, paragraphs, title]);
 
     const renderBlockAdder = useMemo(() => {
         switch (blockType) {
@@ -136,18 +128,22 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
         case PostBlockType.LIST:
             return (
                 <ListBlockAdder
-                    removeLastListItem={removeLastListItem}
-                    onChangeListItem={onChangeListItem}
                     listItems={listItems}
-                    addListItem={addListItem}
                     listTitle={listTitle}
                     setListTitle={setListTitle}
                     addListBlock={addListBlock}
+                    setListItems={setListItems}
                 />
             );
         case PostBlockType.TEXT:
             return (
-                <TextBlockAdder />
+                <TextBlockAdder
+                    title={title}
+                    paragraphs={paragraphs}
+                    setParagraphs={setParagraphs}
+                    setTitle={setTitle}
+                    addTextBlock={addTextBlock}
+                />
             );
         default:
             return null;
@@ -157,7 +153,7 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
         addImageBlock,
         addLinkBlock,
         addListBlock,
-        addListItem,
+        addTextBlock,
         blockType,
         code,
         image,
@@ -167,8 +163,8 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
         linkTitle,
         listItems,
         listTitle,
-        onChangeListItem,
-        removeLastListItem,
+        paragraphs,
+        title,
     ]);
 
     return (
