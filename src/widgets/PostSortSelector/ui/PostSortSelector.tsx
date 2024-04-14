@@ -4,6 +4,7 @@ import { PostSortField } from 'pages/PostsPage/model/consts/postsPageConsts';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
 import { SortOrder } from 'shared/types/sortOptions';
 import cls from './PostSortSelector.module.scss';
+import { VStack } from '../../../shared/ui/Stack';
 
 interface PostSortSelectorProps {
     className?: string;
@@ -53,7 +54,7 @@ export const PostSortSelector = memo((props: PostSortSelectorProps) => {
     }, [onChangeOrder]);
 
     return (
-        <div className={classNames(cls.PostSortSelector, {}, [className])}>
+        <VStack max gap="16" className={classNames(cls.PostSortSelector, {}, [className])}>
             <Select
                 options={sortFieldOptions}
                 label="Сортировать ПО"
@@ -67,6 +68,6 @@ export const PostSortSelector = memo((props: PostSortSelectorProps) => {
                 onChange={changeOrderHandler}
                 className={cls.order}
             />
-        </div>
+        </VStack>
     );
 });
