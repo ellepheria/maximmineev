@@ -5,6 +5,7 @@ export const getPostsPageIsLoading = (state: StateSchema) => state.postsPage?.is
 export const getPostsPageError = (state: StateSchema) => state.postsPage?.error || '';
 export const getPostsPageSortOrder = (state: StateSchema) => state.postsPage?.order || 'asc';
 export const getPostsPageSortField = (state: StateSchema) => state.postsPage?.sort || PostSortField.TITLE;
+export const getPostsPageSearch = (state: StateSchema) => state.postsPage?.search || '';
 export const getPostsPagePosts = (state: StateSchema) => state.postsPage?.posts || [];
 export const getPostsPageInited = (state: StateSchema) => state.postsPage?.posts || false;
 export const getPostsPageNum = (state: StateSchema) => state.postsPage?.page || 1;
