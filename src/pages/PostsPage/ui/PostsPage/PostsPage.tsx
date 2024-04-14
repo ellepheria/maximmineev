@@ -10,6 +10,7 @@ import { getPostsPageInited, getPostsPageIsLoading, getPostsPagePosts } from '..
 import { fetchPosts } from '../../model/services/fetchPosts/fetchPosts';
 import { PostCard } from '../PostCard/PostCard';
 import { PostsPageSkeletons } from '../PostsPageSkeletons/PostsPageSkeletons';
+import { PostsPageFilters } from '../PostsPageFilters/PostsPageFilters';
 
 const reducers: ReducersList = {
     postsPage: postsPageReducer,
@@ -40,6 +41,7 @@ const PostsPage = memo(() => {
                 : (
                     <Page>
                         <VStack max gap="32">
+                            <PostsPageFilters />
                             {postsList}
                         </VStack>
                     </Page>

@@ -1,14 +1,17 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import cls from './PostsPageFilters.module.scss';
-import { getPostsPageSearch, getPostsPageSortField, getPostsPageSortOrder } from '../../model/selectors/posts';
-import { useAppDispatch } from '../../../../shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchPosts } from '../../model/services/fetchPosts/fetchPosts';
-import { useDebounce } from '../../../../shared/lib/hooks/useDebouce/useDebounce';
-import { postsPageActions } from '../../model/slice/postsPageSlice';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from 'shared/lib/hooks/useDebouce/useDebounce';
+import { SortOrder } from 'shared/types/sortOptions';
+import { PostSortSelector } from 'widgets/PostSortSelector/ui/PostSortSelector';
+import { Card } from 'shared/ui/Card/Card';
+import Input from 'shared/ui/Input/Input';
 import { PostSortField } from '../../model/consts/postsPageConsts';
-import { SortOrder } from '../../../../shared/types/sortOptions';
+import { postsPageActions } from '../../model/slice/postsPageSlice';
+import { fetchPosts } from '../../model/services/fetchPosts/fetchPosts';
+import { getPostsPageSearch, getPostsPageSortField, getPostsPageSortOrder } from '../../model/selectors/posts';
+import cls from './PostsPageFilters.module.scss';
 
 interface PostsPageFiltersProps {
     className?: string;
@@ -50,7 +53,21 @@ export const PostsPageFilters = memo((props: PostsPageFiltersProps) => {
 
     return (
         <div className={classNames(cls.PostsPageFilters, {}, [className])}>
-            /
+            <div className={cls.sortWrapper}>
+                <PostSortSelector
+                    order={order}
+                    sort={sort}
+                    onChangeOrder={onChangeOrder}
+                    onChangeSort={onChangeSort}
+                />
+            </div>
+            <Card className={cls.search}>
+                <Input
+                    onChange={onChangeSearch}
+                    value={search}
+                    placeholder="Поиск"
+                />
+            </Card>
         </div>
     );
 });
