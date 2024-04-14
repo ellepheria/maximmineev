@@ -7,7 +7,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { VStack } from 'shared/ui/Stack';
 import { useSearchParams } from 'react-router-dom';
 import { postsPageReducer } from '../../model/slice/postsPageSlice';
-import { getPostsPageInited, getPostsPageIsLoading, getPostsPagePosts } from '../../model/selectors/posts';
+import { getPostsPageIsLoading, getPostsPagePosts } from '../../model/selectors/posts';
 import { PostCard } from '../PostCard/PostCard';
 import { PostsPageSkeletons } from '../PostsPageSkeletons/PostsPageSkeletons';
 import { PostsPageFilters } from '../PostsPageFilters/PostsPageFilters';
@@ -20,7 +20,6 @@ const reducers: ReducersList = {
 
 const PostsPage = memo(() => {
     const isLoading = useSelector(getPostsPageIsLoading);
-    const inited = useSelector(getPostsPageInited);
     const dispatch = useAppDispatch();
     const [searchParams] = useSearchParams();
 
@@ -40,17 +39,17 @@ const PostsPage = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            {isLoading ? (
-                <PostsPageSkeletons />
-            )
-                : (
-                    <Page>
-                        <VStack max gap="32">
-                            <PostsPageFilters />
-                            {postsList}
-                        </VStack>
-                    </Page>
-                )}
+            {/* {isLoading ? ( */}
+            {/*    <PostsPageSkeletons /> */}
+            {/* ) */}
+            {/*    : ( */}
+            <Page onScrollEnd={onLoadNextPart}>
+                <VStack max gap="32">
+                    <PostsPageFilters />
+                    {postsList}
+                </VStack>
+            </Page>
+            {/* )} */}
         </DynamicModuleLoader>
     );
 });
