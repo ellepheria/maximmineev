@@ -1,8 +1,8 @@
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit';
-import { adminReducers } from '../../../../entities/Admin/model/slice/adminSlice';
+import { adminReducers } from 'entities/Admin/model/slice/adminSlice';
+import { $api } from 'shared/api/api';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
-import { $api } from '../../../../shared/api/api';
 
 export function createReduxStore(
     initialState?: StateSchema,
@@ -36,6 +36,4 @@ export function createReduxStore(
     return store;
 }
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
