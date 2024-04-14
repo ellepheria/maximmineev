@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Post } from 'entities/Post';
+import { SortOrder } from 'shared/types/sortOptions';
 import { fetchPosts } from '../services/fetchPosts/fetchPosts';
 import { PostsPageSchema } from '../types/posts';
-import { SortOrder } from '../../../../shared/types/sortOptions';
 import { PostSortField } from '../consts/postsPageConsts';
 
 const initialState: PostsPageSchema = {
@@ -10,7 +10,7 @@ const initialState: PostsPageSchema = {
     error: undefined,
     posts: [],
 
-    order: 'asc',
+    order: 'desc',
     page: 1,
     search: '',
     sort: PostSortField.TITLE,
@@ -35,6 +35,10 @@ export const postsPageSlice = createSlice({
         },
         setSearch: (state, action: PayloadAction<string>) => {
             state.search = action.payload;
+        },
+        initState: (state) => {
+            state.limit = 3;
+            state._inited = true;
         },
     },
     extraReducers: (builder) => {
