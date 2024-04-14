@@ -2,18 +2,41 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Post } from 'entities/Post';
 import { fetchPosts } from '../services/fetchPosts/fetchPosts';
 import { PostsPageSchema } from '../types/posts';
+import { SortOrder } from '../../../../shared/types/sortOptions';
+import { PostSortField } from '../consts/postsPageConsts';
 
 const initialState: PostsPageSchema = {
     isLoading: false,
     error: undefined,
     posts: [],
+
+    order: 'asc',
+    page: 1,
+    search: '',
+    sort: PostSortField.TITLE,
+    hasMore: true,
+    limit: 3,
+
     _inited: false,
 };
 
 export const postsPageSlice = createSlice({
     name: 'postsPage',
     initialState,
-    reducers: {},
+    reducers: {
+        setPage: (state, action: PayloadAction<number>) => {
+            state.page = action.payload;
+        },
+        setOrder: (state, action: PayloadAction<SortOrder>) => {
+            state.order = action.payload;
+        },
+        setSort: (state, action: PayloadAction<PostSortField>) => {
+            state.sort = action.payload;
+        },
+        setSearch: (state, action: PayloadAction<string>) => {
+            state.search = action.payload;
+        },
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchPosts.pending, (state) => {
