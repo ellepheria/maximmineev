@@ -1,29 +1,32 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback, useMemo } from 'react';
+import React, {
+    memo, useCallback, useMemo, useState,
+} from 'react';
 import { HStack, VStack } from 'shared/ui/Stack';
 import Input from 'shared/ui/Input/Input';
 import { Button } from 'shared/ui/Button/Button';
 import { Text } from 'shared/ui/Text/Text';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './TextBlockAdder.module.scss';
+import { createPostActions } from '../../model/slice/createPostSlice';
+import { PostBlockType } from '../../../Post/model/types/post';
 
 interface TextBlockAdderProps {
     className?: string;
-    title: string;
-    setTitle: (value: string) => void;
-    paragraphs: string[];
-    setParagraphs: (values: string[]) => void;
-    addTextBlock: () => void;
+    currentIndex: number;
+    setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const TextBlockAdder = memo((props: TextBlockAdderProps) => {
     const {
         className,
-        title,
-        setTitle,
-        paragraphs,
-        setParagraphs,
-        addTextBlock,
+        setCurrentIndex,
+        currentIndex,
     } = props;
+    const dispatch = useAppDispatch();
+
+    const [title, setTitle] = useState('');
+    const [paragraphs, setParagraphs] = useState<string[]>([]);
 
     const addParagraph = useCallback(() => {
         setParagraphs([...paragraphs, '']);
@@ -32,7 +35,6 @@ export const TextBlockAdder = memo((props: TextBlockAdderProps) => {
     const onChangeParagraph = useCallback((value: string, index: number) => {
         const newItems = [...paragraphs];
         newItems[index] = value;
-        console.log(value);
         setParagraphs(newItems);
     }, [paragraphs, setParagraphs]);
 
@@ -41,6 +43,16 @@ export const TextBlockAdder = memo((props: TextBlockAdderProps) => {
         newParagraphs.pop();
         setParagraphs(newParagraphs);
     }, [paragraphs, setParagraphs]);
+
+    const addTextBlock = useCallback(() => {
+        dispatch(createPostActions.addBlock({
+            id: currentIndex.toString(),
+            type: PostBlockType.TEXT,
+            title,
+            paragraphs,
+        }));
+        setCurrentIndex((prev) => prev + 1);
+    }, [currentIndex, dispatch, paragraphs, setCurrentIndex, title]);
 
     const onAddBlock = useCallback(() => {
         addTextBlock();
