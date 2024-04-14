@@ -5,7 +5,6 @@ import {
 import { VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 import { ButtonTabs } from 'shared/ui/ButtonTabs/ButtonTabs';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './CreatePostFormBlocks.module.scss';
 import { PostBlockType } from '../../../Post/model/types/post';
 import { CodeBlockAdder } from '../CodeBlockAdder/CodeBlockAdder';
@@ -13,7 +12,6 @@ import { ImageBlockAdder } from '../ImageBlockAdder/ImageBlockAdder';
 import { LinkBlockAdder } from '../LinkBlockAdder/LinkBlockAdder';
 import { ListBlockAdder } from '../ListBlockAdder/ListBlockAdder';
 import { TextBlockAdder } from '../TextBlockAdder/TextBlockAdder';
-import { createPostActions } from '../../model/slice/createPostSlice';
 
 interface CreatePostFormBlocksProps {
     className?: string;
@@ -25,147 +23,54 @@ export const CreatePostFormBlocks = memo((props: CreatePostFormBlocksProps) => {
     const {
         className,
     } = props;
-    const dispatch = useAppDispatch();
     const [blockType, setBlockType] = useState(PostBlockType.TEXT);
-    const [code, setCode] = useState('');
-    const [image, setImage] = useState('');
-    const [imageTitle, setImageTitle] = useState('');
-    const [imageAlt, setImageAlt] = useState('');
-    const [linkTitle, setLinkTitle] = useState('');
-    const [linkHref, setLinkHref] = useState('');
-    const [listTitle, setListTitle] = useState('');
-    const [listItems, setListItems] = useState<string[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [title, setTitle] = useState('');
-    const [paragraphs, setParagraphs] = useState<string[]>([]);
 
     const onChangeBlockType = useCallback((value: string) => {
         setBlockType(value as PostBlockType);
     }, []);
-
-    const addCodeBlock = useCallback(() => {
-        dispatch(createPostActions.addBlock({
-            id: currentIndex.toString(),
-            type: PostBlockType.CODE,
-            code,
-        }));
-        setCurrentIndex((prev) => prev + 1);
-    }, [code, currentIndex, dispatch]);
-
-    const addLinkBlock = useCallback(() => {
-        dispatch(createPostActions.addBlock({
-            id: currentIndex.toString(),
-            type: PostBlockType.LINK,
-            link: linkHref,
-            text: linkTitle,
-        }));
-        setCurrentIndex((prev) => prev + 1);
-    }, [currentIndex, dispatch, linkHref, linkTitle]);
-
-    const addListBlock = useCallback(() => {
-        dispatch(createPostActions.addBlock({
-            id: currentIndex.toString(),
-            type: PostBlockType.LIST,
-            items: listItems,
-            title: listTitle,
-        }));
-        setCurrentIndex((prev) => prev + 1);
-    }, [currentIndex, dispatch, listItems, listTitle]);
-
-    const addImageBlock = useCallback(() => {
-        dispatch(createPostActions.addBlock({
-            id: currentIndex.toString(),
-            type: PostBlockType.IMAGE,
-            title: imageTitle,
-            alt: imageAlt,
-            src: image,
-        }));
-        setCurrentIndex((prev) => prev + 1);
-    }, [currentIndex, dispatch, image, imageAlt, imageTitle]);
-
-    const addTextBlock = useCallback(() => {
-        dispatch(createPostActions.addBlock({
-            id: currentIndex.toString(),
-            type: PostBlockType.TEXT,
-            title,
-            paragraphs,
-        }));
-        setCurrentIndex((prev) => prev + 1);
-    }, [currentIndex, dispatch, paragraphs, title]);
 
     const renderBlockAdder = useMemo(() => {
         switch (blockType) {
         case PostBlockType.CODE:
             return (
                 <CodeBlockAdder
-                    code={code}
-                    setCode={setCode}
-                    addCodeBlock={addCodeBlock}
+                    currentIndex={currentIndex}
+                    setCurrentIndex={setCurrentIndex}
                 />
             );
         case PostBlockType.IMAGE:
             return (
                 <ImageBlockAdder
-                    image={image}
-                    setImage={setImage}
-                    addImageBlock={addImageBlock}
-                    imageAlt={imageAlt}
-                    imageTitle={imageTitle}
-                    setImageAlt={setImageAlt}
-                    setImageTitle={setImageTitle}
+                    setCurrentIndex={setCurrentIndex}
+                    currentIndex={currentIndex}
                 />
             );
         case PostBlockType.LINK:
             return (
                 <LinkBlockAdder
-                    linkTitle={linkTitle}
-                    setLinkTitle={setLinkTitle}
-                    linkHref={linkHref}
-                    setLinkHref={setLinkHref}
-                    addLinkBlock={addLinkBlock}
+                    setCurrentIndex={setCurrentIndex}
+                    currentIndex={currentIndex}
                 />
             );
         case PostBlockType.LIST:
             return (
                 <ListBlockAdder
-                    listItems={listItems}
-                    listTitle={listTitle}
-                    setListTitle={setListTitle}
-                    addListBlock={addListBlock}
-                    setListItems={setListItems}
+                    setCurrentIndex={setCurrentIndex}
+                    currentIndex={currentIndex}
                 />
             );
         case PostBlockType.TEXT:
             return (
                 <TextBlockAdder
-                    title={title}
-                    paragraphs={paragraphs}
-                    setParagraphs={setParagraphs}
-                    setTitle={setTitle}
-                    addTextBlock={addTextBlock}
+                    setCurrentIndex={setCurrentIndex}
+                    currentIndex={currentIndex}
                 />
             );
         default:
             return null;
         }
-    }, [
-        addCodeBlock,
-        addImageBlock,
-        addLinkBlock,
-        addListBlock,
-        addTextBlock,
-        blockType,
-        code,
-        image,
-        imageAlt,
-        imageTitle,
-        linkHref,
-        linkTitle,
-        listItems,
-        listTitle,
-        paragraphs,
-        title,
-    ]);
+    }, [blockType, currentIndex]);
 
     return (
         <VStack max gap="16" className={classNames(cls.CreatePostFormBlocks, {}, [className])}>

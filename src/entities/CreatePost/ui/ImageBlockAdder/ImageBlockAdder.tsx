@@ -1,33 +1,42 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import Input from 'shared/ui/Input/Input';
 import { HStack, VStack } from 'shared/ui/Stack';
 import { Button } from 'shared/ui/Button/Button';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ImageBlockAdder.module.scss';
+import { createPostActions } from '../../model/slice/createPostSlice';
+import { PostBlockType } from '../../../Post/model/types/post';
 
 interface ImageBlockAdderProps {
     className?: string;
-    image: string;
-    setImage: (value: string) => void;
-    imageTitle: string;
-    setImageTitle: (value: string) => void;
-    imageAlt: string;
-    setImageAlt: (value: string) => void;
-    addImageBlock: () => void;
+    currentIndex: number;
+    setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
 export const ImageBlockAdder = memo((props: ImageBlockAdderProps) => {
     const {
         className,
-        image,
-        setImage,
-        addImageBlock,
-        imageAlt,
-        setImageAlt,
-        setImageTitle,
-        imageTitle,
+        setCurrentIndex,
+        currentIndex,
     } = props;
+    const dispatch = useAppDispatch();
+
+    const [image, setImage] = useState('');
+    const [imageTitle, setImageTitle] = useState('');
+    const [imageAlt, setImageAlt] = useState('');
+
+    const addImageBlock = useCallback(() => {
+        dispatch(createPostActions.addBlock({
+            id: currentIndex.toString(),
+            type: PostBlockType.IMAGE,
+            title: imageTitle,
+            alt: imageAlt,
+            src: image,
+        }));
+        setCurrentIndex((prev) => prev + 1);
+    }, [currentIndex, dispatch, image, imageAlt, imageTitle, setCurrentIndex]);
 
     const onAddBlock = useCallback(() => {
         addImageBlock();
