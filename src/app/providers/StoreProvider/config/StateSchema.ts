@@ -7,9 +7,11 @@ import { ProjectsPageSchema } from 'pages/Projects';
 import { PostsPageSchema } from 'pages/PostsPage/model/types/posts';
 import { PostDetailsSchema } from 'entities/Post';
 import { CreatePostSchema } from 'entities/CreatePost/model/types/createPost';
+import { UISchema } from 'features/ui/model/types/UISchema';
 
 export interface StateSchema {
 	admin: AdminSchema;
+	ui: UISchema;
 
 	// async reducers
 	project?: ProjectSchema;
