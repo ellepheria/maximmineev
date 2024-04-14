@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Post } from 'entities/Post';
+import { SortOrder } from 'shared/types/sortOptions';
 import { fetchPosts } from '../services/fetchPosts/fetchPosts';
 import { PostsPageSchema } from '../types/posts';
-import { SortOrder } from '../../../../shared/types/sortOptions';
 import { PostSortField } from '../consts/postsPageConsts';
 
 const initialState: PostsPageSchema = {
