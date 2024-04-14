@@ -10,7 +10,7 @@ const initialState: PostsPageSchema = {
     error: undefined,
     posts: [],
 
-    order: 'asc',
+    order: 'desc',
     page: 1,
     search: '',
     sort: PostSortField.TITLE,
@@ -35,6 +35,10 @@ export const postsPageSlice = createSlice({
         },
         setSearch: (state, action: PayloadAction<string>) => {
             state.search = action.payload;
+        },
+        initState: (state) => {
+            state.limit = 3;
+            state._inited = true;
         },
     },
     extraReducers: (builder) => {
