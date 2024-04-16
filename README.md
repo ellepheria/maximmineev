@@ -1,11 +1,11 @@
-    my website
+my website
 
-`npm i`
+    npm i
 
 Для локальной разработки с бэком:
 
-`npm i`
+    npm i
 
-`npm start`
+    npm start
 
-`npm run start:dev:server`
+    npm run start:dev:server
