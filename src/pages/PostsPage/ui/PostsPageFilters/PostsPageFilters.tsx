@@ -29,7 +29,7 @@ export const PostsPageFilters = memo((props: PostsPageFiltersProps) => {
     const search = useSelector(getPostsPageSearch);
 
     const fetchData = useCallback(() => {
-        dispatch(fetchPosts());
+        dispatch(fetchPosts({ replace: true }));
     }, [dispatch]);
 
     const debouncedFetchData = useDebounce(fetchData, 500);

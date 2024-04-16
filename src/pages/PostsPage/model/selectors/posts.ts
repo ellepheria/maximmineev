@@ -9,6 +9,6 @@ export const getPostsPageSortField = (state: StateSchema) => state.postsPage?.so
 export const getPostsPageSearch = (state: StateSchema) => state.postsPage?.search || '';
 export const getPostsPagePosts = (state: StateSchema) => state.postsPage?.posts || [];
 export const getPostsPageInited = (state: StateSchema) => state.postsPage?.posts || false;
-export const getPostsPageNum = (state: StateSchema) => state.postsPage?.page || 1;
+export const getPostsPageNum = (state: StateSchema) => state.postsPage?.page || 0;
 export const getPostsPageLimit = (state: StateSchema) => state.postsPage?.limit || 9;
 export const getPostsPageHasMore = (state: StateSchema) => state.postsPage?.hasMore;

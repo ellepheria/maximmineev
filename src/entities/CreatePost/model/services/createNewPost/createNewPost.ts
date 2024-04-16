@@ -32,7 +32,7 @@ export const createNewPost = createAsyncThunk<
                 throw new Error();
             }
 
-            dispatch(fetchPosts());
+            dispatch(fetchPosts({ replace: true }));
             return undefined;
         } catch (e) {
             return rejectWithValue('error');

@@ -32,7 +32,7 @@ export const initPostsPage = createAsyncThunk<
             }
 
             dispatch(postsPageActions.initState());
-            dispatch(fetchPosts());
+            dispatch(fetchPosts({ replace: true }));
         }
     },
 );
