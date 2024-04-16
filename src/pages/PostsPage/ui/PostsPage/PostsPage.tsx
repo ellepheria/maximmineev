@@ -23,6 +23,7 @@ const PostsPage = memo(() => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
+        console.log('scroll');
         dispatch(fetchNextPostsPage());
     }, [dispatch]);
 
