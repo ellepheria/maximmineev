@@ -8,8 +8,8 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { StateSchema } from 'app/providers/StoreProvider/config/StateSchema';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { getUIScrollByPath } from 'features/ui/model/selectors/ui';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import { getUIScrollByPath } from 'features/ui/model/selectors/ui';
 import { uiActions } from 'features/ui/model/slice/uiSlice';
 import cls from './Page.module.scss';
 

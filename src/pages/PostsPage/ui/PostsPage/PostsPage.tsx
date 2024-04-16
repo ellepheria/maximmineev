@@ -9,10 +9,9 @@ import { useSearchParams } from 'react-router-dom';
 import { postsPageReducer } from '../../model/slice/postsPageSlice';
 import { getPostsPageIsLoading, getPostsPagePosts } from '../../model/selectors/posts';
 import { PostCard } from '../PostCard/PostCard';
-import { PostsPageSkeletons } from '../PostsPageSkeletons/PostsPageSkeletons';
 import { PostsPageFilters } from '../PostsPageFilters/PostsPageFilters';
-import { fetchNextPostsPage } from '../../model/services/fetchNextPostsPage/fetchNextPostsPage';
 import { initPostsPage } from '../../model/services/initPostsPage/initPostsPage';
+import { fetchNextPostsPage } from '../../model/services/fetchNextPostsPage/fetchNextPostsPage';
 
 const reducers: ReducersList = {
     postsPage: postsPageReducer,
@@ -39,17 +38,12 @@ const PostsPage = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            {/* {isLoading ? ( */}
-            {/*    <PostsPageSkeletons /> */}
-            {/* ) */}
-            {/*    : ( */}
             <Page onScrollEnd={onLoadNextPart}>
                 <VStack max gap="32">
                     <PostsPageFilters />
                     {postsList}
                 </VStack>
             </Page>
-            {/* )} */}
         </DynamicModuleLoader>
     );
 });

@@ -3,6 +3,7 @@ import { PostSortField } from '../consts/postsPageConsts';
 
 export const getPostsPageIsLoading = (state: StateSchema) => state.postsPage?.isLoading || false;
 export const getPostsPageError = (state: StateSchema) => state.postsPage?.error || '';
+export const getPostsPageData = (state: StateSchema) => state.postsPage?.posts || [];
 export const getPostsPageSortOrder = (state: StateSchema) => state.postsPage?.order || 'asc';
 export const getPostsPageSortField = (state: StateSchema) => state.postsPage?.sort || PostSortField.TITLE;
 export const getPostsPageSearch = (state: StateSchema) => state.postsPage?.search || '';
