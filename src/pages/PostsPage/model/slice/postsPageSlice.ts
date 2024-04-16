@@ -11,7 +11,7 @@ const initialState: PostsPageSchema = {
     posts: [],
 
     order: 'desc',
-    page: 1,
+    page: 0,
     search: '',
     sort: PostSortField.TITLE,
     hasMore: true,
@@ -38,6 +38,7 @@ export const postsPageSlice = createSlice({
         },
         initState: (state) => {
             state.limit = 3;
+            state.page = 0;
             state._inited = true;
         },
     },

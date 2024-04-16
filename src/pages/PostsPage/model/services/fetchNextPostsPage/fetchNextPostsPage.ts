@@ -18,7 +18,7 @@ export const fetchNextPostsPage = createAsyncThunk<
 
         if (hasMore && !isLoading) {
             dispatch(postsPageActions.setPage(page + 1));
-            dispatch(fetchPosts());
+            dispatch(fetchPosts({ replace: false }));
         }
     },
 );
