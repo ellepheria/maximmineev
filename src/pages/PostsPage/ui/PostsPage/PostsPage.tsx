@@ -12,6 +12,7 @@ import { PostCard } from '../PostCard/PostCard';
 import { PostsPageFilters } from '../PostsPageFilters/PostsPageFilters';
 import { initPostsPage } from '../../model/services/initPostsPage/initPostsPage';
 import { fetchNextPostsPage } from '../../model/services/fetchNextPostsPage/fetchNextPostsPage';
+import { PostsPageSkeletons } from '../PostsPageSkeletons/PostsPageSkeletons';
 
 const reducers: ReducersList = {
     postsPage: postsPageReducer,
@@ -23,7 +24,6 @@ const PostsPage = memo(() => {
     const [searchParams] = useSearchParams();
 
     const onLoadNextPart = useCallback(() => {
-        console.log('scroll');
         dispatch(fetchNextPostsPage());
     }, [dispatch]);
 
@@ -42,6 +42,7 @@ const PostsPage = memo(() => {
             <Page onScrollEnd={onLoadNextPart}>
                 <VStack max gap="32">
                     <PostsPageFilters />
+                    {isLoading && <PostsPageSkeletons />}
                     {postsList}
                 </VStack>
             </Page>
