@@ -1,7 +1,6 @@
-import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-
 import { classNames } from 'shared/lib/classNames/classNames';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Navbar } from '../widgets/NavBar';
 import { useTheme } from './providers/ThemeProvider';
 import { AppRouter } from './providers/router';
@@ -9,12 +8,11 @@ import { adminActions } from '../entities/Admin/model/slice/adminSlice';
 
 function App() {
     const { theme } = useTheme();
-    const dispatch = useDispatch();
+    const dispatch = useAppDispatch();
 
-    useEffect(() => {
+    useInitialEffect(() => {
         dispatch(adminActions.initAuthData());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    });
 
     return (
         <div className={classNames('app', {}, [theme])}>

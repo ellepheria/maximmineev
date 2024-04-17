@@ -3,8 +3,8 @@ import { memo, useCallback, useMemo } from 'react';
 import { PostSortField } from 'pages/PostsPage/model/consts/postsPageConsts';
 import { Select, SelectOption } from 'shared/ui/Select/Select';
 import { SortOrder } from 'shared/types/sortOptions';
+import { VStack } from 'shared/ui/Stack';
 import cls from './PostSortSelector.module.scss';
-import { VStack } from '../../../shared/ui/Stack';
 
 interface PostSortSelectorProps {
     className?: string;
