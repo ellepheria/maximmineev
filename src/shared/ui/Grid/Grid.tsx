@@ -17,6 +17,10 @@ export type GridAlignContent =
 
 export type GridAutoFlow = 'row' | 'column' | 'dense';
 
+export type GridColumnGap = '4' | '8' | '12' | '16' | '20' | '24' | '28' | '32' | '40' | '44' | '48';
+
+export type GridRowGap = '4' | '8' | '12' | '16' | '20' | '24' | '28' | '32' | '40' | '44' | '48';
+
 interface GridProps {
     className?: string;
     children: ReactNode;
@@ -27,6 +31,8 @@ interface GridProps {
     justifyContent?: GridJustifyContent;
     alignContent?: GridAlignContent;
     autoFlow?: GridAutoFlow;
+    rowGap?: GridRowGap;
+    columnGap?: GridColumnGap;
 }
 
 const mapGridJustifyToClassName: Record<GridJustify, string> = {
@@ -99,6 +105,34 @@ const mapAutoFlowToClassName: Record<GridAutoFlow, string> = {
     dense: cls.autoFlowDense,
 };
 
+const mapGridColumnGap: Record<GridColumnGap, string> = {
+    4: cls.columnGap4,
+    8: cls.columnGap8,
+    12: cls.columnGap12,
+    16: cls.columnGap16,
+    20: cls.columnGap20,
+    24: cls.columnGap24,
+    28: cls.columnGap28,
+    32: cls.columnGap32,
+    40: cls.columnGap40,
+    44: cls.columnGap44,
+    48: cls.columnGap48,
+};
+
+const mapGridRowGap: Record<GridRowGap, string> = {
+    4: cls.rowGap4,
+    8: cls.rowGap8,
+    12: cls.rowGap12,
+    16: cls.rowGap16,
+    20: cls.rowGap20,
+    24: cls.rowGap24,
+    28: cls.rowGap28,
+    32: cls.rowGap32,
+    40: cls.rowGap40,
+    44: cls.rowGap44,
+    48: cls.rowGap48,
+};
+
 export const Grid = memo((props: GridProps) => {
     const {
         className = '',
@@ -109,6 +143,8 @@ export const Grid = memo((props: GridProps) => {
         justifyContent = 'around',
         alignContent = 'around',
         autoFlow = 'dense',
+        rowGap = '4',
+        columnGap = '4',
         children,
     } = props;
 
@@ -121,6 +157,8 @@ export const Grid = memo((props: GridProps) => {
         mapColumnStartToClassName[colStart],
         mapColumnEndToClassName[colEnd],
         mapAutoFlowToClassName[autoFlow],
+        mapGridColumnGap[columnGap],
+        mapGridRowGap[rowGap],
     ];
 
     return (
