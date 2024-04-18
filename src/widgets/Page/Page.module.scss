@@ -1,10 +1,10 @@
 .Page {
-    flex-grow: 1;
+    display: grid;
+    grid-column-start: 4;
+    grid-column-end: 10;
     padding: 20px 20px 20px 45px;
     min-height: calc(100vh - var(--navbar-height) - 10px);
     overflow-y: auto;
-    flex-shrink: 100;
-    display: flex;
     max-width: 1000px;
     min-width: 600px;
 }

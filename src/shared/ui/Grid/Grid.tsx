@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import cls from './Grid.module.scss';
 
@@ -28,20 +28,32 @@ interface GridProps {
     autoFlow?: GridAutoFlow;
 }
 
+const mapGridJustifyToClassName: Record<GridJustify, string> = {
+    start: cls.justifyStart,
+    stretch: cls.justifyStretch,
+    center: cls.justifyCenter,
+    end: cls.justifyEnd,
+};
+
 export const Grid = memo((props: GridProps) => {
     const {
-        className,
-        colStart,
-        colEnd,
-        justify,
-        align,
-        justifyContent,
-        alignContent,
-        autoFlow,
+        className = '',
+        colStart = '4',
+        colEnd = '10',
+        justify = 'start',
+        align = 'start',
+        justifyContent = 'around',
+        alignContent = 'around',
+        autoFlow = 'dense',
     } = props;
 
+    const additional: string[] = [
+        className,
+        mapGridJustifyToClassName[justify],
+    ];
+
     return (
-        <div className={classNames(cls.Grid, {}, [className])}>
+        <div className={classNames(cls.Grid, {}, additional)}>
             /
         </div>
     );
