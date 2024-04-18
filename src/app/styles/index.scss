@@ -13,15 +13,13 @@
     background: var(--bg-color);
     min-height: 100vh;
     transition: var(--theme-transition);
-    display: flex;
-    flex-direction: column;
+    display: grid;
 }
 
 .content_page {
-    display: flex;
-    flex-grow: 1;
+    display: grid;
     width: 100%;
-    justify-content: center;
+    grid-template-columns: repeat(12, 1fr);
 }
 
 *[data-hint] {
