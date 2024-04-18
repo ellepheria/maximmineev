@@ -89,3 +89,111 @@
 .alignContentEvenly {
     align-content: space-evenly;
 }
+
+.columnStart1 {
+    grid-column-start: 1;
+}
+
+.columnStart2 {
+    grid-column-start: 2;
+}
+
+.columnStart3 {
+    grid-column-start: 3;
+}
+
+.columnStart4 {
+    grid-column-start: 4;
+}
+
+.columnStart5 {
+    grid-column-start: 5;
+}
+
+.columnStart6 {
+    grid-column-start: 6;
+}
+
+.columnStart7 {
+    grid-column-start: 7;
+}
+
+.columnStart8 {
+    grid-column-start: 8;
+}
+
+.columnStart9 {
+    grid-column-start: 9;
+}
+
+.columnStart10 {
+    grid-column-start: 10;
+}
+
+.columnStart11 {
+    grid-column-start: 11;
+}
+
+.columnStart12 {
+    grid-column-start: 12;
+}
+
+.columnEnd1 {
+    grid-column-end: 1;
+}
+
+.columnEnd2 {
+    grid-column-end: 2;
+}
+
+.columnEnd3 {
+    grid-column-end: 3;
+}
+
+.columnEnd4 {
+    grid-column-end: 4;
+}
+
+.columnEnd5 {
+    grid-column-end: 5;
+}
+
+.columnEnd6 {
+    grid-column-end: 6;
+}
+
+.columnEnd7 {
+    grid-column-end: 7;
+}
+
+.columnEnd8 {
+    grid-column-end: 8;
+}
+
+.columnEnd9 {
+    grid-column-end: 9;
+}
+
+.columnEnd10 {
+    grid-column-end: 10;
+}
+
+.columnEnd11 {
+    grid-column-end: 11;
+}
+
+.columnEnd12 {
+    grid-column-end: 12;
+}
+
+.autoFlowColumn {
+    grid-auto-flow: column;
+}
+
+.autoFlowRow {
+    grid-auto-flow: row;
+}
+
+.autoFlowDense {
+    grid-auto-flow: dense;
+}
