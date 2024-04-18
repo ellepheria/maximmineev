@@ -1,5 +1,5 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { memo, ReactNode } from 'react';
 import cls from './Grid.module.scss';
 
 export type Column =
@@ -19,6 +19,7 @@ export type GridAutoFlow = 'row' | 'column' | 'dense';
 
 interface GridProps {
     className?: string;
+    children: ReactNode;
     colStart?: Column;
     colEnd?: Column;
     justify?: GridJustify;
@@ -52,6 +53,52 @@ const mapGridJustifyContentToClassName: Record<GridJustifyContent, string> = {
     evenly: cls.justifyContentEvenly,
 };
 
+const mapGridAlignContentToClassName: Record<GridAlignContent, string> = {
+    start: cls.alignContentStart,
+    stretch: cls.alignContentStretch,
+    center: cls.alignContentCenter,
+    end: cls.alignContentEnd,
+    around: cls.alignContentAround,
+    between: cls.alignContentBetween,
+    evenly: cls.alignContentEvenly,
+};
+
+const mapColumnStartToClassName: Record<Column, string> = {
+    1: cls.columnStart1,
+    2: cls.columnStart2,
+    3: cls.columnStart3,
+    4: cls.columnStart4,
+    5: cls.columnStart5,
+    6: cls.columnStart6,
+    7: cls.columnStart7,
+    8: cls.columnStart8,
+    9: cls.columnStart9,
+    10: cls.columnStart10,
+    11: cls.columnStart11,
+    12: cls.columnStart12,
+};
+
+const mapColumnEndToClassName: Record<Column, string> = {
+    1: cls.columnEnd1,
+    2: cls.columnEnd2,
+    3: cls.columnEnd3,
+    4: cls.columnEnd4,
+    5: cls.columnEnd5,
+    6: cls.columnEnd6,
+    7: cls.columnEnd7,
+    8: cls.columnEnd8,
+    9: cls.columnEnd9,
+    10: cls.columnEnd10,
+    11: cls.columnEnd11,
+    12: cls.columnEnd12,
+};
+
+const mapAutoFlowToClassName: Record<GridAutoFlow, string> = {
+    column: cls.autoFlowColumn,
+    row: cls.autoFlowRow,
+    dense: cls.autoFlowDense,
+};
+
 export const Grid = memo((props: GridProps) => {
     const {
         className = '',
@@ -62,6 +109,7 @@ export const Grid = memo((props: GridProps) => {
         justifyContent = 'around',
         alignContent = 'around',
         autoFlow = 'dense',
+        children,
     } = props;
 
     const additional: string[] = [
@@ -69,11 +117,15 @@ export const Grid = memo((props: GridProps) => {
         mapGridJustifyToClassName[justify],
         mapGridAlignToClassName[align],
         mapGridJustifyContentToClassName[justifyContent],
+        mapGridAlignContentToClassName[alignContent],
+        mapColumnStartToClassName[colStart],
+        mapColumnEndToClassName[colEnd],
+        mapAutoFlowToClassName[autoFlow],
     ];
 
     return (
         <div className={classNames(cls.Grid, {}, additional)}>
-            /
+            {children}
         </div>
     );
 });

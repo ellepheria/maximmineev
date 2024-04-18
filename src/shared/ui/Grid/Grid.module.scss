@@ -1,3 +1,91 @@
 .Grid {
     display: grid;
 }
+
+.justifyStart {
+    justify-items: start;
+}
+
+.justifyStretch {
+    justify-items: stretch;
+}
+
+.justifyCenter {
+    justify-items: center;
+}
+
+.justifyEnd {
+    justify-items: end;
+}
+
+.alignStart {
+    align-items: start;
+}
+
+.alignStretch {
+    align-items: stretch;
+}
+
+.alignCenter {
+    align-items: center;
+}
+
+.alignEnd {
+    align-items: end;
+}
+
+.justifyContentStart {
+    justify-content: start;
+}
+
+.justifyContentStretch {
+    justify-content: stretch;
+}
+
+.justifyContentCenter {
+    justify-content: center;
+}
+
+.justifyContentEnd {
+    justify-content: end;
+}
+
+.justifyContentAround {
+    justify-content: space-around;
+}
+
+.justifyContentBetween {
+    justify-content: space-between;
+}
+
+.justifyContentEvenly {
+    justify-content: space-evenly;
+}
+
+.alignContentStart {
+    align-content: start;
+}
+
+.alignContentStretch {
+    align-content: stretch;
+}
+
+.alignContentCenter {
+    align-content: center;
+}
+
+.alignContentEnd {
+    align-content: end;
+}
+
+.alignContentAround {
+    align-content: space-around;
+}
+
+.alignContentBetween {
+    align-content: space-between;
+}
+
+.alignContentEvenly {
+    align-content: space-evenly;
+}
