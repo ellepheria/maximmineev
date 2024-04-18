@@ -35,6 +35,23 @@ const mapGridJustifyToClassName: Record<GridJustify, string> = {
     end: cls.justifyEnd,
 };
 
+const mapGridAlignToClassName: Record<GridAlign, string> = {
+    start: cls.alignStart,
+    stretch: cls.alignStretch,
+    center: cls.alignCenter,
+    end: cls.alignEnd,
+};
+
+const mapGridJustifyContentToClassName: Record<GridJustifyContent, string> = {
+    start: cls.justifyContentStart,
+    stretch: cls.justifyContentStretch,
+    center: cls.justifyContentCenter,
+    end: cls.justifyContentEnd,
+    around: cls.justifyContentAround,
+    between: cls.justifyContentBetween,
+    evenly: cls.justifyContentEvenly,
+};
+
 export const Grid = memo((props: GridProps) => {
     const {
         className = '',
@@ -50,6 +67,8 @@ export const Grid = memo((props: GridProps) => {
     const additional: string[] = [
         className,
         mapGridJustifyToClassName[justify],
+        mapGridAlignToClassName[align],
+        mapGridJustifyContentToClassName[justifyContent],
     ];
 
     return (
