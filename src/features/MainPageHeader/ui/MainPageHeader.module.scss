@@ -1,29 +1,102 @@
-.grid {
-    width: 100%;
-    grid-column-start: 1;
-    grid-column-end: 13;
-    grid-template-columns: repeat(2, auto);
-    grid-template-rows: 1fr 2fr;
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .title {
+        align-self: end;
+        justify-self: center;
+    }
+
+    .title h2 {
+        font: var(--font-m) !important;
+    }
+
+    .text {
+        grid-column: 1;
+        max-width: 90vw;
+        margin-bottom: 4px;
+    }
+
+    .text p {
+        font: var(--font-s);
+        text-indent: 25px;
+        line-height: 1.2 !important;
+    }
+
+    .photo {
+        justify-self: center;
+        width: 80vw;
+        object-fit: cover;
+        aspect-ratio: 1 / 1;
+        border-radius: 12px;
+        grid-row-start: 1;
+        grid-column: 1;
+    }
+
+    .description {
+        max-width: 100%;
+    }
 }
 
-.title {
-    align-self: end;
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: 1fr 2fr;
+    }
+
+    .title {
+        align-self: end;
+    }
+
+    .text {
+        grid-column: 1;
+    }
+
+    .photo {
+        height: 280px;
+        width: 240px;
+        object-fit: cover;
+        border-radius: 12px;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column: 2;
+    }
+
+    .description {
+        max-width: 300px;
+    }
 }
 
-.text {
-    grid-column: 1;
-}
+@media (min-width: 1280px) {
+    .grid {
+        width: 100%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: 1fr 2fr;
+    }
 
-.photo {
-    height: 280px;
-    width: 240px;
-    object-fit: cover;
-    border-radius: 12px;
-    grid-row-start: 1;
-    grid-row-end: 4;
-    grid-column: 2;
-}
+    .title {
+        align-self: end;
+    }
 
-.description {
-    max-width: 500px;
+    .text {
+        grid-column: 1;
+    }
+
+    .photo {
+        height: 280px;
+        width: 240px;
+        object-fit: cover;
+        border-radius: 12px;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        grid-column: 2;
+    }
+
+    .description {
+        max-width: 500px;
+    }
 }

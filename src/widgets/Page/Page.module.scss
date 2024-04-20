@@ -2,11 +2,35 @@
     display: grid;
     min-height: calc(100vh - var(--navbar-height) - 10px);
     overflow-y: auto;
-    width: 1000px;
-    padding: 20px 0;
+}
 
-    grid-template-columns: repeat(12, 65px);
-    grid-column-gap: 20px;
+@media (max-width: 768px) {
+    .Page {
+        width: 100%;
+        padding: 20px;
+
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .Page {
+        width: 680px;
+        padding: 20px 0;
+
+        grid-template-columns: repeat(8, 65px);
+        grid-column-gap: 20px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .Page {
+        width: 1000px;
+        padding: 20px 0;
+
+        grid-template-columns: repeat(12, 65px);
+        grid-column-gap: 20px;
+    }
 }
 
 .center {

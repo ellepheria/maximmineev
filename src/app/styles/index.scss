@@ -25,7 +25,24 @@ html {
     display: grid;
     width: 100%;
     justify-content: center;
-    grid-template-columns: 1000px;
+}
+
+@media (max-width: 768px) {
+    .content_page {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .content_page {
+        grid-template-columns: 680px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .content_page {
+        grid-template-columns: 1000px;
+    }
 }
 
 *[data-hint] {
