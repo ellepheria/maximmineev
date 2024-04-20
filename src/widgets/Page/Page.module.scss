@@ -1,12 +1,11 @@
 .Page {
     display: grid;
-    padding: 20px;
     min-height: calc(100vh - var(--navbar-height) - 10px);
     overflow-y: auto;
-    overflow-x: visible;
-    max-width: 1000px;
+    width: 1000px;
+    padding: 20px 0;
 
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 65px);
     grid-column-gap: 20px;
 }
 
