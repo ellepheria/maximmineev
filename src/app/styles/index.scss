@@ -27,9 +27,9 @@ html {
     justify-content: center;
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 768px) {
     .content_page {
-        grid-template-columns: 1000px;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -39,9 +39,9 @@ html {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1280px) {
     .content_page {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1000px;
     }
 }
 

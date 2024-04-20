@@ -4,13 +4,12 @@
     overflow-y: auto;
 }
 
-@media (min-width: 1280px) {
+@media (max-width: 768px) {
     .Page {
-        width: 1000px;
-        padding: 20px 0;
+        width: 100%;
+        padding: 20px;
 
-        grid-template-columns: repeat(12, 65px);
-        grid-column-gap: 20px;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -24,12 +23,13 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1280px) {
     .Page {
-        width: 100%;
-        padding: 20px;
+        width: 1000px;
+        padding: 20px 0;
 
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(12, 65px);
+        grid-column-gap: 20px;
     }
 }
 
