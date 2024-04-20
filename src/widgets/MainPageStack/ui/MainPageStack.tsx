@@ -1,12 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { HStack } from 'shared/ui/Stack';
 import { Technologies } from 'entities/Project/model/types/project';
 import { TechnologiesStack } from 'features/TechnologiesStack';
-
-interface MainPageStackProps {
-    className?: string;
-}
+import { Grid } from 'shared/ui/Grid/Grid';
+import cls from './MainPageStack.module.scss';
 
 const technologies: Technologies[] = [
     Technologies.REACT,
@@ -19,19 +15,8 @@ const technologies: Technologies[] = [
     Technologies.PYTHON,
 ];
 
-export const MainPageStack = memo((props: MainPageStackProps) => {
-    const {
-        className,
-    } = props;
-
-    return (
-        <HStack
-            className={classNames('', {}, [className])}
-            align="center"
-            justify="center"
-            max
-        >
-            <TechnologiesStack technologies={technologies} title="Мой стек:" />
-        </HStack>
-    );
-});
+export const MainPageStack = memo(() => (
+    <Grid className={cls.grid}>
+        <TechnologiesStack technologies={technologies} title="Мой стек:" />
+    </Grid>
+));

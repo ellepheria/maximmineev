@@ -1,12 +1,12 @@
 .Page {
     display: grid;
-    grid-column-start: 4;
-    grid-column-end: 10;
-    padding: 20px 20px 20px 45px;
     min-height: calc(100vh - var(--navbar-height) - 10px);
     overflow-y: auto;
-    max-width: 1000px;
-    min-width: 600px;
+    width: 1000px;
+    padding: 20px 0;
+
+    grid-template-columns: repeat(12, 65px);
+    grid-column-gap: 20px;
 }
 
 .center {

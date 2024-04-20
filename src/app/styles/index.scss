@@ -3,6 +3,11 @@
 @import "themes/light";
 @import "themes/dark";
 
+html {
+    height: 100%;
+    width: 100%;
+}
+
 .app,
 .app_modal {
     font: var(--font-m);
@@ -19,7 +24,8 @@
 .content_page {
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(12, 1fr);
+    justify-content: center;
+    grid-template-columns: 1000px;
 }
 
 *[data-hint] {

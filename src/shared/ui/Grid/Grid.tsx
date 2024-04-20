@@ -3,7 +3,7 @@ import { memo, ReactNode } from 'react';
 import cls from './Grid.module.scss';
 
 export type Column =
-    '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12';
+    '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13';
 
 export type GridJustify = 'start' | 'end' | 'center' | 'stretch';
 
@@ -82,6 +82,7 @@ const mapColumnStartToClassName: Record<Column, string> = {
     10: cls.columnStart10,
     11: cls.columnStart11,
     12: cls.columnStart12,
+    13: cls.columnStart13,
 };
 
 const mapColumnEndToClassName: Record<Column, string> = {
@@ -97,6 +98,7 @@ const mapColumnEndToClassName: Record<Column, string> = {
     10: cls.columnEnd10,
     11: cls.columnEnd11,
     12: cls.columnEnd12,
+    13: cls.columnEnd13,
 };
 
 const mapAutoFlowToClassName: Record<GridAutoFlow, string> = {
@@ -136,12 +138,12 @@ const mapGridRowGap: Record<GridRowGap, string> = {
 export const Grid = memo((props: GridProps) => {
     const {
         className = '',
-        colStart = '4',
-        colEnd = '10',
+        colStart = '1',
+        colEnd = '13',
         justify = 'start',
         align = 'start',
         justifyContent = 'around',
-        alignContent = 'around',
+        alignContent = 'start',
         autoFlow = 'dense',
         rowGap = '4',
         columnGap = '4',

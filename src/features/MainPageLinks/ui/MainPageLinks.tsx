@@ -1,14 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Text } from 'shared/ui/Text/Text';
-import { VStack } from 'shared/ui/Stack';
 import { Link } from 'shared/types/Link';
+import { Grid } from 'shared/ui/Grid/Grid';
 import cls from './MainPageLinks.module.scss';
-
-interface MainPageLinksProps {
-    className?: string;
-}
 
 const links: Link[] = [
     { href: 'https://vk.com/mineevmaxim', title: 'VK' },
@@ -18,11 +13,7 @@ const links: Link[] = [
     { href: 'mailto:maksim.mineeff@gmail.com', title: 'EMAIL' },
 ];
 
-export const MainPageLinks = memo((props: MainPageLinksProps) => {
-    const {
-        className,
-    } = props;
-
+export const MainPageLinks = memo(() => {
     const linksList = links.map((link) => (
         <li className={cls.listItem} key={link.href}>
             <AppLink to={link.href} target="_blank">
@@ -32,11 +23,14 @@ export const MainPageLinks = memo((props: MainPageLinksProps) => {
     ));
 
     return (
-        <VStack max gap="16" className={classNames('', {}, [className])}>
+        <Grid
+            className={cls.grid}
+            justifyContent="start"
+        >
             <Text title="Ссылки:" />
             <ul>
                 {linksList}
             </ul>
-        </VStack>
+        </Grid>
     );
 });

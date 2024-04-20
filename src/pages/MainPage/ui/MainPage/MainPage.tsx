@@ -2,16 +2,19 @@ import { memo } from 'react';
 import { Page } from 'widgets/Page/Page';
 import { MainPageHeader } from 'features/MainPageHeader';
 import { MainPageStack } from 'widgets/MainPageStack';
-import { VStack } from 'shared/ui/Stack';
 import { MainPageLinks } from 'features/MainPageLinks';
+import { Grid } from 'shared/ui/Grid/Grid';
+import cls from './MainPage.module.scss';
 
 const MainPage = () => (
-    <Page>
-        <VStack max gap="32">
+    <Page center>
+        <Grid
+            className={cls.grid}
+        >
             <MainPageHeader />
             <MainPageLinks />
             <MainPageStack />
-        </VStack>
+        </Grid>
     </Page>
 );
 
