@@ -15,6 +15,17 @@
     margin-right: auto;
 }
 
+@media (max-width: 768px) {
+    .Navbar {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .links {
+        flex-direction: column;
+    }
+}
+
 .themeSwitcher {
     fill: var(--primary-color);
     margin-right: auto;
