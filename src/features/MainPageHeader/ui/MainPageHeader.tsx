@@ -1,4 +1,3 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import MainImage from 'shared/assets/images/main-photo.jpg';
 import { Text } from 'shared/ui/Text/Text';
@@ -12,13 +11,18 @@ const description: string[] = [
 ];
 
 export const MainPageHeader = memo(() => (
-    <Grid>
+    <Grid
+        className={cls.grid}
+    >
         <Text
             title="Привет! Меня зовут Максим"
+            className={cls.title}
         />
-        {description.map((block) => (
-            <Text text={block} key={block} />
-        ))}
+        <div className={cls.description}>
+            {description.map((block) => (
+                <Text text={block} key={block} className={cls.text} />
+            ))}
+        </div>
         <img src={MainImage} alt="main" className={cls.photo} />
     </Grid>
 ));

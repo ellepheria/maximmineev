@@ -1,8 +1,27 @@
+.grid {
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 13;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: 1fr 2fr;
+}
+
+.title {
+    align-self: end;
+}
+
+.text {
+    grid-column: 1;
+}
+
 .photo {
     height: 280px;
     width: 240px;
     object-fit: cover;
     border-radius: 12px;
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column: 2;
 }
 
 .description {
