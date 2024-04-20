@@ -4,6 +4,7 @@ import MainImage from 'shared/assets/images/main-photo.jpg';
 import { Text } from 'shared/ui/Text/Text';
 import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './MainPageHeader.module.scss';
+import { Grid } from '../../../shared/ui/Grid/Grid';
 
 interface MainPageHeaderProps {
     className?: string;
@@ -21,21 +22,14 @@ export const MainPageHeader = memo((props: MainPageHeaderProps) => {
     } = props;
 
     return (
-        <VStack max gap="32" className={classNames('', {}, [className])}>
-            <HStack max gap="32" justify="between">
-                <VStack
-                    className={cls.description}
-                    gap="16"
-                >
-                    <Text
-                        title="Привет! Меня зовут Максим"
-                    />
-                    {description.map((block) => (
-                        <Text text={block} key={block} />
-                    ))}
-                </VStack>
-                <img src={MainImage} alt="main" className={cls.photo} />
-            </HStack>
-        </VStack>
+        <Grid>
+            <Text
+                title="Привет! Меня зовут Максим"
+            />
+            {description.map((block) => (
+                <Text text={block} key={block} />
+            ))}
+            <img src={MainImage} alt="main" className={cls.photo} />
+        </Grid>
     );
 });

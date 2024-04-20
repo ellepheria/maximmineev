@@ -143,7 +143,7 @@ export const Grid = memo((props: GridProps) => {
         justify = 'start',
         align = 'start',
         justifyContent = 'around',
-        alignContent = 'around',
+        alignContent = 'start',
         autoFlow = 'dense',
         rowGap = '4',
         columnGap = '4',
