@@ -9,8 +9,6 @@ import cls from './MainPage.module.scss';
 const MainPage = () => (
     <Page center>
         <Grid
-            colStart="1"
-            colEnd="13"
             className={cls.grid}
         >
             <MainPageHeader />

@@ -138,8 +138,8 @@ const mapGridRowGap: Record<GridRowGap, string> = {
 export const Grid = memo((props: GridProps) => {
     const {
         className = '',
-        colStart = '4',
-        colEnd = '10',
+        colStart = '1',
+        colEnd = '13',
         justify = 'start',
         align = 'start',
         justifyContent = 'around',

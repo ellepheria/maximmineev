@@ -23,7 +23,10 @@ export const MainPageLinks = memo(() => {
     ));
 
     return (
-        <Grid>
+        <Grid
+            className={cls.grid}
+            justifyContent="start"
+        >
             <Text title="Ссылки:" />
             <ul>
                 {linksList}
