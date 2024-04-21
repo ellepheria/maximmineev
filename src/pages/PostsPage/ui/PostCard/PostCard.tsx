@@ -33,33 +33,32 @@ export const PostCard = memo((props: PostCardProps) => {
             max
             theme={CardTheme.CLEAR}
         >
-            <VStack max gap="16">
-                <HStack max className={cls.titleWrapper} justify="center">
-                    <Text title={post.title} />
-                </HStack>
-                <AppLink to={`${RoutePath.posts}/${post.id}`} theme={AppLinkTheme.CLEAR}>
-                    <HStack max className={cls.container}>
-                        <Tab className={`${cls.createdAt} ${cls.tab}`}>
-                            <Text text={post.createdAt} />
-                        </Tab>
-                        <img src={post.cover} alt="post cover" className={cls.cover} />
-                    </HStack>
-                </AppLink>
-                <Text
-                    title={post.subtitle}
-                    className={cls.subtitle}
+            <Text title={post.title} />
+            <AppLink to={`${RoutePath.posts}/${post.id}`} theme={AppLinkTheme.CLEAR}>
+                <Tab className={`${cls.createdAt} ${cls.tab}`}>
+                    <Text text={post.createdAt} />
+                </Tab>
+                <img src={post.cover} alt="post cover" className={cls.cover} />
+            </AppLink>
+            <Text
+                title={post.subtitle}
+                className={cls.subtitle}
+            />
+            {textBlock && (
+                <PostTextBlock
+                    block={{
+                        type: PostBlockType.TEXT,
+                        paragraphs: textBlock.paragraphs,
+                        id: textBlock.id,
+                    }}
+                    className={cls.description}
                 />
-                {textBlock && (
-                    <PostTextBlock block={textBlock} className={cls.description} />
-                )}
-                <HStack max justify="end" align="center">
-                    <AppLink to={`${RoutePath.posts}/${post.id}`} theme={AppLinkTheme.CLEAR}>
-                        <Button theme={ButtonTheme.INVERTED}>
-                            <Text text="Читать далее..." />
-                        </Button>
-                    </AppLink>
-                </HStack>
-            </VStack>
+            )}
+            <AppLink to={`${RoutePath.posts}/${post.id}`} theme={AppLinkTheme.CLEAR}>
+                <Button theme={ButtonTheme.INVERTED}>
+                    <Text text="Читать далее..." />
+                </Button>
+            </AppLink>
         </Card>
     );
 });

@@ -1,5 +1,15 @@
+.grid {
+    grid-template-columns: repeat(2, auto);
+}
+
 .label {
     margin-right: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.labelText p {
+    text-overflow: ellipsis;
 }
 
 .select {
@@ -8,9 +18,17 @@
     color: var(--primary-color);
     padding: 2px 10px 2px 2px;
     border: 1px solid var(--primary-color);
+    font: var(--font-m);
+    color: var(--secondary-color);
 }
 
 .option {
     color: var(--inverted-primary-color);
     background: var(--inverted-bg-color);
+}
+
+@media (max-width: 767px) {
+    .select {
+        font: var(--font-s);
+    }
 }
