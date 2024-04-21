@@ -9,11 +9,6 @@
     border-radius: 8px;
 }
 
-.content {
-    height: 100%;
-    padding: 12px;
-}
-
 .description {
     align-self: flex-end;
 }
@@ -51,20 +46,10 @@
 
 .createdAt {
     background: var(--bg-color);
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
 }
 
 .type {
     background: var(--bg-color);
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in;
 }
 
 @media (max-width: 768px) {
@@ -124,15 +109,123 @@
     .tabLink p {
         font: var(--font-m) !important;
     }
+
+    .type {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+    }
+
+    .createdAt {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+    }
 }
 
 @media (min-width: 768px) {
+    .ProjectCard {
+        padding: 16px 24px;
+    }
 
+    .grid {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: repeat(7, auto);
+        grid-gap: 12px;
+    }
+
+    .title {
+        grid-row: 5;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        text-align: center;
+        width: 100%;
+    }
+
+    .tab p {
+        font: var(--font-m) !important;
+    }
+
+    .cover {
+        width: 100%;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+
+    .coverContainer {
+        grid-row-start: 1;
+        grid-row-end: 5;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .description {
+        text-align: left;
+        grid-row: 6;
+        word-wrap: break-word;
+        text-indent: 25px;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .technologies {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+        grid-row: 7;
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .type {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+    }
+
+    .createdAt {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+    }
+
+    .tabText {
+        display: flex;
+    }
+
+    .tabLink {
+        grid-row: 8;
+        grid-column: 2;
+        justify-self: end;
+    }
+
+    .tabLink p {
+        font: var(--font-m) !important;
+    }
 }
 
 @media (min-width: 1280px) {
     .cover {
         width: 400px;
         max-height: 250px;
+    }
+
+    .createdAt {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .type {
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease-in;
     }
 }
