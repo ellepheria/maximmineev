@@ -39,17 +39,47 @@
 }
 
 .subtitle {
-    max-height: 50px;
     text-indent: 35px;
-}
-
-.subtitle p {
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .description {
     max-height: 150px;
     overflow-y: hidden;
     text-overflow: ellipsis;
+}
+
+.title {
+    text-indent: 35px;
+}
+
+.link {
+    align-self: end;
+}
+
+@media (max-width: 767px) {
+    .PostCard {
+        padding: 4px 12px 8px;
+    }
+
+    .title {
+        width: 100%;
+        text-indent: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardContainer {
+        gap: 0;
+    }
+
+    .link {
+        width: 100%;
+    }
+
+    .linkBtn {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
