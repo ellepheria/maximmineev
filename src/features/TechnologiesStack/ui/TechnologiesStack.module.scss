@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .TechnologiesStack {
         grid-template-rows: repeat(2, auto);
         grid-template-columns: 1fr;
@@ -29,7 +29,7 @@
 @media (min-width: 768px) {
     .TechnologiesStack {
         grid-column-start: 1;
-        grid-column-end: 13;
+        grid-column-end: 3;
         grid-auto-flow: column;
     }
 
@@ -48,8 +48,7 @@
         display: grid;
         grid-auto-flow: column;
         grid-template-rows: 1fr;
-        grid-column-gap: 16px;
-        justify-content: center;
+        grid-column-gap: 8px;
         align-content: center;
     }
 }
@@ -59,6 +58,7 @@
         grid-auto-flow: column;
         grid-column-gap: 16px;
         justify-content: center;
+        grid-column-gap: 16px;
     }
 
     .icon {

@@ -1,9 +1,9 @@
 import { memo, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/ui/Stack';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader';
+import { Grid } from 'shared/ui/Grid/Grid';
 import { fetchProjects } from '../../model/services/fetchProjects/fetchProjects';
 import {
     getProjectsInited,
@@ -13,6 +13,7 @@ import {
 import { ProjectPageSkeletons } from '../ProjectPageSkeletons/ProjectPageSkeletons';
 import { projectsPageReducer } from '../../model/slice/projectsPage';
 import { ProjectCard } from '../ProjectCard/ProjectCard';
+import cls from './ProjectList.module.scss';
 
 const reducers: ReducersList = {
     projectsPage: projectsPageReducer,
@@ -39,14 +40,17 @@ export const ProjectsList = memo(() => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            {isLoading ? (
-                <ProjectPageSkeletons />
-            )
-                : (
-                    <VStack max gap="32" align="center">
-                        {projectList}
-                    </VStack>
-                )}
+            <Grid className={cls.grid}>
+                {isLoading ? (
+                    <ProjectPageSkeletons />
+                )
+                    : (
+                        // eslint-disable-next-line react/jsx-no-useless-fragment
+                        <>
+                            { projectList }
+                        </>
+                    )}
+            </Grid>
         </DynamicModuleLoader>
     );
 });
