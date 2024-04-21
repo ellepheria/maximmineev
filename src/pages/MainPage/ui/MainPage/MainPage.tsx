@@ -13,7 +13,7 @@ const MainPage = () => (
         >
             <MainPageHeader />
             <MainPageLinks />
-            {/* <MainPageStack /> */}
+            <MainPageStack />
         </Grid>
     </Page>
 );

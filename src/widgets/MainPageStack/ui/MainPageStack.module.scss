@@ -1,4 +1,14 @@
-.grid {
-    grid-column: 2;
-    align-self: center;
+@media (max-width: 768px) {
+    .grid {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: start;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-column: 2;
+        align-self: center;
+    }
 }
