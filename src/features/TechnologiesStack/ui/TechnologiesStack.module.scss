@@ -24,21 +24,13 @@
         grid-template-columns: repeat(auto-fill, 40px);
         grid-gap: 8px;
     }
-
-    .container {
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 }
 
 @media (min-width: 768px) {
     .TechnologiesStack {
+        grid-column-start: 1;
+        grid-column-end: 13;
         grid-auto-flow: column;
-        grid-column-gap: 16px;
-        justify-content: center;
     }
 
     .title h2 {
@@ -52,9 +44,13 @@
         width: 32px;
     }
 
-    .container {
-        padding: 0;
-        margin: 0;
+    .iconsContainer {
+        display: grid;
+        grid-auto-flow: column;
+        grid-template-rows: 1fr;
+        grid-column-gap: 16px;
+        justify-content: center;
+        align-content: center;
     }
 }
 
@@ -75,9 +71,13 @@
         font-weight: bold !important;
         text-wrap: nowrap;
     }
+}
 
-    .container {
-        padding: 0;
-        margin: 0;
-    }
+
+.container {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
