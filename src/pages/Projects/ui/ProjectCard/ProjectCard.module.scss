@@ -6,10 +6,7 @@
 
 .cover {
     object-fit: cover;
-    width: 400px;
-    max-height: 250px;
     border-radius: 8px;
-    flex: 1 0 auto;
 }
 
 .content {
@@ -23,6 +20,8 @@
 
 .tab {
     background: var(--bg-color);
+    text-wrap: nowrap;
+    display: inline-block;
 }
 
 .tabLink {
@@ -66,4 +65,74 @@
     left: 8px;
     opacity: 0;
     transition: opacity 0.3s ease-in;
+}
+
+@media (max-width: 768px) {
+    .ProjectCard {
+        padding: 8px 16px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, auto);
+        grid-row-gap: 12px;
+    }
+
+    .title {
+        grid-row: 1;
+        text-align: center;
+        width: 100%;
+    }
+
+    .title h2 {
+        font: var(--font-m) !important;
+        font-weight: bold !important;
+    }
+
+    .tab p {
+        font: var(--font-s) !important;
+    }
+
+    .cover {
+        width: 100%;
+        grid-row: 2;
+    }
+
+    .imageWrapper {
+        width: 100%;
+    }
+
+    .description {
+        text-align: left;
+    }
+
+    .technologies {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .tabText {
+        display: flex;
+    }
+
+    .tabLink {
+        justify-self: end;
+    }
+
+    .tabLink p {
+        font: var(--font-m) !important;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1280px) {
+    .cover {
+        width: 400px;
+        max-height: 250px;
+    }
 }
