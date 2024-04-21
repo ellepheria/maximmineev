@@ -9,8 +9,8 @@ import {
 import { Tab } from 'shared/ui/Tab/Tab';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'app/providers/router/routeConfig';
+import { Grid } from 'shared/ui/Grid/Grid';
 import cls from './ProjectCard.module.scss';
-import { Grid } from '../../../../shared/ui/Grid/Grid';
 
 interface ProjectCardProps {
     className?: string;
@@ -53,7 +53,11 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
             className={classNames(cls.ProjectCard, {}, [className])}
         >
             <Grid className={cls.grid}>
-                <AppLink to={`${RoutePath.projects}/${project.id}`} theme={AppLinkTheme.CLEAR}>
+                <AppLink
+                    to={`${RoutePath.projects}/${project.id}`}
+                    theme={AppLinkTheme.CLEAR}
+                    className={cls.coverContainer}
+                >
                     <div className={cls.imageWrapper}>
                         <Tab className={cls.createdAt}>
                             <Text text={createdAt} />
