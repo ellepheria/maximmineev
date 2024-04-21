@@ -2,9 +2,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { Post } from 'entities/Post';
 import { Card, CardTheme } from 'shared/ui/Card/Card';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { VStack } from 'shared/ui/Stack';
 import { Tab } from 'shared/ui/Tab/Tab';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextAlign } from 'shared/ui/Text/Text';
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePath } from 'app/providers/router/routeConfig';
 import { PostBlockType, PostTextBlockType } from 'entities/Post/model/types/post';
@@ -33,32 +33,41 @@ export const PostCard = memo((props: PostCardProps) => {
             max
             theme={CardTheme.CLEAR}
         >
-            <VStack max gap="16">
-                <HStack max className={cls.titleWrapper} justify="center">
-                    <Text title={post.title} />
-                </HStack>
-                <AppLink to={`${RoutePath.posts}/${post.id}`} theme={AppLinkTheme.CLEAR}>
-                    <HStack max className={cls.container}>
-                        <Tab className={`${cls.createdAt} ${cls.tab}`}>
-                            <Text text={post.createdAt} />
-                        </Tab>
-                        <img src={post.cover} alt="post cover" className={cls.cover} />
-                    </HStack>
+            <VStack gap="8" className={cls.cardContainer}>
+                <Text title={post.title} className={cls.title} />
+                <AppLink
+                    to={`${RoutePath.posts}/${post.id}`}
+                    theme={AppLinkTheme.CLEAR}
+                    className={cls.container}
+                >
+                    <Tab className={`${cls.createdAt} ${cls.tab}`}>
+                        <Text text={post.createdAt} />
+                    </Tab>
+                    <img src={post.cover} alt="post cover" className={cls.cover} />
                 </AppLink>
                 <Text
                     title={post.subtitle}
                     className={cls.subtitle}
                 />
                 {textBlock && (
-                    <PostTextBlock block={textBlock} className={cls.description} />
+                    <PostTextBlock
+                        block={{
+                            type: PostBlockType.TEXT,
+                            paragraphs: textBlock.paragraphs,
+                            id: textBlock.id,
+                        }}
+                        className={cls.description}
+                    />
                 )}
-                <HStack max justify="end" align="center">
-                    <AppLink to={`${RoutePath.posts}/${post.id}`} theme={AppLinkTheme.CLEAR}>
-                        <Button theme={ButtonTheme.INVERTED}>
-                            <Text text="Читать далее..." />
-                        </Button>
-                    </AppLink>
-                </HStack>
+                <AppLink
+                    className={cls.link}
+                    to={`${RoutePath.posts}/${post.id}`}
+                    theme={AppLinkTheme.CLEAR}
+                >
+                    <Button theme={ButtonTheme.INVERTED} className={cls.linkBtn}>
+                        <Text text="Читать далее..." />
+                    </Button>
+                </AppLink>
             </VStack>
         </Card>
     );
