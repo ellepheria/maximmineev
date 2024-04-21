@@ -1,9 +1,9 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useMemo } from 'react';
-import { HStack } from 'shared/ui/Stack';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { Technologies } from 'entities/Project/model/types/project';
 import { mapTechIcon } from 'shared/const/mapTechIcon';
+import { Grid } from 'shared/ui/Grid/Grid';
 import cls from './TechnologiesStack.module.scss';
 
 interface TechnologiesStackProps {
@@ -32,12 +32,13 @@ export const TechnologiesStack = memo((props: TechnologiesStackProps) => {
     }
 
     return (
-        <HStack
+        <Grid
             className={classNames(cls.TechnologiesStack, {}, [className])}
-            gap="16"
         >
-            {title && <Text title={title} size={size} />}
-            {icons}
-        </HStack>
+            {title && <Text title={title} size={size} className={cls.title} />}
+            <div className={cls.iconsContainer}>
+                {icons}
+            </div>
+        </Grid>
     );
 });

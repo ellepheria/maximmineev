@@ -1,4 +1,16 @@
-.grid {
-    grid-column: 2;
-    align-self: center;
+@media (max-width: 768px) {
+    .grid {
+        grid-column: 1;
+        grid-row: 3;
+        align-self: start;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-column: 2;
+        align-self: center;
+    }
 }
