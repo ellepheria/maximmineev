@@ -3,6 +3,8 @@
         grid-column: 1;
         grid-row: 3;
         align-self: start;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
     }
 }
 

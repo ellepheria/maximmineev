@@ -36,7 +36,9 @@ export const TechnologiesStack = memo((props: TechnologiesStackProps) => {
             className={classNames(cls.TechnologiesStack, {}, [className])}
         >
             {title && <Text title={title} size={size} className={cls.title} />}
-            {icons}
+            <div className={cls.iconsContainer}>
+                {icons}
+            </div>
         </Grid>
     );
 });
