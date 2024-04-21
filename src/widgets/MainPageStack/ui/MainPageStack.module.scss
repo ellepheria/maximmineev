@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .grid {
         grid-column: 1;
         grid-row: 3;
@@ -12,5 +12,7 @@
     .grid {
         grid-column: 2;
         align-self: center;
+        grid-template-columns: auto;
+        justify-content: start;
     }
 }
