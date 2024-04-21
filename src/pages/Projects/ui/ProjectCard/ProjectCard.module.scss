@@ -1,6 +1,5 @@
 .ProjectCard {
     width: 100%;
-    padding: 16px 24px;
     border-radius: 16px;
 }
 
@@ -54,7 +53,9 @@
 
 @media (max-width: 768px) {
     .ProjectCard {
-        padding: 8px 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+        padding-top: 16px;
     }
 
     .grid {
@@ -64,7 +65,7 @@
     }
 
     .title {
-        grid-row: 1;
+        grid-row: 2;
         text-align: center;
         width: 100%;
     }
@@ -78,9 +79,12 @@
         font: var(--font-s) !important;
     }
 
+    .coverContainer {
+        grid-row: 1;
+    }
+
     .cover {
         width: 100%;
-        grid-row: 2;
     }
 
     .imageWrapper {
@@ -208,6 +212,10 @@
 }
 
 @media (min-width: 1280px) {
+    .ProjectCard {
+        padding: 16px 24px;
+    }
+
     .cover {
         width: 400px;
         max-height: 250px;
