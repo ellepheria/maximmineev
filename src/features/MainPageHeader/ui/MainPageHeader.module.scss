@@ -1,4 +1,4 @@
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .grid {
         grid-column: 1;
         grid-row: 1;
@@ -44,8 +44,11 @@
 
 @media (min-width: 768px) {
     .grid {
+        width: 100%;
+        grid-column-start: 1;
+        grid-column-end: 3;
         grid-template-columns: repeat(2, auto);
-        grid-template-rows: 1fr 2fr;
+        grid-template-rows: repeat(2, auto);
     }
 
     .title {
@@ -54,6 +57,10 @@
 
     .text {
         grid-column: 1;
+    }
+
+    .text p {
+        text-indent: 25px;
     }
 
     .photo {
