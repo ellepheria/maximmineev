@@ -6,12 +6,8 @@
         grid-gap: 4px;
     }
 
-    .cover {
+    .image {
         height: calc(90vw * 0.5625);
-    }
-
-    .flex {
-        gap: 4px;
     }
 }
 
@@ -23,12 +19,8 @@
         grid-gap: 8px;
     }
 
-    .cover {
+    .image {
         height: 372px;
-    }
-
-    .flex {
-        gap: 8px;
     }
 }
 
@@ -40,13 +32,8 @@
         grid-gap: 12px;
     }
 
-    .cover {
+    .image {
         height: 565px;
     }
-
-    .flex {
-        gap: 12px;
-    }
 }
-
 
