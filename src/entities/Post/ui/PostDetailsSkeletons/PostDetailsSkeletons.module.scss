@@ -1,0 +1,39 @@
+@media (max-width: 767px) {
+    .grid {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-gap: 4px;
+    }
+
+    .image {
+        height: calc(90vw * 0.5625);
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-gap: 8px;
+    }
+
+    .image {
+        height: 372px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .grid {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-gap: 12px;
+    }
+
+    .image {
+        height: 565px;
+    }
+}
+
