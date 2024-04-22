@@ -1,22 +1,52 @@
-.cover {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-    aspect-ratio: 16 / 9;
+@media (max-width: 767px) {
+    .grid {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-gap: 4px;
+    }
+
+    .cover {
+        height: calc(90vw * 0.5625);
+    }
+
+    .flex {
+        gap: 4px;
+    }
 }
 
-.title {
-    width: 100%;
-    padding: 16px 24px;
+@media (min-width: 768px) {
+    .grid {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-gap: 8px;
+    }
+
+    .cover {
+        height: 372px;
+    }
+
+    .flex {
+        gap: 8px;
+    }
 }
 
-.card {
-    align-self: flex-end;
-    justify-self: flex-end;
-    border-radius: 8px;
-    padding: 8px;
+@media (min-width: 1280px) {
+    .grid {
+        grid-column: 1;
+        grid-template-columns: 1fr;
+        width: 100%;
+        grid-gap: 12px;
+    }
+
+    .cover {
+        height: 565px;
+    }
+
+    .flex {
+        gap: 12px;
+    }
 }
 
-.content {
-    padding: 16px 24px;
-}
+

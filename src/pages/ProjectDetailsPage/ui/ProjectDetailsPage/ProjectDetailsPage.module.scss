@@ -1,6 +1,7 @@
 @media (max-width: 767px) {
     .grid {
         grid-column: 1;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -8,6 +9,7 @@
     .grid {
         grid-column-start: 1;
         grid-column-end: 9;
+        grid-template-columns: 1fr;
     }
 }
 
@@ -15,5 +17,6 @@
     .grid {
         grid-column-start: 1;
         grid-column-end: 13;
+        grid-template-columns: 1fr;
     }
 }
