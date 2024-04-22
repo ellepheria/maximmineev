@@ -73,7 +73,9 @@ export const ProjectDetails = memo((props: ProjectDetailsProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             {isLoading ? (
-                <ProjectDetailsSkeletons />
+                <VStack max>
+                    <ProjectDetailsSkeletons />
+                </VStack>
             )
                 : (
                     <VStack max>
