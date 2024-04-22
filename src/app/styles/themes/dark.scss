@@ -1,8 +1,11 @@
 .app_dark_theme {
     --bg-color: #2c3531;
+    --bg-color-blur: rgba(44, 53, 49, 0.5);
     --bg-color-secondary: #417273;
     --primary-color: #d1e8e2;
+    --inverted-primary-color: #2c3531;
     --secondary-color: #ffcb9a;
+    --inverted-secondary-color: gray;
     --hover-color: #376e6f;
     --skeleton-color: #417273;
     --skeleton-shadow: #ffcb9a;

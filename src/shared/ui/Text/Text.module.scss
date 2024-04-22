@@ -100,3 +100,38 @@
         margin-bottom: 32px;
     }
 }
+
+@media (max-width: 767px) {
+    .size_s {
+        .title {
+            font: var(--font-s);
+            font-weight: bold;
+        }
+
+        .text {
+            font: var(--font-s);
+        }
+    }
+
+    .size_m {
+        .title {
+            font: var(--font-s);
+            font-weight: bold;
+        }
+
+        .text {
+            font: var(--font-s);
+        }
+    }
+
+    .size_l {
+        .title {
+            font: var(--font-m);
+            font-weight: bold;
+        }
+
+        .text {
+            font: var(--font-m);
+        }
+    }
+}
