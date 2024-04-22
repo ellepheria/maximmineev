@@ -1,0 +1,19 @@
+@media (max-width: 767px) {
+    .grid {
+        grid-column: 1;
+    }
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-column-start: 1;
+        grid-column-end: 9;
+    }
+}
+
+@media (min-width: 1280px) {
+    .grid {
+        grid-column-start: 1;
+        grid-column-end: 13;
+    }
+}
