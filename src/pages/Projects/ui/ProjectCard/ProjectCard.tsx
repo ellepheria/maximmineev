@@ -38,7 +38,6 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
             <Text
                 text={item}
                 size={TextSize.M}
-                theme={TextTheme.INVERTED}
                 key={item}
                 align={TextAlign.CENTER}
                 className={cls.tabText}
@@ -83,7 +82,7 @@ export const ProjectCard = memo((props: ProjectCardProps) => {
                     theme={AppLinkTheme.CLEAR}
                     className={cls.tabLink}
                 >
-                    <Tab className={cls.tab}>
+                    <Tab className={`${cls.tab} ${cls.btn}`}>
                         <Text text="Перейти к проекту" size={TextSize.M} />
                     </Tab>
                 </AppLink>

@@ -6,7 +6,7 @@
 @media (max-width: 768px) {
     .Page {
         width: 100%;
-        padding: 20px;
+        padding: 15px;
 
         grid-template-columns: 1fr;
     }
@@ -16,7 +16,6 @@
     .Page {
         width: 680px;
         padding: 20px 0;
-        overflow-y: auto;
 
         grid-template-columns: repeat(8, 65px);
         grid-column-gap: 20px;
@@ -27,7 +26,6 @@
     .Page {
         width: 1000px;
         padding: 20px 0;
-        overflow-y: auto;
 
         grid-template-columns: repeat(12, 65px);
         grid-column-gap: 20px;

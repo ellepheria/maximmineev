@@ -7,16 +7,59 @@
 
 .title {
     width: 100%;
-    padding: 16px 24px;
+    padding: 8px 16px;
 }
 
-.card {
-    align-self: flex-end;
-    justify-self: flex-end;
-    border-radius: 8px;
-    padding: 8px;
+@media (max-width: 767px) {
+    .title {
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        padding: 16px 24px;
+    }
+
+    .card {
+        align-self: center;
+        width: 100%;
+        justify-self: center;
+        border-radius: 8px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+    }
 }
 
-.content {
-    padding: 16px 24px;
+@media (min-width: 768px) {
+    .title {
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+        padding: 16px 24px;
+    }
+
+    .card {
+        align-self: center;
+        width: 100%;
+        justify-self: center;
+        border-radius: 8px;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1280px) {
+    .title {
+        width: 100%;
+        padding: 16px 24px;
+        flex-direction: row;
+    }
+
+    .card {
+        align-self: flex-end;
+        justify-self: center;
+        border-radius: 8px;
+        padding: 8px;
+        width: auto;
+    }
 }
